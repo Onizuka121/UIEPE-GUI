@@ -1,0 +1,180 @@
+body{
+    width: auto;
+    height: auto;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.form-login{
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+    padding: 4%;
+    gap: 20px;
+    margin: 0 auto;
+}
+.in-container-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 140%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.form-input{
+    padding: 10px;
+    width: 70px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 35px;
+    color: black;
+    text-align: center;
+    font-size: 100%;
+    
+
+}
+.form-input-btn{
+    width: 220px;
+    height: 60px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    background-color: blue;
+    border: none;
+    margin-left: 50px;
+}
+
+.view-pass{
+    width: 20px;
+    
+}
+
+
+
+/*____________________________________________________________________*/
+
+
+
+.input-container{
+    right: 16px;
+    width: 280px;
+    font-size: 20px;
+    position: relative;
+}
+
+.label{
+    position: absolute;
+    left: 10px;
+    top: 14px;
+    transition: all 0.2s;
+    padding: 0 2px;
+    z-index: 1;
+    color: rgb(0, 0, 0);
+}
+
+.text-input{
+    padding: 0.8rem;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #000000;
+    background: #ffffff80;
+    border-radius: 5px;
+    font-size: 22px;
+    outline: none;
+    transition: all .3s;
+    color: #000000
+}
+
+.label::before{
+    content: "";
+    height: 5px;
+    background-color: #000000;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 100%;
+    z-index: -1;
+}
+
+.text-input:focus{
+    border: 2px solid #000000;
+}
+
+.text-input:focus+.label,
+.filled{
+    top: -10px;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.text-input::placeholder{
+    font-size: 19px;
+    opacity: 0;
+    transition: all .3s;
+}
+
+.text-input:focus::placeholder{
+    opacity: 1;
+    animation-delay: 0.2s;
+}
+
+.text-input:focus+label,
+.text-input:valid+label{
+    top: -10px;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+}
+
+
+
+/*____________________________________________________________________*/
+
+
+
+.middle{
+    position: relative;
+}
+
+.btn{
+    background: none;
+    border: 2px solid rgb(0, 0, 0);
+    font-family: 'Poppins', sans-serif;
+    color:rgb(0, 0, 0);
+    text-transform: uppercase;
+    padding: 15px 25px;
+    min-width: 230px;
+    margin: 15px;
+    cursor: pointer;
+    transition: color 0.4s linear;
+    position: relative;
+    margin: auto;
+}
+
+.btn:hover{
+    color: #ffffff;
+}
+
+.btn::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    z-index: -1;
+    transition: transform 0.5s;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+}
+
+.btn1::before{
+    transform: scaleX(0);
+}
+
+.btn1:hover::before{
+    transform: scaleX(1);
+}
+
+
+
