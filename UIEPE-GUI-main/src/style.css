@@ -2,22 +2,32 @@ body{
     width: auto;
     height: auto;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgba(0, 0, 255, 0.343);
+}
+.login-title{
+    font-size: 250%;
 }
 .form-login{
-    text-align: center;
-    align-items: center;
+    align-items: left;
     display: flex;
     flex-direction: column;
     width: 30%;
-    height: 100%;
+    height: 70%;
     padding: 4%;
+    align-self: center;
     gap: 20px;
     margin: 0 auto;
+    border: 2px solid blue;
+    background-color: blue;
+    border-radius: 10px;
+    
 }
 .in-container-form{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 30px;
+   
+    width: 100%;
     font-size: 140%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -30,6 +40,7 @@ body{
     color: black;
     text-align: center;
     font-size: 100%;
+   
     
 
 }
@@ -42,23 +53,33 @@ body{
     border: none;
     margin-left: 50px;
 }
-
 .view-pass{
-    width: 20px;
-    
+    border: 1px solid black;
+    width: 10%;
+    align-self: center;
+    height: 20px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-image: url("/UIEPE-GUI-main/eye.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+
 }
 
 
 
-/*____________________________________________________________________*/
-
-
 
 .input-container{
+    display: flex;
+    flex-direction: row;
     right: 16px;
-    width: 280px;
+    width: auto;
     font-size: 20px;
     position: relative;
+    gap: 5%;
 }
 
 .label{
@@ -70,15 +91,27 @@ body{
     z-index: 1;
     color: rgb(0, 0, 0);
 }
-
-.text-input{
+.text-input[type = "password"]{
     padding: 0.8rem;
-    width: 100%;
+    width: 80%;
     height: 100%;
     border: 2px solid #000000;
     background: #ffffff80;
     border-radius: 5px;
-    font-size: 22px;
+    font-size: 20px;
+    outline: none;
+    transition: all .3s;
+    color: #000000;
+}
+
+.text-input{
+    padding: 0.8rem;
+    width: 104%;
+    height: 100%;
+    border: 2px solid #000000;
+    background: #ffffff80;
+    border-radius: 5px;
+    font-size: 20px;
     outline: none;
     transition: all .3s;
     color: #000000
@@ -133,6 +166,7 @@ body{
 
 .middle{
     position: relative;
+    align-self: center;
 }
 
 .btn{

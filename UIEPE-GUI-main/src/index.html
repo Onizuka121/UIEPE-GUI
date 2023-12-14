@@ -3,21 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>LOGIN PAGE</title>
   </head>
   <body>
     <form action="work.php" method="post" class="form-login">
       <div class="login">
-      <h1>LOGIN</h1>
+      <h1 class="login-title">LOGIN</h1><br>
       <div class="in-container-form">
         <label>Email / Username</label>
         <div class="input-container">     
-          <input type="text" id="username" autocomplete="off" placeholder="Inserisci la tua Email/Username" required class="text-input">
+          <input type="text" id="username" placeholder="Inserisci la tua Email/Username" required class="text-input">
         </div>
         <label>Password</label>
         <div class="input-container">     
-          <input type="password" id="username" autocomplete="off" placeholder="Inserisci la tua password" required class="text-input">
+          <input type="password" id="pass" placeholder="Inserisci la tua password" required class="text-input">
+          <div class="view-pass" id="view_id" onclick="ShowPass()"></div>
         </div>
         
         <br>
