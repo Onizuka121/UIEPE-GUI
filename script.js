@@ -1,5 +1,4 @@
 
-
 var text = false;
 
 function ShowPass(){
