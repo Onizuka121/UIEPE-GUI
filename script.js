@@ -9,11 +9,11 @@ function ShowPass(){
 
     if(!text){
         input.type = 'text';
-        div.style.backgroundImage = "url(eye.png')";
+        div.style.backgroundImage = "url('hide.png')";
         text = true;
     }else{
         input.type = "password";
-        div.style.backgroundImage = "url('hide.png')";
+        div.style.backgroundImage = "url('eye.png')";
         text = false;
     }
 
