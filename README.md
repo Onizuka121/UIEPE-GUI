@@ -1,6 +1,6 @@
   #                                  GUI UIEPE                       #
 
-link site -> https://onizuka121.github.io/UIEPE-GUI/
+link site -> https://onizuka121.github.io/UIEPE-GUI/index.html
 
 # Spazio dove pubblicare il lavoro sulla GUI del portale web UIEPE
 # Per ogni modifica (commit changes) lasciare un commento sulla modifica apportata
