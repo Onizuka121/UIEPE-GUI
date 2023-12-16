@@ -1,343 +1,360 @@
-body{
-    width: auto;
-    height: auto;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: rgba(144, 144, 238, 0.343);
-}
-.login-title{
-    font-size: 250%;
-}
-.form-login{
-    align-items: left;
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    height: 70%;
-    padding: 4%;
-    align-self: center;
-    gap: 20px;
-    margin: 0 auto;
-    border: 2px solid blue;
-    background-color: blue;
-    border-radius: 10px;
-    
-}
-.in-container-form{
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-   
-    width: 100%;
-    font-size: 140%;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+body {
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: #90aad6;
 }
 
-.form-input{
-    padding: 10px;
-    width: 70px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    height: 35px;
-    color: black;
-    text-align: center;
-    font-size: 100%;
-   
-    
+.container-form-logo {
+  display: flex;
+  flex-direction: row;
+}
 
+.login-title {
+  font-size: 300%;
+  color: #f5f5f5;
 }
-.form-input-btn{
-    width: 220px;
-    height: 60px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
-    background-color: blue;
-    border: none;
-    margin-left: 50px;
+.logo-brand{
+   margin-left: 20%;
+   margin-top: 5%;
+   text-align: left;
+    width: 70%;
+    padding: 20px;
 }
-.view-pass{
-    border: 1px solid black;
-    width: 10%;
-    align-self: center;
-    height: 20px;
-    border: 2px solid #000000;
-    border-radius: 5px;
-    background-image: url("eye.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-size: contain;
-    cursor: pointer;
-
+.logo-brand-login {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 60%;
+  background-color: #092147;
+  color: #f5f5f5;
+  height: 100%;
 }
-.input-container{
+.italia-flag{
     display: flex;
     flex-direction: row;
-    right: 16px;
-    width: auto;
-    font-size: 20px;
-    position: relative;
-    gap: 5%;
-}
-
-.label{
-    position: absolute;
-    left: 10px;
-    top: 14px;
-    transition: all 0.2s;
-    padding: 0 2px;
-    z-index: 1;
-    color: rgb(0, 0, 0);
-}
-.text-input[type = "password"]{
-    padding: 0.8rem;
-    width: 80%;
-    height: 100%;
-    border: 2px solid #000000;
-    background: #ffffff80;
-    border-radius: 5px;
-    font-size: 20px;
-    outline: none;
-    transition: all .3s;
-    color: #000000;
-}
-
-.text-input{
-    padding: 0.8rem;
-    width: 104%;
-    height: 100%;
-    border: 2px solid #000000;
-    background: #ffffff80;
-    border-radius: 5px;
-    font-size: 20px;
-    outline: none;
-    transition: all .3s;
-    color: #000000
-}
-
-.label::before{
-    content: "";
-    height: 5px;
-    background-color: #000000;
-    position: absolute;
-    left: 0;
-    top: 10px;
     width: 100%;
-    z-index: -1;
+    height: auto;
+}
+.color{
+    width: 20%;
+    height: 10px;
+}
+.form-login {
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  width: 30%;
+  height: 70%;
+  padding: 4%;
+  gap: 20px;
+  background-color: #90aad6;
+  border-radius: 10px;
+}
+.in-container-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  width: 100%;
+  font-size: 140%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.text-input:focus{
-    border: 2px solid #000000;
+.form-input {
+  padding:10px;
+  width: 50%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  height: 35px;
+  color: black;
+  font-size: 100%;
+}
+.form-input-btn {
+  width: 220px;
+  height: 60px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 20px;
+  background-color: blue;
+  border: none;
+  margin-left: 50px;
+}
+.view-pass {
+  border: 1px solid black;
+  width: 10%;
+  align-self: center;
+  height: 20px;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  background-image: url("eye.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+}
+.input-container {
+  display: flex;
+  flex-direction: row;
+  right: 16px;
+  width: auto;
+  font-size: 20px;
+  position: relative;
+  gap: 5%;
 }
 
-.text-input:focus+.label,
-.filled{
-    top: -10px;
-    color: rgb(0, 0, 0);
-    font-size: 18px;
-    font-family: 'Poppins', sans-serif;
+.label {
+  position: absolute;
+  left: 10px;
+  top: 14px;
+  transition: all 0.2s;
+  padding: 0 2px;
+  z-index: 1;
+  color: rgb(0, 0, 0);
+}
+.text-input[type="password"] {
+  padding: 10px;
+  padding-left: 20px;
+  width: 70%;
+  height: auto;
+  border: 2px solid #000000;
+  background: #f5f5f5;
+  font-size: 20px;
+  outline: none;
+  transition: all 0.3s;
+  color: #000000;
 }
 
-.text-input::placeholder{
-    font-size: 19px;
-    opacity: 0;
-    transition: all .3s;
+.text-input {
+  padding: 10px;
+  padding-left: 20px;
+  width: 90%;
+  height: auto;
+  border: 2px solid #000000;
+  background: #f5f5f5;
+  font-size: 20px;
+  outline: none;
+  transition: all 0.3s;
+  color: #000000;
 }
 
-.text-input:focus::placeholder{
-    opacity: 1;
-    animation-delay: 0.2s;
+.label::before {
+  content: "";
+  height: 5px;
+  background-color: #000000;
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 100%;
+  z-index: -1;
 }
 
-.text-input:focus+label,
-.text-input:valid+label{
-    top: -10px;
-    color: rgb(0, 0, 0);
-    font-size: 18px;
+.text-input:focus {
+  border: 2px solid #000000;
 }
 
+.text-input:focus + .label,
+.filled {
+  top: -10px;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+}
 
+.text-input::placeholder {
+  font-size: 19px;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.text-input:focus::placeholder {
+  opacity: 1;
+  animation-delay: 0.2s;
+}
+
+.text-input:focus + label,
+.text-input:valid + label {
+  top: -10px;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+}
+
+.select-user-form {
+  width: 200px;
+  background-color: #174384;
+  color: #f5f5f5;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: 2%;
+}
 
 /*____________________________________________________________________*/
 
-
-
 .middle{
-    position: relative;
-    align-self: center;
+    margin-left: 50%;
 }
 
-.btn{
-    background: none;
-    border: 2px solid rgb(0, 0, 0);
-    font-family: 'Poppins', sans-serif;
-    color:rgb(0, 0, 0);
-    text-transform: uppercase;
-    padding: 15px 25px;
-    min-width: 230px;
-    margin: 15px;
-    cursor: pointer;
-    transition: color 0.4s linear;
-    position: relative;
-    margin: auto;
+.btn {
+  background: none;
+  border: none;
+  background-color: #174384;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: large;
+  color: #f5f5f5;
+  text-transform: uppercase;
+  padding: 15px 25px;
+  min-width: 230px;
+  margin: 15px;
+  cursor: pointer;
+  margin: auto;
 }
 
-.btn:hover{
-    color: #ffffff;
-}
-
-.btn::before{
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgb(0, 0, 0);
-    z-index: -1;
-    transition: transform 0.5s;
-    transform-origin: 0 0;
-    transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
-}
-
-.btn1::before{
-    transform: scaleX(0);
-}
-
-.btn1:hover::before{
-    transform: scaleX(1);
-}
-
-
-header h1{
-    text-align: ce;
+header h1 {
+  text-align: ce;
 }
 
 main {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-    border: 3px solid green;
-    height: 300px;
-    justify-content: center;
-    display: flex;
-
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  height: 300px;
+  justify-content: center;
+  display: flex;
 }
-table{
-    width: 100%;
-    height: 100%;
+table {
+  width: 100%;
+  height: 100%;
 }
-table, th, td{
-    border: 1px solid black;
-    border-collapse: collapse;
-    padding: 10px;
-
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
 }
 
 thead {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
 
-
-
-.header-home{
-    padding-top: 2%;
-   
-    margin-top: -10px;
-    width: auto;
-    background-color: #052abe80;
-    height:auto;
-    color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
+.header-home {
+  padding-top: 3%;
+  margin-top: -10px;
+  width: auto;
+  background-color: #092147;
+  height: auto;
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-.nav-home{
-    padding: 1%;
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-    width: auto;
-
+.nav-home {
+  padding: 1%;
+  display: flex;
+  flex-direction: row;
+  width: auto;
 }
 
-.brand{
-    padding: 1%;
-    width: 400px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: bolder;
-    font-size: xx-large;
-    height: auto;
+.brand {
+  padding: 1%;
+  width: 400px;
+  margin-top: -15px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bolder;
+  font-size: xx-large;
+  height: auto;
 }
 
-.logo{
-    background-image: url("logo-gv.png");
-    width: 6%;
-    height: 100px;
-    background-repeat: no-repeat;
-    background-size: contain;
-
+.logo {
+  margin-left: 40px;
+  background-image: url("logo-gv.png");
+  width: 6%;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
-.container-profile-details{
-    margin-left: 15%;
-    justify-self: right;
-    font-size: large;
-    width: 40%;
-    display: flex;
-    height: 120px;
-    border: 2px solid;
-    border-radius: 15px;
-    flex-direction: row;
+.container-profile-details {
+  justify-self: right;
+  font-size: large;
+  width: 400px;
+  display: flex;
+  height: 120px;
+  flex-direction: row;
 }
-.logo-profile{
-    justify-self: right;
-    width: 40%;
-    background-image: url("profile-icon.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+.logo-profile {
+  justify-self: right;
+  width: 40%;
+  background-image: url("profile-icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
-.nome-cognome{
-    color: #08007e;
-    font-size: 30px;
-    
+.nome-cognome {
+  color: #ffffff;
+  font-size: 30px;
 }
-.details-profile{
-    width: 100%;
-    justify-self:center;
-    text-wrap: nowrap;
-    font-size: 30px;
+.details-profile {
+  width: 100%;
+  justify-self: center;
+  text-wrap: nowrap;
+  font-size: 30px;
 }
-.nav-options{
-    margin-top: 10px;
-    display: flex;
-    background-color: #08007e;
-    flex-direction: row;
-    width: 100%;
-    height: 50px;
-    gap: 10%;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
+.nav-options {
+  margin-top: 10px;
+  display: flex;
+  background-color: #174384;
+  flex-direction: row;
+  width: 100%;
+  height: 50px;
+  gap: 10%;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-.nav-btn-div{
-    width: 10%;
-    padding: 1%;
-    justify-self: center;
-    height: 20px;
-    cursor: pointer;
-    border-radius: 5px;
-   
+.nav-btn-div {
+  width: 15%;
+  justify-self: center;
+  justify-content: center;
+  text-align: center;
+  justify-items: center;
+  height: 50px;
+  line-height: 50px;
+  cursor: pointer;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
-.nav-btn-div:hover{
-    background-color:#8485bc67;
+.container-pro {
+  display: flex;
+  flex-direction: column;
+  justify-self: right;
+  border-radius: 15px;
+  position: absolute;
+  top: 40px;
+  right: 40px;
 }
+.btn-profile-container {
+  display: flex;
+  flex-direction: row;
+  text-align: right;
+  padding: 1%;
+  gap: 180px;
+}
+.btn-profile {
+  display: flex;
+  flex-direction: row;
+  background-color: #174384;
+  color: #f5f5f5;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  border: none;
+  width: auto;
+  gap: 10px;
+}
+.logo-btn-profile {
+  width: 20px;
 
-
-
-
-
-
-
-
-
+  background-repeat: no-repeat;
+  background-size: contain;
+}

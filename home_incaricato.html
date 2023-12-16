@@ -11,28 +11,51 @@
     <header class="header-home">
       <nav class="nav-home">
         <div class="logo"></div>
-
         <div class="brand">
           Ufficio interdistrettuale esecuzione penale esterna
           <p style="font-size: 60%">Ministero della Giustizia</p>
         </div>
-        <div class="container-profile-details">
-          <div class="logo-profile"></div>
-          <div class="details-profile">
-            <!--IN QUESTA PARTE DOVRA' ESSERCI DEL CODICE PHP INNESTATO PER 
+        <div class="container-pro">
+          <div class="container-profile-details">
+            <div class="logo-profile"></div>
+            <div class="details-profile">
+              <!--IN QUESTA PARTE DOVRA' ESSERCI DEL CODICE PHP INNESTATO PER 
                     1-  tipologia utente*
                     2 - nome cognome
                     3- altri dati
                -->
-            <p class="nome-cognome" id="nc">
-              Marco Rossi <br />AS SEGRETARIATO
-            </p>
+              <p class="nome-cognome" id="nc">
+                Marco Rossi <br />AS SEGRETARIATO
+              </p>
+            </div>
+          </div>
+          <div class="btn-profile-container">
+            <div class="btn-profile">
+              <div class="logo-btn-profile"style=" background-image: url('user.png');"></div>
+              PROFILO
+            </div>
+            <div class="btn-profile" onclick="ChangePage('index.html')">
+              <div class="logo-btn-profile" style=" background-image: url('exit.png');"></div>
+              LOGOUT
+            </div>
           </div>
         </div>
       </nav>
       <div class="nav-options">
-        <div class="nav-btn-div">HOME</div>
-        <div class="nav-btn-div">INSERISCI PRATICA</div>
+        <div
+          class="nav-btn-div"
+          id="home_btn_id"
+          onclick="ShowContainer('home_btn_id')"
+        >
+          HOME
+        </div>
+        <div
+          class="nav-btn-div"
+          id="in_btn_id"
+          onclick="ShowContainer('in_btn_id')"
+        >
+          INSERISCI PRATICA
+        </div>
       </div>
     </header>
     <!-- BODY -->
@@ -67,4 +90,28 @@
     </main>
     <!-- FOOTER -->
   </body>
+
+  <script>
+    let btn_nav_in = document.getElementById("in_btn_id");
+    let btn_nav_home = document.getElementById("home_btn_id");
+    window.onload = btn_nav_home.style.backgroundColor = "#90AAD6";
+
+    let style_hover = ".nav-btn-div:hover{background-color: #90aad67f;}";
+
+    function ShowContainer(id) {
+      let btn_div = document.getElementById(id);
+      btn_div.style.backgroundColor = "#90AAD6";
+
+      if (btn_nav_home == btn_div) {
+        btn_nav_in.style.backgroundColor = "#174384";
+      } else {
+        btn_nav_home.style.backgroundColor = "#174384";
+      }
+    }
+
+    function ChangePage(page_path){
+      window.location = page_path;
+    }
+    //#174384
+  </script>
 </html>

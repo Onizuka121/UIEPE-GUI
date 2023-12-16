@@ -8,27 +8,69 @@
     <title>LOGIN PAGE</title>
   </head>
   <body>
-    <!--aggiungere parti php qui su form ( action file [php] )-->
-    <form class="form-login">
-      <div class="login">
-      <h1 class="login-title">LOGIN</h1><br>
-      <div class="in-container-form">
-        <label>Email / Username</label>
-        <div class="input-container">     
-          <input type="text" id="username" placeholder="Inserisci la tua Email/Username" required class="text-input">
+    <div class="container-form-logo">
+      <!--aggiungere parti php qui su form ( action file [php] )-->
+      <form class="form-login">
+        <div class="login">
+          <h1 class="login-title">ACCESSO PORTALE</h1>
+          <br />
+          <div class="in-container-form">
+            <label>Email / Username</label>
+            <div class="input-container">
+              <input
+                type="text"
+                id="username"
+                placeholder="Inserisci la tua Email/Username"
+                required
+                class="text-input"
+              />
+            </div>
+            <label>Password</label>
+            <div class="input-container">
+              <input
+                type="password"
+                id="pass"
+                placeholder="Inserisci la tua password"
+                required
+                class="text-input"
+              />
+              <div class="view-pass" id="view_id" onclick="ShowPass()"></div>
+            </div>
+            <select name="tipologia_utente" class="select-user-form">
+              <option value="segretariato">AS SEGRETARIATO</option>
+              <option value="titolare">AS TITOLARE</option>
+              <option value="direttore">DIRETTORE</option>
+              <option value="responsabile">RESPONSABILE</option>
+            </select>
+            <br />
+            <div class="middle">
+              <a href="home_incaricato.html">
+                <button type="button" class="btn btn1">Accedi</button>
+              </a>
+            </div>
+          </div>
         </div>
-        <label>Password</label>
-        <div class="input-container">     
-          <input type="password" id="pass" placeholder="Inserisci la tua password" required class="text-input">
-          <div class="view-pass" id="view_id" onclick="ShowPass()"></div>
-        </div>
-        
-        <br>
-        <div class="middle">
-          <a href="home_incaricato.html"><button type="button" class="btn btn1"> Accedi </button></a>
+      </form>
+
+      <div class="logo-brand-login">
+        <div class="logo-brand">
+          <div class="logo" style="width: auto; margin-left: 23%;"></div><br><br>
+          <div class="italia-flag">
+            <div class="color" style="background-color: green;"></div>
+            <div class="color" style="background-color: white;"></div>
+            <div class="color" style="background-color: red;"></div>
+          </div>
+          <br>
+          <br>
+          <div class="brand" style="width: 600px;font-size: 310%; text-align: left; text-transform: uppercase; margin-left: -30px;">
+            Ufficio interdistrettuale esecuzione penale esterna
+            <br />
+            <br />
+            UIEPE
+            <p style="font-size: 60%">Ministero della Giustizia</p>
+          </div>
         </div>
       </div>
     </div>
-    </form>
   </body>
 </html>
