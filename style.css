@@ -23,7 +23,6 @@ body {
     padding: 20px;
 }
 .logo-brand-login {
-  position: absolute;
   right: 0px;
   top: 0px;
   width: 60%;
@@ -57,10 +56,15 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px;
-
+  margin-left: -20px;
   width: 100%;
   font-size: 140%;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.ml{
+  margin-left: -15px;
+  display: flex;
 }
 
 .form-input {
@@ -105,7 +109,6 @@ body {
 }
 
 .label {
-  position: absolute;
   left: 10px;
   top: 14px;
   transition: all 0.2s;
@@ -181,17 +184,24 @@ body {
 }
 
 .select-user-form {
-  width: 200px;
+  border: none;
+  min-width: 200px;
+  height: 51px;
   background-color: #174384;
   color: #f5f5f5;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  padding: 2%;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  margin-left: 25px;
+  text-align: center;
+
 }
 
 /*____________________________________________________________________*/
 
 .middle{
-    margin-left: 50%;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .btn {
@@ -203,7 +213,7 @@ body {
   color: #f5f5f5;
   text-transform: uppercase;
   padding: 15px 25px;
-  min-width: 230px;
+  min-width: 200px;
   margin: 15px;
   cursor: pointer;
   margin: auto;
@@ -310,6 +320,7 @@ thead {
   align-items: center;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+
 .nav-btn-div {
   width: 15%;
   justify-self: center;
@@ -328,7 +339,6 @@ thead {
   flex-direction: column;
   justify-self: right;
   border-radius: 15px;
-  position: absolute;
   top: 40px;
   right: 40px;
 }
@@ -357,4 +367,212 @@ thead {
 
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.brand{
+  width: 600px;
+  font-size: 310%;
+  text-align: left;
+  text-transform: uppercase;
+  margin-left: -30px;
+}
+
+@media screen and (max-width: 1368px){
+  .login-title{
+    font-size: 250%;
+  }
+  .brand{
+    width: 560px;
+    font-size: 280%;
+  }
+  .select-user-form{
+    margin-left: 10px;
+  }
+  
+}
+
+@media screen and (max-width: 1210px) {
+  
+}
+
+@media screen and (max-width: 1150px) {
+  .login-title {
+    font-size: 200%;
+  }
+  .select-user-form{
+    min-width: 170px;
+  }
+  #btn1{
+    min-width: 170px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  
+  .select-user-form {
+    min-width: 140px;
+  }
+
+  #btn1 {
+    
+    min-width: 140px;
+  }
+}
+
+@media screen and (max-width: 922px) {
+  .login-title {
+    font-size: 150%;
+  }
+  .brand {
+    width: 450px;
+    font-size: 250%;
+  }
+}
+
+@media screen and (max-width: 810px) {
+  .login-title {
+    font-size: 150%;
+  }
+
+  .brand {
+    width: 350px;
+    font-size: 200%;
+  }
+
+  .select-user-form {
+    font-size: x-small;
+    min-width: 120px;
+    height: 53px;
+  }
+
+  #btn1 {
+    padding-top: 19px;
+    padding-bottom: 19px;
+    font-size: small;
+    min-width: 120px;
+  }
+  .container-form-logo{
+    display: grid;
+  }
+
+  .form-login{
+    width: 100%;
+  }
+
+  .logo-brand-login{
+    width: 100%;
+    height: 100%;
+  }
+
+  .ml{
+    justify-content: center;
+    margin-left: -35px;
+  }
+
+  .middle{
+    margin-right: 15vh;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .login-title {
+    font-size: 100%;
+  }
+
+}
+
+@media screen and (max-width: 655px) {
+  .brand {
+    width: 300px;
+    font-size: 170%;
+  }
+
+  .select-user-form {
+    font-size: x-small;
+    min-width: 100px;
+  }
+
+  #btn1 {
+    padding-top: 19px;
+    padding-bottom: 19px;
+    font-size: small;
+    min-width: 100px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .brand {
+    width: 250px;
+    font-size: 150%;
+  }
+
+  .select-user-form {
+    font-size: xx-small;
+    min-width: 90px;
+  }
+
+  #btn1 {
+    padding-top: 19px;
+    padding-bottom: 19px;
+    font-size: small;
+    min-width: 90px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .login-title {
+    font-size: 75%;
+  }
+
+  .brand {
+    width: 220px;
+    font-size: 130%;
+  }
+
+  .select-user-form {
+    font-size: xx-small;
+    min-width: 75px;
+  }
+
+  #btn1 {
+    padding-top: 19px;
+    padding-bottom: 19px;
+    font-size: small;
+    min-width: 75px;
+  }
+}
+
+@media screen and (max-width: 455px) {
+  
+  .select-user-form {
+    font-size: xx-small;
+    min-width: 50px;
+  }
+
+  #btn1 {
+    padding-top: 19px;
+    padding-bottom: 19px;
+    font-size: small;
+    min-width: 50px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .login-title {
+    font-size: 75%;
+  }
+
+  .brand {
+    width: 180px;
+    font-size: 110%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .middle{
+    margin-right: 0;
+  }
+  .ml{
+    margin-left: -20px;
+  }
 }
