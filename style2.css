@@ -1,0 +1,513 @@
+body {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    background-color: #90aad6;
+}
+
+.container-form-logo {
+    display: flex;
+    flex-direction: row;
+}
+
+.login-title {
+    font-size: 300%;
+    color: #f5f5f5;
+}
+
+.logo-brand {
+    margin-left: 20%;
+    margin-top: 5%;
+    text-align: left;
+    width: 70%;
+    padding: 20px;
+}
+
+.logo-brand-login {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 60%;
+    background-color: #092147;
+    color: #f5f5f5;
+    height: 100%;
+}
+
+.italia-flag {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+}
+
+.color {
+    width: 20%;
+    height: 10px;
+}
+
+.form-login {
+    align-items: left;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    width: 30%;
+    height: 70%;
+    padding: 4%;
+    gap: 20px;
+    background-color: #90aad6;
+    border-radius: 10px;
+}
+
+.in-container-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    width: 100%;
+    font-size: 140%;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.form-input {
+    padding: 10px;
+    width: 50%;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    height: 35px;
+    color: black;
+    font-size: 100%;
+}
+
+.form-input-btn {
+    width: 220px;
+    height: 60px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 20px;
+    background-color: blue;
+    border: none;
+    margin-left: 50px;
+}
+
+.view-pass {
+    border: 1px solid black;
+    width: 10%;
+    align-self: center;
+    height: 20px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-image: url("eye.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+    right: 16px;
+    width: auto;
+    font-size: 20px;
+    position: relative;
+    gap: 5%;
+}
+
+.label {
+    position: absolute;
+    left: 10px;
+    top: 14px;
+    transition: all 0.2s;
+    padding: 0 2px;
+    z-index: 1;
+    color: rgb(0, 0, 0);
+}
+
+.text-input[type="password"] {
+    padding: 10px;
+    padding-left: 20px;
+    width: 70%;
+    height: auto;
+    border: 2px solid #000000;
+    background: #f5f5f5;
+    font-size: 20px;
+    outline: none;
+    transition: all 0.3s;
+    color: #000000;
+}
+
+
+.text-input {
+    padding: 10px;
+    padding-left: 20px;
+    width: 90%;
+    height: auto;
+    border: 2px solid #000000;
+    background: #f5f5f5;
+    font-size: 20px;
+    outline: none;
+    transition: all 0.3s;
+    color: #000000;
+}
+
+.label::before {
+    content: "";
+    height: 5px;
+    background-color: #000000;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 100%;
+    z-index: -1;
+}
+
+.text-input:focus {
+    border: 2px solid #000000;
+}
+
+.text-input:focus+.label,
+.filled {
+    top: -10px;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+}
+
+.text-input::placeholder {
+    font-size: 19px;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.text-input:focus::placeholder {
+    opacity: 1;
+    animation-delay: 0.2s;
+}
+
+.text-input:focus+label,
+.text-input:valid+label {
+    top: -10px;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+}
+
+.select-user-form {
+    width: 200px;
+    background-color: #174384;
+    color: #f5f5f5;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    padding: 2%;
+}
+
+/*____________________________________________________________________*/
+
+
+
+.btn {
+    background: none;
+    border: none;
+    background-color: #174384;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: large;
+    color: #f5f5f5;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    min-width: 230px;
+
+    cursor: pointer;
+    margin: auto;
+}
+
+.header-home {
+    position: relative;
+    padding-top: 3%;
+    margin-top: -10px;
+    width: auto;
+    background-color: #092147;
+    height: 200px;
+    color: white;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.nav-home {
+    padding: 1%;
+    display: flex;
+    flex-direction: row;
+    width: auto;
+}
+
+.brand {
+    padding: 1%;
+    width: 400px;
+    margin-top: -15px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-weight: bolder;
+    font-size: xx-large;
+    height: auto;
+}
+
+.logo {
+    margin-left: 40px;
+    background-image: url("logo-gv.png");
+    width: 6%;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.container-profile-details {
+    justify-self: right;
+    font-size: large;
+    width: 400px;
+    display: flex;
+    height: 110px;
+    flex-direction: row;
+}
+
+.logo-profile {
+    justify-self: right;
+    width: 40%;
+    background-image: url("profile-icon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.nome-cognome {
+    color: #ffffff;
+    font-size: 90%;
+}
+
+.details-profile {
+    width: 100%;
+    justify-self: center;
+    text-wrap: nowrap;
+    font-size: 30px;
+}
+
+.nav-options {
+    margin-top: -4px;
+    display: flex;
+    background-color: #174384;
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+    gap: 10%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.nav-btn-div {
+    width: 15%;
+    justify-self: center;
+    justify-content: center;
+    text-align: center;
+    justify-items: center;
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.container-pro {
+    display: flex;
+    flex-direction: column;
+    justify-self: right;
+    border-radius: 15px;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+
+.btn-profile-container {
+    display: flex;
+    flex-direction: row;
+    text-align: right;
+    padding: 1%;
+    gap: 180px;
+}
+
+.btn-profile {
+    display: flex;
+    flex-direction: row;
+    background-color: #174384;
+    color: #f5f5f5;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    border: none;
+    width: auto;
+    gap: 10px;
+}
+
+.logo-btn-profile {
+    width: 20px;
+
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.container-main {
+    margin-top: 1.5%;
+}
+
+.home-page-richieste {
+    width: 80%;
+    padding-right: 5%;
+    margin: 0 auto;
+    height: 420px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.container-row-campi {
+    width: 80%;
+    height: 100px;
+    padding-right: 5%;
+    margin: 0 auto;
+}
+
+.row-name-coloumn {
+    color: #f5f5f5;
+    width: 100%;
+    height: 70px;
+    margin: 0 auto;
+    padding: 1%;
+    border-radius: 10px;
+    background-color: #092147;
+}
+
+.row-name-coloumn th {
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: center;
+    width: 25%;
+    height: auto;
+    font-size: 96%;
+}
+
+.input-filter,
+.select-filter {
+    color: #f5f5f5;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    text-align: center;
+    width: 100px;
+    padding: 3%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #174384;
+    margin-top: 10px;
+}
+
+.richiesta-short {
+    display: flex;
+    flex-direction: row;
+    color: #f5f5f5;
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #4e7bbe;
+    cursor: pointer;
+}
+
+.richiesta-short:hover {
+    background-color: #1f519a;
+}
+
+.type-container {
+    padding: 1%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 30%;
+    color: #f5f5f5;
+    text-align: center;
+}
+
+.type-container div {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.type-container p {
+    margin-top: 9px;
+    margin-bottom: 0;
+}
+
+.status-cont {
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    align-self: center;
+    justify-content: center;
+    width: 60%;
+    margin: 0 auto;
+    height: 60%;
+    padding: 2%;
+    border-radius: 25px;
+
+    background-color: rgba(0, 128, 0, 0.561);
+}
+
+.insert-pratica-container {
+    display: none;
+    margin: 0 auto;
+    border: 1px solid;
+    width: 70%;
+    height: auto;
+}
+
+.body_inserisci_pratica {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    box-sizing: border-box;
+    min-height: 70vh;
+    justify-content: center;
+    align-items: center;
+    color: #f5f5f5;
+}
+
+.label_inserisci_pratica {
+    font-size: 30px;
+    color: #f5f5f5;
+}
+
+.input_text_inserisci_pratica {
+    padding: 15px;
+    width: 400px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.input_text_inserisci_pratica2 {
+    padding: 15px;
+    width: 600px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.in_qualitÃ _di_select_inserisci_pratica {
+    width: 550px;
+    border-radius: 5px;
+    height: 50px;
+    font-size: 15px;
+}
+
+.button_inserisci_pratica {
+    background-color: rgb(33, 144, 255);
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(33, 144, 255);
+    padding: 15px 25px;
+    min-width: 200px;
+    cursor: pointer;
+    transition: color 0.4s linear;
+    position: relative;
+
+}
