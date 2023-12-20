@@ -25,17 +25,23 @@
                     3- altri dati
                -->
               <p class="nome-cognome" id="nc">
-                Marco Rossi <br />AS SEGRETARIATO
+                Roberto De Amori <br />AS SEGRETARIATO
               </p>
             </div>
           </div>
           <div class="btn-profile-container">
             <div class="btn-profile">
-              <div class="logo-btn-profile"style=" background-image: url('user.png');"></div>
+              <div
+                class="logo-btn-profile"
+                style="background-image: url('user.png')"
+              ></div>
               PROFILO
             </div>
             <div class="btn-profile" onclick="ChangePage('index.html')">
-              <div class="logo-btn-profile" style=" background-image: url('exit.png');"></div>
+              <div
+                class="logo-btn-profile"
+                style="background-image: url('exit.png')"
+              ></div>
               LOGOUT
             </div>
           </div>
@@ -61,33 +67,243 @@
     <!-- BODY -->
     <br />
     <br />
-    <main>
-      <table>
-        <thead>
+
+    <div class="container-main">
+      <div class="container-row-campi" id="crc">
+        <table class="row-name-coloumn">
           <tr>
-            <th colspan="2">Tipologia</th>
-            <th>Data di richiesta</th>
-            <th colspan="2">Nome soggetto</th>
+            <th>
+              TIPOLOGIA
+              <select name="tipologia_filtro" class="select-filter">
+                <option value="tutte">tutte</option>
+                <option value="Appuntamento Map">Appuntamento Map</option>
+              </select>
+            </th>
+            <th>
+              DATA
+              <input type="date" name="data_filtro" class="input-filter" />
+            </th>
+            <th>
+              SOGGETTO
+              <input
+                type="text"
+                name="soggetto_filtro"
+                class="input-filter"
+                value="null"
+              />
+            </th>
+            <th>
+              STATO
+              <select name="stato_filtro" class="select-filter">
+                <option value="tutte">tutte</option>
+                <option value="terminata">terminata</option>
+                <option value="lavorazione">lavorazione</option>
+              </select>
+            </th>
           </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><button>Visualizza dettagli</button></td>
-            <td>A​ppuntamento sottoscrizione MAP</td>
-            <td>12/04/2023</td>
-            <td>Mario Rossi</td>
-            <td><input type="checkbox" />Terminata</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </main>
+        </table>
+      </div>
+
+      <div class="home-page-richieste" id="home_richieste">
+        <div class="richiesta-short">
+          <div class="type-container"><p>Appuntamento Map</p></div>
+          <div class="type-container"><p>12/04/2023</p></div>
+          <div class="type-container"><p>Francesco Rossi</p></div>
+          <div class="type-container">
+            <div class="status-cont">
+              <label>terminata</label>
+            </div>
+          </div>
+        </div>
+        <div class="richiesta-short">
+          <div class="type-container"><p>Appuntamento Map</p></div>
+          <div class="type-container"><p>17/04/2023</p></div>
+          <div class="type-container"><p>Lorenzo De Ciglio</p></div>
+          <div class="type-container">
+            <div class="status-cont">
+              <label>terminata</label>
+            </div>
+          </div>
+        </div>
+        <div class="richiesta-short">
+          <div class="type-container"><p>Appuntamento Map</p></div>
+          <div class="type-container"><p>05/04/2023</p></div>
+          <div class="type-container"><p>Mario Neri</p></div>
+          <div class="type-container">
+            <div class="status-cont">
+              <label>lavorazione</label>
+            </div>
+          </div>
+        </div>
+        <div class="richiesta-short">
+          <div class="type-container"><p>Appuntamento Map</p></div>
+          <div class="type-container"><p>20/12/2023</p></div>
+          <div class="type-container"><p>Marco Verdi</p></div>
+          <div class="type-container">
+            <div
+              class="status-cont"
+              style="background-color: rgba(177, 2, 2, 0.707)"
+            >
+              lavorazione
+            </div>
+          </div>
+        </div>
+        <div class="richiesta-short">
+          <div class="type-container"><p>Appuntamento Map</p></div>
+          <div class="type-container"><p>20/12/2023</p></div>
+          <div class="type-container"><p>Marco Verdi</p></div>
+          <div class="type-container">
+            <div
+              class="status-cont"
+              style="background-color: rgba(177, 2, 2, 0.707)"
+            >
+              lavorazione
+            </div>
+          </div>
+        </div>
+        <div class="richiesta-short">
+          <div class="type-container"><p>Appuntamento Map</p></div>
+          <div class="type-container"><p>20/12/2023</p></div>
+          <div class="type-container"><p>Marco Verdi</p></div>
+          <div class="type-container">
+            <div
+              class="status-cont"
+              style="background-color: rgba(177, 2, 2, 0.707)"
+            >
+              lavorazione
+            </div>
+          </div>
+        </div>
+        <div class="richiesta-short">
+          <div class="type-container"><p>Appuntamento Map</p></div>
+          <div class="type-container"><p>20/12/2023</p></div>
+          <div class="type-container"><p>Marco Verdi</p></div>
+          <div class="type-container">
+            <div class="status-cont">lavorazione</div>
+          </div>
+        </div>
+        <div class="richiesta-short">
+          <div class="type-container"><p>Appuntamento Map</p></div>
+          <div class="type-container"><p>20/12/2023</p></div>
+          <div class="type-container"><p>Marco Verdi</p></div>
+          <div class="type-container">
+            <div class="status-cont">lavorazione</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-main">
+      <div class="insert-pratica-container" id="insert_pratica_id">
+          <!--AGGIUTA DEL FORM PER MANDARE I DATI DELL'INSERIMENTO -->
+            <div class="dati_del_richiedente">
+              <label class="label_inserisci_pratica">
+                Dati del richiedente
+              </label><br><br>
+              <div class="container-dati">
+              <input
+                type="text"
+                placeholder="Inserisci il tuo nome"
+                class="input_text_inserisci_pratica"
+              />
+              <input
+                type="text"
+                placeholder="Inserisci il tuo cognome"
+                class="input_text_inserisci_pratica"
+              />
+            </div>
+          </div>
+          <br>
+          <div class="dati_del_richiedente">
+              <label class="label_inserisci_pratica"> In qualità di: </label>
+              <br><br>
+            <div class="select_apertura_inserisci_pratica">
+              <div class="container-dati">
+              <select
+                id=""
+                name="select_iqd"
+                class="in_qualità_di_select_inserisci_pratica"
+                required="required"
+              >
+                <option value="Se_stesso">Se stesso</option>
+                <option value="Tribunale_di_Sorveglianza">
+                  Tribunale di Sorveglianza
+                </option>
+                <option value="Ufficio _di_Sorveglianza Canc 1">
+                  Ufficio di Sorveglianza Canc 1
+                </option>
+                <option value="Ufficio di Sorveglianza Canc 2">
+                  Ufficio di Sorveglianza Canc 2
+                </option>
+                <option value="Ufficio di Sorveglianza Canc 3">
+                  Ufficio di Sorveglianza Canc 3
+                </option>
+                <option value="Educatore Istituto di ..........">
+                  Educatore Istituto di ..........
+                </option>
+                <option value="U.E.P.E. di ..........">
+                  U.E.P.E. di ..........
+                </option>
+                <option value="Ser. D. Asl ..........">
+                  Ser. D. Asl ..........
+                </option>
+                <option value="Servizio Sociale Mun ..........">
+                  Servizio Sociale Mun ..........
+                </option>
+                <option value="Servizio Sociale Comune di ..........">
+                  Servizio Sociale Comune di ..........
+                </option>
+                <option value="Familiare">Familiare</option>
+                <option value="Commissariato PS di ..........">
+                  Commissariato PS di ..........
+                </option>
+                <option value="Stazione Carabiniere di ..........">
+                  Stazione Carabiniere di ..........
+                </option>
+                <option value="Avvocata/o">Avvocata/o</option>
+                <option value="Datore di lavoro">Datore di lavoro</option>
+                <option value="Operatore sociale del Comune di ..........">
+                  Operatore sociale del Comune di ..........
+                </option>
+                <option value="Volontario">Volontario</option>
+                <option value="Ente">Ente</option>
+                <option value="Altro">Altro</option>
+              </select>
+              <input
+                type="text"
+                placeholder="Dettagli"
+                class="input_text_inserisci_pratica"
+              />
+            </div>
+            </div>
+            <br />
+          <div class="dati_del_richiedente">
+            <div class="container-dati">
+            <input
+              type="text"
+              placeholder="Inserisci il tuo indirizzo e-mail"
+              class="input_text_inserisci_pratica"
+            />
+            
+            <input
+              type="text"
+              placeholder="Inserisci il tuo numero di telefono"
+              class="input_text_inserisci_pratica"
+            />
+          </div>
+          </div>
+         <br>
+         <br>
+                     <div class="button_inserisci_pratica_div">
+              <button type="button" class="btn">
+                VERIFICA DB
+              </button>
+              <button type="button" class="btn">
+                AVANTI
+              </button>
+            </div>
+      </div>
+    </div>
+
     <!-- FOOTER -->
   </body>
 
@@ -104,12 +320,20 @@
 
       if (btn_nav_home == btn_div) {
         btn_nav_in.style.backgroundColor = "#174384";
+        //nascondi la view dell'inserisci pratica e mostra la view della home
+        document.getElementById("home_richieste").style.display = "flex";
+        document.getElementById("crc").style.display = "block";
+        document.getElementById("insert_pratica_id").style.display = "none";
       } else {
         btn_nav_home.style.backgroundColor = "#174384";
+        //nascondi la view della home e mostra view dell'inserisci pratica
+        document.getElementById("insert_pratica_id").style.display = "flex";
+        document.getElementById("home_richieste").style.display = "none";
+        document.getElementById("crc").style.display = "none";
       }
     }
 
-    function ChangePage(page_path){
+    function ChangePage(page_path) {
       window.location = page_path;
     }
     //#174384
