@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css" />
   <title>Document</title>
 </head>
+<script src="script.js"></script>
 
 <body>
   <!-- HEADER -->
@@ -56,7 +57,7 @@
   <br />
   <br />
 
-  <div class="container-main">
+  <div class="container-main" id="crc_container">
     <div class="container-row-campi" id="crc">
       <table class="row-name-coloumn">
         <tr>
@@ -273,19 +274,19 @@
                 </option>
                 <option value="Volontario">Volontario</option>
                 <option value="Ente">Ente</option>
-                <option value="Altro">Altro</option>
+                <option value="Altro">Altro..........</option>
               </select>
             </div>
-            <div id="qualita_container_id">
-
-            </div>
-
+            <div id="qualita_container_id"></div>
           </div>
+          <span class="title-div-span">Contatti</span>
+          <hr />
           <div class="inpput-container-in-pratica">
             <input type="email" name="email" class="input-in-pratica" placeholder="Inserisci indirizzo email" />
-            <input type="tel" name="telefono" class="input-in-pratica" placeholder="Inserisci numero di telefono"
+            <input type="tel" name="telefono" class="input-in-pratica" placeholder="Inserisci telefono"
               maxlength="10" />
           </div>
+          <br>
           <div class="input-container" style="
                 align-self: center;
                 width: 60%;
@@ -304,23 +305,69 @@
           <div class="inpput-container-in-pratica">
             <input type="text" name="nome" class="input-in-pratica" placeholder="Inserisci nome" />
             <input type="text" name="cognome" class="input-in-pratica" placeholder="Inserisci cognome" />
+            <input type="text" name="id_siepe" class="input-in-pratica" placeholder="ID-SIEPE" style="width: 10%;">
           </div>
           <div class="inpput-container-in-pratica">
             <input type="text" name="luogo-nascita" class="input-in-pratica" placeholder="Inserisci luogo di nascita"
-              style="margin-top: 10px" />
+              style="width: 25%; margin-top: 10px;" />
             <div class="select-label-container">
               <label style="margin-left: 20px">Data di nascita</label>
-              <input type="date" name="data-nascita" class="input-in-pratica" />
+              <input type="date" name="data-nascita" class="input-in-pratica" style="margin-left: -50%;width: 40%;" />
+            </div>
+          </div>
+          <hr class="inner-hr">
+          <div class="inpput-container-in-pratica">
+            <div class="select-label-container">
+              Posizione giuridica
+              <select name="posizione_giuridica" class="select-in-pratica" id="pos_giuridica" style="width: 30%;"
+                onchange="ShowAltro('')">
+                <option value="definitivo">Definitivo</option>
+                <option value="imputato">Imputato</option>
+                <option value="LPU">LPU</option>
+                <option value="cartabia">Cartabia</option>
+                <option value="altro">Altro....</option>
+              </select>
+            </div>
+            <div id="altro_div"></div>
+            <div class="label-checkbox-container" style="margin-left: 5%;">
+              <input type="checkbox" name="verificata" id="chck_ver"><label for="chck_ver">Verificata</label>
+            </div>
+          </div>
+          <hr class="inner-hr">
+          <div class="inpput-container-in-pratica">
+            <div class="select-label-container">
+              Istituto di detenzione
+              <select name="posizione_giuridica" class="select-in-pratica" id="ist_detenzione" style="width: 60%;"
+                onchange="ShowAltro('ist')">
+                <option value="C.C. Regina Coeli">C.C. Regina Coeli</option>
+                <option value="C.C. N. C. Rebibbia">C.C. N. C. Rebibbia</option>
+                <option value="C.R. Rebibbia">C.R. Rebibbia</option>
+                <option value="III Casa Rebibbia">III Casa Rebibbia</option>
+                <option value="C.C. Rebibbia Femminile">C.C. Rebibbia Femminile</option>
+                <option value="C.C. N. C. Velletri">C.C. N. C. Velletri</option>
+                <option value="C.C. N. C. Civitavecchia">C.C. N. C. Civitavecchia</option>
+                <option value="C. R. Civitavecchia">C. R. Civitavecchia</option>
+                <option value="altro istituto">altro istituto...</option>
+              </select>
+            </div>
+            <div id="altro_div_ist" style="margin-left: -20%;"></div>
+            <div class="label-checkbox-container">
+              <input type="checkbox" name="ist_verificata" id="chck_ver_ist">
+              <label for="chck_ver_ist">Istituto verificato</label>
             </div>
           </div>
           <span class="title-div-span">Residenza</span>
           <hr />
           <div class="inpput-container-in-pratica">
-            <input type="text" name="cognome" class="input-in-pratica" placeholder="Città di residenza"
-              style="width: 20%; margin-top: 10px;" />
+            <input type="text" name="indirizzo" class="input-in-pratica"
+              placeholder="Inserisci indirizzo es ( Via Ostiense , 131 )" style="width: 50%;" />
+            <input type="text" name="cognome" class="input-in-pratica" placeholder="Città"
+              style="width: 20%; margin-top: 0px;" />
+            <input type="text" name="cap" class="input-in-pratica" placeholder="CAP"
+              style="width: 7%; margin-top: 0px;" />
             <div class="select-label-container" id="select_provincie">
               <label>Provincia</label>
-              <select name="provincia" class="select-in-pratica" style="width: 30%;">
+              <select name="provincia" class="select-in-pratica" style="width: 55%;">
                 <option value="Agrigento">Agrigento</option>
                 <option value="Alessandria">Alessandria</option>
                 <option value="Ancona">Ancona</option>
@@ -441,6 +488,21 @@
               </select>
             </div>
           </div>
+
+
+
+
+          <span class="title-div-span">Contatti</span>
+          <hr />
+          <div class="inpput-container-in-pratica">
+            <input type="email" name="email_assistito" class="input-in-pratica"
+              placeholder="Inserisci indirizzo email" />
+            <input type="tel" name="telefono_assistito" class="input-in-pratica" placeholder="Inserisci telefono"
+              style="width: 20%;">
+          </div>
+
+
+
           <div class="input-container" style="
                 align-self: center;
                 width: 70%;
@@ -491,8 +553,6 @@
   let btn_nav_home = document.getElementById("home_btn_id");
   window.onload = btn_nav_home.style.backgroundColor = "#90AAD6";
 
-  let style_hover = ".nav-btn-div:hover{background-color: #90aad67f;}";
-
   function ShowContainer(id) {
     let btn_div = document.getElementById(id);
     btn_div.style.backgroundColor = "#90AAD6";
@@ -502,6 +562,8 @@
       //nascondi la view dell'inserisci pratica e mostra la view della home
       document.getElementById("home_richieste").style.display = "flex";
       document.getElementById("crc").style.display = "block";
+      document.getElementById("crc_container").style.display = "block";
+
       document.getElementById("insert_pratica_id").style.display = "none";
       document.getElementById("inser_pra_container_id").style.display = "none";
     } else {
@@ -511,6 +573,7 @@
       document.getElementById("inser_pra_container_id").style.display = "flex";
       document.getElementById("home_richieste").style.display = "none";
       document.getElementById("crc").style.display = "none";
+      document.getElementById("crc_container").style.display = "none";
     }
   }
 
@@ -521,11 +584,11 @@
     valore += "";
     if (valore.endsWith("di ..........")) {
       console.log("ok");
-      div_to_inner.innerHTML = '<select name="citta_qualità" class="select-in-pratica" style="width:40%"> <option value="Roma">Roma</option> <option value="Milano">Milano</option>      </select> '
+      div_to_inner.innerHTML = '  <input type="text" name="citta_qualita" class="input-in-pratica" placeholder="Città" style="margin-bottom: -20px" /> '
       return;
     }
     if (valore.endsWith("Altro")) {
-      div_to_inner.innerHTML = '<input type="text" name="dettagli" class="input-in-pratica" placeholder="Dettagli" style="margin-bottom: -20px" />'
+      div_to_inner.innerHTML = '<input type="text" name="dettagli" class="input-in-pratica" placeholder="Altro" style="width: 50%; margin-bottom: -20px" />'
       return;
     }
     div_to_inner.innerHTML = '';

@@ -212,7 +212,7 @@ body {
 .header-home {
   position: relative;
   padding-top: 3%;
-  margin-top: -10px;
+  margin-top: -30px;
   width: auto;
   background-color: #092147;
   height: 200px;
@@ -332,7 +332,8 @@ body {
 }
 .container-main{
   margin-top: 1.5%;
-  
+  overflow: auto;
+  width: 100%;
 }
 
 .home-page-richieste{
@@ -435,9 +436,15 @@ body {
   background-color: #f5f5f5;
   width: 80%;
   margin: 0 auto;
-  height: 400px;
+  height: 500px;
   padding-top: 1%;
   border-radius: 10px;
+}
+
+@media only screen and (max-height: 900px) {
+  .container-inserisci-pratica{
+    height: 400px;
+  }
 }
 .insert-pratica-container{
   margin: 0 auto;
@@ -462,7 +469,7 @@ body {
 .inpput-container-in-pratica{
   display: flex;
   flex-direction: row;
-  margin-left: 5px;
+  margin-left: 8%;
   padding: 1%;
   width: 90%;
   gap: 20px;
@@ -470,13 +477,13 @@ body {
 
 hr{
   background-color: #092147;
-  height: 0.7px;
+  height: 2px;
   width: 93%;
   margin-left: 0px;
 }
 .input-in-pratica{
   padding: 1%;
-  width: 80%;
+  width: 30%;
   height: 20px;
   font-family: Arial, sans-serif;
   color: black;
@@ -532,6 +539,38 @@ hr{
 #riepilogo{
   display: none;
 }
+
+
+.label-checkbox-container{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  height: 30px;
+  width: auto;
+  margin-top: 1%;
+  padding: 1%;
+  
+}
+.label-checkbox-container label{
+  margin-top: 4%;
+}
+
+#altro_div , #altro_div_ist{
+  display: flex;
+  flex-direction: row;
+  width: 45%;
+  margin-left: -25%;
+  justify-content: center;
+  padding-top: 2%;
+ 
+}
+.inner-hr{
+  width: 80%;
+  margin-left: 7%;
+  height: 0.5px;
+  background-color: #4e7bbe;
+}
+
 
 
 
