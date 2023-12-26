@@ -1,234 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style2.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <!-- HEADER -->
-    <header class="header-home">
-      <nav class="nav-home">
-        <div class="logo"></div>
-        <div class="brand">
-          Ufficio interdistrettuale esecuzione penale esterna
-          <p style="font-size: 60%">Ministero della Giustizia</p>
-        </div>
-        <div class="container-pro">
-          <div class="container-profile-details">
-            <div class="logo-profile"></div>
-            <div class="details-profile">
-              <!--IN QUESTA PARTE DOVRA' ESSERCI DEL CODICE PHP INNESTATO PER 
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header-home">
+    <nav class="nav-home">
+      <div class="logo"></div>
+      <div class="brand">
+        Ufficio interdistrettuale esecuzione penale esterna
+        <p style="font-size: 60%">Ministero della Giustizia</p>
+      </div>
+      <div class="container-pro">
+        <div class="container-profile-details">
+          <div class="logo-profile"></div>
+          <div class="details-profile">
+            <!--IN QUESTA PARTE DOVRA' ESSERCI DEL CODICE PHP INNESTATO PER 
                     1-  tipologia utente*
                     2 - nome cognome
                     3- altri dati
                -->
-              <p class="nome-cognome" id="nc">
-                Roberto De Amori <br />AS SEGRETARIATO
-              </p>
-            </div>
-          </div>
-          <div class="btn-profile-container">
-            <div class="btn-profile">
-              <div
-                class="logo-btn-profile"
-                style="background-image: url('user.png')"
-              ></div>
-              PROFILO
-            </div>
-            <div class="btn-profile" onclick="ChangePage('index.html')">
-              <div
-                class="logo-btn-profile"
-                style="background-image: url('exit.png')"
-              ></div>
-              LOGOUT
-            </div>
+            <p class="nome-cognome" id="nc">
+              Roberto De Amori <br />AS SEGRETARIATO
+            </p>
           </div>
         </div>
-      </nav>
-      <div class="nav-options">
-        <div
-          class="nav-btn-div"
-          id="home_btn_id"
-          onclick="ShowContainer('home_btn_id')"
-        >
-          HOME
-        </div>
-        <div
-          class="nav-btn-div"
-          id="in_btn_id"
-          onclick="ShowContainer('in_btn_id')"
-        >
-          INSERISCI PRATICA
+        <div class="btn-profile-container">
+          <div class="btn-profile">
+            <div class="logo-btn-profile" style="background-image: url('user.png')"></div>
+            PROFILO
+          </div>
+          <div class="btn-profile" onclick="ChangePage('index.html')">
+            <div class="logo-btn-profile" style="background-image: url('exit.png')"></div>
+            LOGOUT
+          </div>
         </div>
       </div>
-    </header>
-    <!-- BODY -->
-    <br />
-    <br />
-
-    <div class="container-main">
-      <div class="container-row-campi" id="crc">
-        <table class="row-name-coloumn">
-          <tr>
-            <th>
-              TIPOLOGIA
-              <select name="tipologia_filtro" class="select-filter">
-                <option value="tutte">tutte</option>
-                <option value="Appuntamento Map">Appuntamento Map</option>
-              </select>
-            </th>
-            <th>
-              DATA
-              <input type="date" name="data_filtro" class="input-filter" />
-            </th>
-            <th>
-              SOGGETTO
-              <input
-                type="text"
-                name="soggetto_filtro"
-                class="input-filter"
-                value="null"
-              />
-            </th>
-            <th>
-              STATO
-              <select name="stato_filtro" class="select-filter">
-                <option value="tutte">tutte</option>
-                <option value="terminata">terminata</option>
-                <option value="lavorazione">lavorazione</option>
-              </select>
-            </th>
-          </tr>
-        </table>
+    </nav>
+    <div class="nav-options">
+      <div class="nav-btn-div" id="home_btn_id" onclick="ShowContainer('home_btn_id')">
+        HOME
       </div>
+      <div class="nav-btn-div" id="in_btn_id" onclick="ShowContainer('in_btn_id')">
+        INSERISCI PRATICA
+      </div>
+    </div>
+  </header>
+  <!-- BODY -->
+  <br />
+  <br />
 
-      <div class="home-page-richieste" id="home_richieste">
-        <div class="richiesta-short">
-          <div class="type-container"><p>Appuntamento Map</p></div>
-          <div class="type-container"><p>12/04/2023</p></div>
-          <div class="type-container"><p>Francesco Rossi</p></div>
-          <div class="type-container">
-            <div class="status-cont">
-              <label>terminata</label>
-            </div>
+  <div class="container-main">
+    <div class="container-row-campi" id="crc">
+      <table class="row-name-coloumn">
+        <tr>
+          <th>
+            TIPOLOGIA
+            <select name="tipologia_filtro" class="select-filter">
+              <option value="tutte">tutte</option>
+              <option value="Appuntamento Map">Appuntamento Map</option>
+            </select>
+          </th>
+          <th>
+            DATA
+            <input type="date" name="data_filtro" class="input-filter" />
+          </th>
+          <th>
+            SOGGETTO
+            <input type="text" name="soggetto_filtro" class="input-filter" value="null" />
+          </th>
+          <th>
+            STATO
+            <select name="stato_filtro" class="select-filter">
+              <option value="tutte">tutte</option>
+              <option value="terminata">terminata</option>
+              <option value="lavorazione">lavorazione</option>
+            </select>
+          </th>
+        </tr>
+      </table>
+    </div>
+
+    <div class="home-page-richieste" id="home_richieste">
+      <div class="richiesta-short">
+        <div class="type-container">
+          <p>Appuntamento Map</p>
+        </div>
+        <div class="type-container">
+          <p>12/04/2023</p>
+        </div>
+        <div class="type-container">
+          <p>Francesco Rossi</p>
+        </div>
+        <div class="type-container">
+          <div class="status-cont">
+            <label>terminata</label>
           </div>
         </div>
-        <div class="richiesta-short">
-          <div class="type-container"><p>Appuntamento Map</p></div>
-          <div class="type-container"><p>17/04/2023</p></div>
-          <div class="type-container"><p>Lorenzo De Ciglio</p></div>
-          <div class="type-container">
-            <div class="status-cont">
-              <label>terminata</label>
-            </div>
+      </div>
+      <div class="richiesta-short">
+        <div class="type-container">
+          <p>Appuntamento Map</p>
+        </div>
+        <div class="type-container">
+          <p>17/04/2023</p>
+        </div>
+        <div class="type-container">
+          <p>Lorenzo De Ciglio</p>
+        </div>
+        <div class="type-container">
+          <div class="status-cont">
+            <label>terminata</label>
           </div>
         </div>
-        <div class="richiesta-short">
-          <div class="type-container"><p>Appuntamento Map</p></div>
-          <div class="type-container"><p>05/04/2023</p></div>
-          <div class="type-container"><p>Mario Neri</p></div>
-          <div class="type-container">
-            <div class="status-cont">
-              <label>lavorazione</label>
-            </div>
+      </div>
+      <div class="richiesta-short">
+        <div class="type-container">
+          <p>Appuntamento Map</p>
+        </div>
+        <div class="type-container">
+          <p>05/04/2023</p>
+        </div>
+        <div class="type-container">
+          <p>Mario Neri</p>
+        </div>
+        <div class="type-container">
+          <div class="status-cont">
+            <label>lavorazione</label>
           </div>
         </div>
-        <div class="richiesta-short">
-          <div class="type-container"><p>Appuntamento Map</p></div>
-          <div class="type-container"><p>20/12/2023</p></div>
-          <div class="type-container"><p>Marco Verdi</p></div>
-          <div class="type-container">
-            <div
-              class="status-cont"
-              style="background-color: rgba(177, 2, 2, 0.707)"
-            >
-              lavorazione
-            </div>
+      </div>
+      <div class="richiesta-short">
+        <div class="type-container">
+          <p>Appuntamento Map</p>
+        </div>
+        <div class="type-container">
+          <p>20/12/2023</p>
+        </div>
+        <div class="type-container">
+          <p>Marco Verdi</p>
+        </div>
+        <div class="type-container">
+          <div class="status-cont" style="background-color: rgba(177, 2, 2, 0.707)">
+            lavorazione
           </div>
         </div>
-        <div class="richiesta-short">
-          <div class="type-container"><p>Appuntamento Map</p></div>
-          <div class="type-container"><p>20/12/2023</p></div>
-          <div class="type-container"><p>Marco Verdi</p></div>
-          <div class="type-container">
-            <div
-              class="status-cont"
-              style="background-color: rgba(177, 2, 2, 0.707)"
-            >
-              lavorazione
-            </div>
+      </div>
+      <div class="richiesta-short">
+        <div class="type-container">
+          <p>Appuntamento Map</p>
+        </div>
+        <div class="type-container">
+          <p>20/12/2023</p>
+        </div>
+        <div class="type-container">
+          <p>Marco Verdi</p>
+        </div>
+        <div class="type-container">
+          <div class="status-cont" style="background-color: rgba(177, 2, 2, 0.707)">
+            lavorazione
           </div>
         </div>
-        <div class="richiesta-short">
-          <div class="type-container"><p>Appuntamento Map</p></div>
-          <div class="type-container"><p>20/12/2023</p></div>
-          <div class="type-container"><p>Marco Verdi</p></div>
-          <div class="type-container">
-            <div
-              class="status-cont"
-              style="background-color: rgba(177, 2, 2, 0.707)"
-            >
-              lavorazione
-            </div>
+      </div>
+      <div class="richiesta-short">
+        <div class="type-container">
+          <p>Appuntamento Map</p>
+        </div>
+        <div class="type-container">
+          <p>20/12/2023</p>
+        </div>
+        <div class="type-container">
+          <p>Marco Verdi</p>
+        </div>
+        <div class="type-container">
+          <div class="status-cont" style="background-color: rgba(177, 2, 2, 0.707)">
+            lavorazione
           </div>
         </div>
-        <div class="richiesta-short">
-          <div class="type-container"><p>Appuntamento Map</p></div>
-          <div class="type-container"><p>20/12/2023</p></div>
-          <div class="type-container"><p>Marco Verdi</p></div>
-          <div class="type-container">
-            <div class="status-cont">lavorazione</div>
-          </div>
+      </div>
+      <div class="richiesta-short">
+        <div class="type-container">
+          <p>Appuntamento Map</p>
         </div>
-        <div class="richiesta-short">
-          <div class="type-container"><p>Appuntamento Map</p></div>
-          <div class="type-container"><p>20/12/2023</p></div>
-          <div class="type-container"><p>Marco Verdi</p></div>
-          <div class="type-container">
-            <div class="status-cont">lavorazione</div>
-          </div>
+        <div class="type-container">
+          <p>20/12/2023</p>
+        </div>
+        <div class="type-container">
+          <p>Marco Verdi</p>
+        </div>
+        <div class="type-container">
+          <div class="status-cont">lavorazione</div>
+        </div>
+      </div>
+      <div class="richiesta-short">
+        <div class="type-container">
+          <p>Appuntamento Map</p>
+        </div>
+        <div class="type-container">
+          <p>20/12/2023</p>
+        </div>
+        <div class="type-container">
+          <p>Marco Verdi</p>
+        </div>
+        <div class="type-container">
+          <div class="status-cont">lavorazione</div>
         </div>
       </div>
     </div>
-    <div class="container-main">
+  </div>
+
+  <div class="container-main">
+    <div class="container-inserisci-pratica" id="inser_pra_container_id">
       <div class="insert-pratica-container" id="insert_pratica_id">
-          <!--AGGIUTA DEL FORM PER MANDARE I DATI DELL'INSERIMENTO -->
-            <div class="dati_del_richiedente">
-              <label class="label_inserisci_pratica">
-                Dati del richiedente
-              </label><br><br>
-              <div class="container-dati">
-              <input
-                type="text"
-                placeholder="Inserisci il tuo nome"
-                class="input_text_inserisci_pratica"
-              />
-              <input
-                type="text"
-                placeholder="Inserisci il tuo cognome"
-                class="input_text_inserisci_pratica"
-              />
-            </div>
+        <!--AGGIUTA DEL FORM PER MANDARE I DATI DELL'INSERIMENTO -->
+        <div class="dati-container" id="dati_richiedente">
+          <span class="title-div-span">DATI RICHIEDENTE</span>
+          <hr />
+          <div class="inpput-container-in-pratica">
+            <input type="text" name="nome" class="input-in-pratica" placeholder="Inserisci nome" />
+            <input type="text" name="cognome" class="input-in-pratica" placeholder="Inserisci cognome" />
           </div>
-          <br>
-          <div class="dati_del_richiedente">
-              <label class="label_inserisci_pratica"> In qualità di: </label>
-              <br><br>
-            <div class="select_apertura_inserisci_pratica">
-              <div class="container-dati">
-              <select
-                id=""
-                name="select_iqd"
-                class="in_qualità_di_select_inserisci_pratica"
-                required="required"
-              >
-                <option value="Se_stesso">Se stesso</option>
-                <option value="Tribunale_di_Sorveglianza">
+
+          <div class="inpput-container-in-pratica">
+            <div class="select-label-container">
+              <label>IN QUALITA DI</label>
+              <select name="qualita" class="select-in-pratica" id="select_in_pratica_id" onchange="ShowInput()">
+                <option value="Se stesso">Se stesso</option>
+                <option value="Tribunale di Sorveglianza">
                   Tribunale di Sorveglianza
                 </option>
-                <option value="Ufficio _di_Sorveglianza Canc 1">
+                <option value="Ufficio di Sorveglianza Canc 1">
                   Ufficio di Sorveglianza Canc 1
                 </option>
                 <option value="Ufficio di Sorveglianza Canc 2">
@@ -257,7 +264,7 @@
                   Commissariato PS di ..........
                 </option>
                 <option value="Stazione Carabiniere di ..........">
-                  Stazione Carabiniere di ..........
+                  Stazione Carabinieri di ..........
                 </option>
                 <option value="Avvocata/o">Avvocata/o</option>
                 <option value="Datore di lavoro">Datore di lavoro</option>
@@ -268,75 +275,275 @@
                 <option value="Ente">Ente</option>
                 <option value="Altro">Altro</option>
               </select>
-              <input
-                type="text"
-                placeholder="Dettagli"
-                class="input_text_inserisci_pratica"
-              />
             </div>
+            <div id="qualita_container_id">
+
             </div>
-            <br />
-          <div class="dati_del_richiedente">
-            <div class="container-dati">
-            <input
-              type="text"
-              placeholder="Inserisci il tuo indirizzo e-mail"
-              class="input_text_inserisci_pratica"
-            />
-            
-            <input
-              type="text"
-              placeholder="Inserisci il tuo numero di telefono"
-              class="input_text_inserisci_pratica"
-            />
+
           </div>
+          <div class="inpput-container-in-pratica">
+            <input type="email" name="email" class="input-in-pratica" placeholder="Inserisci indirizzo email" />
+            <input type="tel" name="telefono" class="input-in-pratica" placeholder="Inserisci numero di telefono"
+              maxlength="10" />
           </div>
-         <br>
-         <br>
-                     <div class="button_inserisci_pratica_div">
-             
-              <button type="button" class="btn">
-                VERIFICA DB
-              </button>
-              <button type="button" class="btn">
-                AVANTI
-              </button>
+          <div class="input-container" style="
+                align-self: center;
+                width: 60%;
+                justify-content: center;
+                gap: 10%;
+              ">
+            <button type="reset" class="btn2">ANNULLA</button>
+            <button type="button" class="btn2" onclick="ViewContainerInPratica('dati_richiedente' , 'dati_assistito')">
+              AVANTI
+            </button>
+          </div>
+        </div>
+        <div class="dati-container" id="dati_assistito">
+          <span class="title-div-span">DATI ASSISTITO</span>
+          <hr />
+          <div class="inpput-container-in-pratica">
+            <input type="text" name="nome" class="input-in-pratica" placeholder="Inserisci nome" />
+            <input type="text" name="cognome" class="input-in-pratica" placeholder="Inserisci cognome" />
+          </div>
+          <div class="inpput-container-in-pratica">
+            <input type="text" name="luogo-nascita" class="input-in-pratica" placeholder="Inserisci luogo di nascita"
+              style="margin-top: 10px" />
+            <div class="select-label-container">
+              <label style="margin-left: 20px">Data di nascita</label>
+              <input type="date" name="data-nascita" class="input-in-pratica" />
             </div>
+          </div>
+          <span class="title-div-span">Residenza</span>
+          <hr />
+          <div class="inpput-container-in-pratica">
+            <input type="text" name="cognome" class="input-in-pratica" placeholder="Città di residenza"
+              style="width: 20%; margin-top: 10px;" />
+            <div class="select-label-container" id="select_provincie">
+              <label>Provincia</label>
+              <select name="provincia" class="select-in-pratica" style="width: 30%;">
+                <option value="Agrigento">Agrigento</option>
+                <option value="Alessandria">Alessandria</option>
+                <option value="Ancona">Ancona</option>
+                <option value="Aosta">Aosta</option>
+                <option value="Arezzo">Arezzo</option>
+                <option value="Ascoli Piceno">Ascoli Piceno</option>
+                <option value="Asti">Asti</option>
+                <option value="Avellino">Avellino</option>
+                <option value="Bari">Bari</option>
+                <option value="Barletta-Andria-Trani">
+                  Barletta-Andria-Trani
+                </option>
+                <option value="Belluno">Belluno</option>
+                <option value="Benevento">Benevento</option>
+                <option value="Bergamo">Bergamo</option>
+                <option value="Biella">Biella</option>
+                <option value="Bologna">Bologna</option>
+                <option value="Bolzano">Bolzano</option>
+                <option value="Brescia">Brescia</option>
+                <option value="Brindisi">Brindisi</option>
+                <option value="Cagliari">Cagliari</option>
+                <option value="Caltanissetta">Caltanissetta</option>
+                <option value="Campobasso">Campobasso</option>
+                <option value="Carbonia-Iglesias">Carbonia-Iglesias</option>
+                <option value="Caserta">Caserta</option>
+                <option value="Catania">Catania</option>
+                <option value="Catanzaro">Catanzaro</option>
+                <option value="Chieti">Chieti</option>
+                <option value="Como">Como</option>
+                <option value="Cosenza">Cosenza</option>
+                <option value="Cremona">Cremona</option>
+                <option value="Crotone">Crotone</option>
+                <option value="Cuneo">Cuneo</option>
+                <option value="Enna">Enna</option>
+                <option value="Fermo">Fermo</option>
+                <option value="Ferrara">Ferrara</option>
+                <option value="Firenze">Firenze</option>
+                <option value="Foggia">Foggia</option>
+                <option value="Forlì-Cesena">Forlì-Cesena</option>
+                <option value="Frosinone">Frosinone</option>
+                <option value="Genova">Genova</option>
+                <option value="Gorizia">Gorizia</option>
+                <option value="Grosseto">Grosseto</option>
+                <option value="Imperia">Imperia</option>
+                <option value="Isernia">Isernia</option>
+                <option value="La Spezia">La Spezia</option>
+                <option value="L'Aquila">L'Aquila</option>
+                <option value="Latina">Latina</option>
+                <option value="Lecce">Lecce</option>
+                <option value="Lecco">Lecco</option>
+                <option value="Livorno">Livorno</option>
+                <option value="Lodi">Lodi</option>
+                <option value="Lucca">Lucca</option>
+                <option value="Macerata">Macerata</option>
+                <option value="Mantova">Mantova</option>
+                <option value="Massa-Carrara">Massa-Carrara</option>
+                <option value="Matera">Matera</option>
+                <option value="Messina">Messina</option>
+                <option value="Milano">Milano</option>
+                <option value="Modena">Modena</option>
+                <option value="Monza e della Brianza">
+                  Monza e della Brianza
+                </option>
+                <option value="Napoli">Napoli</option>
+                <option value="Novara">Novara</option>
+                <option value="Nuoro">Nuoro</option>
+                <option value="Ogliastra">Ogliastra</option>
+                <option value="Olbia-Tempio">Olbia-Tempio</option>
+                <option value="Oristano">Oristano</option>
+                <option value="Padova">Padova</option>
+                <option value="Palermo">Palermo</option>
+                <option value="Parma">Parma</option>
+                <option value="Pavia">Pavia</option>
+                <option value="Perugia">Perugia</option>
+                <option value="Pesaro e Urbino">Pesaro e Urbino</option>
+                <option value="Pescara">Pescara</option>
+                <option value="Piacenza">Piacenza</option>
+                <option value="Pisa">Pisa</option>
+                <option value="Pistoia">Pistoia</option>
+                <option value="Pordenone">Pordenone</option>
+                <option value="Potenza">Potenza</option>
+                <option value="Prato">Prato</option>
+                <option value="Ragusa">Ragusa</option>
+                <option value="Ravenna">Ravenna</option>
+                <option value="Reggio Calabria">Reggio Calabria</option>
+                <option value="Reggio Emilia">Reggio Emilia</option>
+                <option value="Rieti">Rieti</option>
+                <option value="Rimini">Rimini</option>
+                <option value="Roma">Roma</option>
+                <option value="Rovigo">Rovigo</option>
+                <option value="Salerno">Salerno</option>
+                <option value="Medio Campidano">Medio Campidano</option>
+                <option value="Sassari">Sassari</option>
+                <option value="Savona">Savona</option>
+                <option value="Siena">Siena</option>
+                <option value="Siracusa">Siracusa</option>
+                <option value="Sondrio">Sondrio</option>
+                <option value="Taranto">Taranto</option>
+                <option value="Teramo">Teramo</option>
+                <option value="Terni">Terni</option>
+                <option value="Torino">Torino</option>
+                <option value="Ogliastra">Ogliastra</option>
+                <option value="Trapani">Trapani</option>
+                <option value="Trento">Trento</option>
+                <option value="Treviso">Treviso</option>
+                <option value="Trieste">Trieste</option>
+                <option value="Udine">Udine</option>
+                <option value="Varese">Varese</option>
+                <option value="Venezia">Venezia</option>
+                <option value="Verbano-Cusio-Ossola">
+                  Verbano-Cusio-Ossola
+                </option>
+                <option value="Vercelli">Vercelli</option>
+                <option value="Verona">Verona</option>
+                <option value="Vibo Valentia">Vibo Valentia</option>
+                <option value="Vicenza">Vicenza</option>
+                <option value="Viterbo">Viterbo</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-container" style="
+                align-self: center;
+                width: 70%;
+                justify-content: center;
+                gap: 10%;
+              ">
+            <button type="button" class="btn2" onclick="ViewContainerInPratica('dati_assistito' , 'dati_richiedente')">
+              INDIETRO
+            </button>
+            <button type="reset" class="btn2">ANNULLA</button>
+            <button type="button" class="btn2" onclick="ViewContainerInPratica('dati_assistito' , 'dati_pratica')">
+              AVANTI
+            </button>
+          </div>
+        </div>
+        <div class="dati-container" id="dati_pratica">
+          <span class="title-div-span">DATI PRATICA</span>
+          <hr />
+
+          <div class="input-container" style="
+                align-self: center;
+                width: 70%;
+                justify-content: center;
+                gap: 10%;
+              ">
+            <button type="button" class="btn2" onclick="ViewContainerInPratica('dati_pratica' , 'dati_assistito')">
+              INDIETRO
+            </button>
+            <button type="reset" class="btn2">ANNULLA</button>
+            <button type="button" class="btn2" onclick="ViewContainerInPratica('dati_pratica' , 'riepilogo')">
+              FINE
+            </button>
+          </div>
+        </div>
+        <div class="dati-container" id="riepilogo">
+          <span class="title-div-span">RIEPILOGO SCHEDA</span>
+          <hr />
+        </div>
       </div>
     </div>
+  </div>
 
-    <!-- FOOTER -->
-  </body>
+  <!-- FOOTER -->
+</body>
 
-  <script>
-    let btn_nav_in = document.getElementById("in_btn_id");
-    let btn_nav_home = document.getElementById("home_btn_id");
-    window.onload = btn_nav_home.style.backgroundColor = "#90AAD6";
+<script>
+  let btn_nav_in = document.getElementById("in_btn_id");
+  let btn_nav_home = document.getElementById("home_btn_id");
+  window.onload = btn_nav_home.style.backgroundColor = "#90AAD6";
 
-    let style_hover = ".nav-btn-div:hover{background-color: #90aad67f;}";
+  let style_hover = ".nav-btn-div:hover{background-color: #90aad67f;}";
 
-    function ShowContainer(id) {
-      let btn_div = document.getElementById(id);
-      btn_div.style.backgroundColor = "#90AAD6";
+  function ShowContainer(id) {
+    let btn_div = document.getElementById(id);
+    btn_div.style.backgroundColor = "#90AAD6";
 
-      if (btn_nav_home == btn_div) {
-        btn_nav_in.style.backgroundColor = "#174384";
-        //nascondi la view dell'inserisci pratica e mostra la view della home
-        document.getElementById("home_richieste").style.display = "flex";
-        document.getElementById("crc").style.display = "block";
-        document.getElementById("insert_pratica_id").style.display = "none";
-      } else {
-        btn_nav_home.style.backgroundColor = "#174384";
-        //nascondi la view della home e mostra view dell'inserisci pratica
-        document.getElementById("insert_pratica_id").style.display = "flex";
-        document.getElementById("home_richieste").style.display = "none";
-        document.getElementById("crc").style.display = "none";
-      }
+    if (btn_nav_home == btn_div) {
+      btn_nav_in.style.backgroundColor = "#174384";
+      //nascondi la view dell'inserisci pratica e mostra la view della home
+      document.getElementById("home_richieste").style.display = "flex";
+      document.getElementById("crc").style.display = "block";
+      document.getElementById("insert_pratica_id").style.display = "none";
+      document.getElementById("inser_pra_container_id").style.display = "none";
+    } else {
+      btn_nav_home.style.backgroundColor = "#174384";
+      //nascondi la view della home e mostra view dell'inserisci pratica
+      document.getElementById("insert_pratica_id").style.display = "flex";
+      document.getElementById("inser_pra_container_id").style.display = "flex";
+      document.getElementById("home_richieste").style.display = "none";
+      document.getElementById("crc").style.display = "none";
     }
+  }
 
-    function ChangePage(page_path) {
-      window.location = page_path;
+
+  function ShowInput() {
+    let div_to_inner = document.getElementById("qualita_container_id");
+    let valore = document.getElementById("select_in_pratica_id").value;
+    valore += "";
+    if (valore.endsWith("di ..........")) {
+      console.log("ok");
+      div_to_inner.innerHTML = '<select name="citta_qualità" class="select-in-pratica" style="width:40%"> <option value="Roma">Roma</option> <option value="Milano">Milano</option>      </select> '
+      return;
     }
-    //#174384
-  </script>
+    if (valore.endsWith("Altro")) {
+      div_to_inner.innerHTML = '<input type="text" name="dettagli" class="input-in-pratica" placeholder="Dettagli" style="margin-bottom: -20px" />'
+      return;
+    }
+    div_to_inner.innerHTML = '';
+  }
+
+  function ViewContainerInPratica(id_hide, id_show) {
+    document.getElementById(id_hide).style.display = "none";
+    document.getElementById(id_show).style.display = "flex";
+  }
+
+
+
+
+
+  function ChangePage(page_path) {
+    window.location = page_path;
+  }
+  //#174384
+</script>
+
 </html>
