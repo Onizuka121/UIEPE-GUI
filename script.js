@@ -35,3 +35,16 @@ function ShowAltro(par) {
   }
 
 }
+
+let richiedente1_is_visible = false;
+let richiedente2_is_visible = false;
+
+function ShowRichiedente1(){
+
+  if(!richiedente1_is_visible){
+   document.getElementById("cont_richiedente_info").innerHTML = ' <div class="label-checkbox-container" id="check_div_info2"><div><input type="checkbox" name="informazioni_pratica" value="Segnalato dall\'Assistente Sociale incaricato"><label>Segnalato dall\'Assistente Sociale incaricato</label></div><div><input type="checkbox" name="informazioni_pratica" value="Occorre designare un Assistente Sociale"><label>Occorre designare un Assistente Sociale</label></div><div><input type="checkbox" name="informazioni_pratica" value="Non occorrono ulteriori interventi"><label>Non occorrono ulteriori interventi</label></div><div> <input type="checkbox" name="informazioni_pratica" value="Trattasi di problemi risolvibili dagli operatori"><label>Trattasi di problemi risolvibili dagli operatori</label></div><div> <input type="checkbox" name="informazioni_pratica" value="Segnalato alla Direzione e agli Educatori"><label>Segnalato alla Direzione e agli Educatori</label></div> <div><input type="checkbox" name="informazioni_pratica" value="E\' necessario fornire riscontro"> <label>E\' necessario fornire riscontro</label></div></div>';
+  }
+  //no innehtml andiamo di display ( none o flex ) e giochiamo con i width
+
+}
+

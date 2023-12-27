@@ -287,6 +287,8 @@
               maxlength="10" />
           </div>
           <br>
+          <hr />
+          <br>
           <div class="input-container" style="
                 align-self: center;
                 width: 60%;
@@ -330,7 +332,8 @@
             </div>
             <div id="altro_div"></div>
             <div class="label-checkbox-container" style="margin-left: 5%;">
-              <input type="checkbox" name="verificata" id="chck_ver"><label for="chck_ver">Verificata</label>
+              <input type="checkbox" name="verificata" id="chck_ver" value="Verificata"><label
+                for="chck_ver">Verificata</label>
             </div>
           </div>
           <hr class="inner-hr">
@@ -352,7 +355,7 @@
             </div>
             <div id="altro_div_ist" style="margin-left: -20%;"></div>
             <div class="label-checkbox-container">
-              <input type="checkbox" name="ist_verificata" id="chck_ver_ist">
+              <input type="checkbox" name="ist_verificata" id="chck_ver_ist" value="Istituto verificato">
               <label for="chck_ver_ist">Istituto verificato</label>
             </div>
           </div>
@@ -488,10 +491,6 @@
               </select>
             </div>
           </div>
-
-
-
-
           <span class="title-div-span">Contatti</span>
           <hr />
           <div class="inpput-container-in-pratica">
@@ -500,9 +499,9 @@
             <input type="tel" name="telefono_assistito" class="input-in-pratica" placeholder="Inserisci telefono"
               style="width: 20%;">
           </div>
-
-
-
+          <br>
+          <hr />
+          <br>
           <div class="input-container" style="
                 align-self: center;
                 width: 70%;
@@ -521,7 +520,158 @@
         <div class="dati-container" id="dati_pratica">
           <span class="title-div-span">DATI PRATICA</span>
           <hr />
+          <div class="inpput-container-in-pratica" id="icpd">
+            <div class="select-label-container" id="slcd">
+              <!--AGGIUNGEWRE POSSIBILITA DI CERCARLO-->
+              <label>Codice incarico</label>
+              <input list="codici_id_data" placeholder="Cerca..." class="input-in-pratica"
+                style="width: 50%; margin-left: -45%;">
+              <datalist id="codici_id_data">
+                <option value="47LI">47LI</option>
+                <option value="47AL">47AL</option>
+                <option value="94TL">94TL</option>
+                <option value="94PL">94PL</option>
+                <option value="47QA">47QA</option>
+                <option value="47ML">47ML</option>
+                <option value="47DE">47DE</option>
+                <option value="47AP">47AP</option>
+                <option value="94TD">94TD</option>
+                <option value="94TP">94TP</option>
+                <option value="47QB">47QB</option>
+                <option value="47PX">47PX</option>
+                <option value="47KX">47KX</option>
+                <option value="94TX">94TX</option>
+                <option value="47QX">47QX</option>
+                <option value="47TL">47TL</option>
+                <option value="47PL">47PL</option>
+                <option value="47QC">47QC</option>
+                <option value="47VL">47VL</option>
+                <option value="47TD">47TD</option>
+                <option value="47DP">47DP</option>
+                <option value="47QD">47QD</option>
+                <option value="47VD">47VD</option>
+                <option value="47DD">47DD</option>
+                <option value="47TP">47TP</option>
+                <option value="48LI">48LI</option>
+                <option value="48PL">48PL</option>
+                <option value="48DE">48DE</option>
+                <option value="48PD">48PD</option>
+                <option value="00SD">00SD</option>
+                <option value="00LC">00LC</option>
+                <option value="55LV">55LV</option>
+                <option value="73LU">73LU</option>
+                <option value="73CS">73CS</option>
+                <option value="168P">168P</option>
+                <option value="13OT">13OT</option>
+                <option value="13CS">13CS</option>
+                <option value="13CT">13CT</option>
+                <option value="13AT">13AT</option>
+                <option value="13AS">13AS</option>
+                <option value="21LE">21LE</option>
+                <option value="30TP">30TP</option>
+                <option value="13MS">13MS</option>
+                <option value="13AM">13AM</option>
+                <option value="13CR">13CR</option>
+                <option value="13OL">13OL</option>
+                <option value="13AL">13AL</option>
+                <option value="13PL">13PL</option>
+                <option value="69MS">69MS</option>
+                <option value="13MP">13MP</option>
+                <option value="13AP">13AP</option>
+                <option value="13MC">13MC</option>
+                <option value="72IN">72IN</option>
+                <option value="72DD">72DD</option>
+                <option value="72AG">72AG</option>
+                <option value="46PP">46PP</option>
+                <option value="47CS">47CS</option>
+                <option value="48CS">48CS</option>
+                <option value="168C">168C</option>
+                <option value="45AF">45AF</option>
+                <option value="21BM">21BM</option>
+              </datalist>
+            </div>
+            <div class="select-label-container" style="width: 25%;">
+              <label style="margin-left: 10px">Data</label>
+              <input type="date" name="data-nascita" class="input-in-pratica" style="margin-left: -30%;width: 60%;" />
+            </div>
+            <input type="text" name="tipologia_consulenza" style="width: 45%; margin-top: 6px;" class="input-in-pratica"
+              placeholder="Descrizione consulenza ">
+          </div>
+          <span class="title-div-span">Info sulla pratica</span>
+          <hr />
+          <div class="inpput-container-in-pratica" id="input-radio-id">
+            <div class="label-checkbox-container">
+              <label>Tipo</label>
+              <div>
+                <input type="radio" name="tipo_pratica" id="rad_tipo_pratica_uff" value="Si è presentato in ufficio">
+                <label for="rad_tipo_pratica_uff">Si è presentato in ufficio</label>
+              </div>
+              <div>
+                <input type="radio" name="tipo_pratica" id="rad_tipo_pratica_tel" value="Ha telefonato">
+                <label for="rad_tipo_pratica_tel">Ha telefonato</label>
+              </div>
+            </div>
+            <div class="label-checkbox-container" id="check_div_info">
+              <div>
+                <input type="checkbox" name="informazioni_pratica" value="Segnalato dall'Assistente Sociale incaricato">
+                <label>Segnalato dall'Assistente Sociale incaricato</label>
+              </div>
+              <div>
+                <input type="checkbox" name="informazioni_pratica" value="Occorre designare un Assistente Sociale">
+                <label>Occorre designare un Assistente Sociale</label>
+              </div>
+              <div>
+                <input type="checkbox" name="informazioni_pratica" value="Non occorrono ulteriori interventi">
+                <label>Non occorrono ulteriori interventi</label>
+              </div>
+              <div>
+                <input type="checkbox" name="informazioni_pratica"
+                  value="Trattasi di problemi risolvibili dagli operatori">
+                <label>Trattasi di problemi risolvibili dagli operatori</label>
+              </div>
+              <div>
+                <input type="checkbox" name="informazioni_pratica" value="Segnalato alla Direzione e agli Educatori">
+                <label>Segnalato alla Direzione e agli Educatori</label>
+              </div>
+              <div>
+                <input type="checkbox" name="informazioni_pratica" value="E' necessario fornire riscontro">
+                <label>E' necessario fornire riscontro</label>
+              </div>
+            </div>
+          </div>
+          <div class="inpput-container-in-pratica" id="input-radio-id">
+            <!-- 
+             ####
+              IL SEGUENTE COMPONENTE VERRA SOSTITUITO CON UN CONTROLLO AUTOMATICO 
+              SE IL RICHIEDENTE ( CON CODICE ? ) E GIA SEGUITO DA UN'AS 
+              QUINDI POTRA ESSERE 
+              - PERSONA IN CARICO
+              - PERSONA NON IN CARICO
 
+              ? IL CONTROLLO PUO' ESSERE AUTOMATICO ? 
+              ? SE SI COME AVVERRA' IL CONTROLLO ( HTTP REQUEST (POST) - o con API DEL SISTEMA SIEPE) ???
+              OPPURE RIMANE TUTTO COSI E' SARA COMPITO DELL'UTENTE CONTROLLARE E INSERIRE 
+              IL GIUSTO PERCORSO ( PERSONA IN CARICO | PERSONA NON INCARICO )
+             -->
+            <div class="label-checkbox-container">
+              <label>Tipologia persona</label>
+              <div>
+                <input type="radio" name="tipo_persona_pratica" id="rad_persona_incarico" value="Persona in carico"
+                  onchange="ShowRichiedente1()">
+                <label for="rad_persona_incarico">PERSONA IN CARICO</label>
+              </div>
+              <div>
+                <input type="radio" name="tipo_persona_pratica" id="rad_tipo_pratica_tel" value="Persona non in carico"
+                  onchange="ShowRichiedente2()">
+                <label for="rad_tipo_pratica_tel">PERSONA NON IN CARICO</label>
+              </div>
+            </div>
+            <div class="container-richiedente-info" id="cont_richiedente_info"></div>
+          </div>
+          <!--  FINE COMPONENTE PRINCIPALE  -->
+          <br>
+          <hr />
+          <br>
           <div class="input-container" style="
                 align-self: center;
                 width: 70%;
@@ -595,6 +745,7 @@
   }
 
   function ViewContainerInPratica(id_hide, id_show) {
+    document.getElementById("insert_pratica_id").scrollTop = 0;
     document.getElementById(id_hide).style.display = "none";
     document.getElementById(id_show).style.display = "flex";
   }

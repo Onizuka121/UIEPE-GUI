@@ -16,12 +16,12 @@ body {
   font-size: 300%;
   color: #f5f5f5;
 }
-.logo-brand{
-   margin-left: 20%;
-   margin-top: 5%;
-   text-align: left;
-    width: 70%;
-    padding: 20px;
+.logo-brand {
+  margin-left: 20%;
+  margin-top: 5%;
+  text-align: left;
+  width: 70%;
+  padding: 20px;
 }
 .logo-brand-login {
   position: absolute;
@@ -32,15 +32,15 @@ body {
   color: #f5f5f5;
   height: 100%;
 }
-.italia-flag{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: auto;
+.italia-flag {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
 }
-.color{
-    width: 20%;
-    height: 10px;
+.color {
+  width: 20%;
+  height: 10px;
 }
 .form-login {
   align-items: left;
@@ -64,7 +64,7 @@ body {
 }
 
 .form-input {
-  padding:10px;
+  padding: 10px;
   width: 50%;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   height: 35px;
@@ -125,7 +125,6 @@ body {
   transition: all 0.3s;
   color: #000000;
 }
-
 
 .text-input {
   padding: 10px;
@@ -204,10 +203,6 @@ body {
 }
 
 /*____________________________________________________________________*/
-
-
-
-
 
 .header-home {
   position: relative;
@@ -330,14 +325,13 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
 }
-.container-main{
+.container-main {
   margin-top: 1.5%;
-  overflow: auto;
   width: 100%;
 }
 
-.home-page-richieste{
-  width:  80%;
+.home-page-richieste {
+  width: 80%;
   padding-right: 5%;
   margin: 0 auto;
   height: 420px;
@@ -345,17 +339,16 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
- 
 }
 
-.container-row-campi{
-  width:  80%;
+.container-row-campi {
+  width: 80%;
   height: 100px;
   padding-right: 5%;
   margin: 0 auto;
 }
 
-.row-name-coloumn{
+.row-name-coloumn {
   color: #f5f5f5;
   width: 100%;
   height: 70px;
@@ -364,7 +357,7 @@ body {
   border-radius: 10px;
   background-color: #092147;
 }
-.row-name-coloumn th{
+.row-name-coloumn th {
   padding-left: 5%;
   padding-right: 5%;
   text-align: center;
@@ -373,7 +366,8 @@ body {
   font-size: 96%;
 }
 
-.input-filter , .select-filter{
+.input-filter,
+.select-filter {
   color: #f5f5f5;
   border: none;
   border-radius: 10px;
@@ -381,12 +375,12 @@ body {
   text-align: center;
   width: 100px;
   padding: 3%;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   background-color: #174384;
   margin-top: 10px;
 }
 
-.richiesta-short{
+.richiesta-short {
   display: flex;
   flex-direction: row;
   color: #f5f5f5;
@@ -397,26 +391,26 @@ body {
   background-color: #4e7bbe;
   cursor: pointer;
 }
-.richiesta-short:hover{
+.richiesta-short:hover {
   background-color: #1f519a;
 }
 
-.type-container{
+.type-container {
   padding: 1%;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   width: 30%;
   color: #f5f5f5;
   text-align: center;
 }
-.type-container div{
+.type-container div {
   margin-top: 5px;
   margin-bottom: 0;
 }
-.type-container p{
+.type-container p {
   margin-top: 9px;
   margin-bottom: 0;
 }
-.status-cont{
+.status-cont {
   display: flex;
   text-align: center;
   flex-direction: row;
@@ -431,22 +425,24 @@ body {
 }
 
 /*-----------------------------------------------------*/
-.container-inserisci-pratica{
+.container-inserisci-pratica {
   display: none;
   background-color: #f5f5f5;
   width: 80%;
   margin: 0 auto;
-  height: 500px;
+  height: 590px;
   padding-top: 1%;
   border-radius: 10px;
 }
-
 @media only screen and (max-height: 900px) {
-  .container-inserisci-pratica{
+  .container-inserisci-pratica {
     height: 400px;
   }
+  .home-page-richieste {
+    height: 300px;
+  }
 }
-.insert-pratica-container{
+.insert-pratica-container {
   margin: 0 auto;
   height: auto;
   display: none;
@@ -455,18 +451,18 @@ body {
   flex-direction: column;
   gap: 20px;
 }
-.dati-container{
+.dati-container {
   display: flex;
   margin-left: 6%;
   flex-direction: column;
   padding: 2%;
   gap: 10px;
 }
-.title-div-span{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.title-div-span {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: x-large;
 }
-.inpput-container-in-pratica{
+.inpput-container-in-pratica {
   display: flex;
   flex-direction: row;
   margin-left: 8%;
@@ -475,13 +471,13 @@ body {
   gap: 20px;
 }
 
-hr{
+hr {
   background-color: #092147;
   height: 2px;
   width: 93%;
   margin-left: 0px;
 }
-.input-in-pratica{
+.input-in-pratica {
   padding: 1%;
   width: 30%;
   height: 20px;
@@ -492,56 +488,52 @@ hr{
   font-size: 100%;
   align-self: center;
   padding-left: 2%;
-  }
+}
 
-.select-label-container{
+.select-label-container {
   width: 40%;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.select-in-pratica{
+.select-in-pratica {
   width: 100%;
-  font-size:100%;
+  font-size: 100%;
   background-color: #f5f5f5;
   font-family: Arial, sans-serif;
   padding: 1%;
 }
 
-#qualita_container_id{
+#qualita_container_id {
   width: 50%;
   align-items: center;
   justify-content: center;
   padding-top: 21px;
 }
 
-
-
-
-.btn2{
- padding: 1%;
- width: 20%;
- background-color: #174384;
- color: #ffffff;
- font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
- border: none;
- font-size: 80%;
- height: 35px;
- cursor: pointer;
+.btn2 {
+  padding: 1%;
+  width: 20%;
+  background-color: #174384;
+  color: #ffffff;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  border: none;
+  font-size: 80%;
+  height: 35px;
+  cursor: pointer;
 }
 
-#dati_assistito{
+#dati_assistito {
   display: none;
 }
-#dati_pratica{
+#dati_pratica {
   display: none;
 }
-#riepilogo{
+#riepilogo {
   display: none;
 }
 
-
-.label-checkbox-container{
+.label-checkbox-container {
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -549,34 +541,63 @@ hr{
   width: auto;
   margin-top: 1%;
   padding: 1%;
-  
 }
-.label-checkbox-container label{
+.label-checkbox-container label {
   margin-top: 4%;
 }
 
-#altro_div , #altro_div_ist{
+#altro_div,
+#altro_div_ist {
   display: flex;
   flex-direction: row;
   width: 45%;
   margin-left: -25%;
   justify-content: center;
   padding-top: 2%;
- 
 }
-.inner-hr{
+.inner-hr {
   width: 80%;
   margin-left: 7%;
   height: 0.5px;
   background-color: #4e7bbe;
 }
+#icpd {
+  gap: 1%;
+}
+#slcd {
+  width: auto;
+}
+#input-radio-id {
+  display: flex;
+  flex-direction: row;
+  gap: 20%;
+  width: 90%;
+  height: 200px;
+}
+#input-radio-id div {
+  display: flex;
+  flex-direction: column;
+}
+#input-radio-id div div {
+  width: 100%;
+  display: inline;
+  align-items: center;
+  justify-items: center;
+  gap: 2%;
+}
+#check_div_info {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+#check_div_info div {
+  display: inline;
+}
 
-
-
-
-
-
-
-
-
-
+.container-richiedente-info {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  border: 1px solid;
+}
