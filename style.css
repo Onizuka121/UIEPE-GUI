@@ -434,14 +434,6 @@ body {
   padding-top: 1%;
   border-radius: 10px;
 }
-@media only screen and (max-height: 900px) {
-  .container-inserisci-pratica {
-    height: 400px;
-  }
-  .home-page-richieste {
-    height: 300px;
-  }
-}
 .insert-pratica-container {
   margin: 0 auto;
   height: auto;
@@ -570,13 +562,14 @@ hr {
 #input-radio-id {
   display: flex;
   flex-direction: row;
-  gap: 20%;
+  gap: 15%;
   width: 90%;
   height: 200px;
 }
 #input-radio-id div {
   display: flex;
   flex-direction: column;
+  margin-left: 5%;
 }
 #input-radio-id div div {
   width: 100%;
@@ -594,10 +587,61 @@ hr {
   display: inline;
 }
 
-.container-richiedente-info {
-  width: auto;
+#input-radio-case-id{
   display: flex;
   flex-direction: column;
-  height: auto;
-  border: 1px solid;
+  margin-left: 23%;
 }
+#input-radio-case-id div{
+  gap: 10%;
+}
+#container-cases{
+  width: 60%;
+  margin: 0 auto;
+  height: 70px;
+}
+#container-cases div div{
+  width: 100%;
+  margin-left: 70px;
+
+}
+
+#container-cases select{
+  height: 40px;
+  width: 100%;
+}
+
+#case_in_carico, #case_non_in_carico,#div_sub_cases_1{
+  display: none;
+}
+
+#div_sub_cases_2{
+  display: none;
+  margin: 0 auto;
+  margin-right: 50%;
+}
+
+#altro_div2{
+  display: none;
+  width: 40%;
+  margin-top: 1.5%;
+}
+
+
+
+@media only screen and (max-height: 900px) {
+  .container-inserisci-pratica {
+    height: 400px;
+  }
+  .home-page-richieste {
+    height: 300px;
+  }
+  #container-cases div div{
+    width: 100%;
+    margin-left: 50px;
+  
+  }
+}
+
+
+

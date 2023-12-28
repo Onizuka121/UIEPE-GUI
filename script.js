@@ -24,7 +24,7 @@ function ShowAltro(par) {
       return;
     }
     div.innerHTML = "";
-  }else{
+  } else {
     let div = document.getElementById("altro_div");
     if (document.getElementById("pos_giuridica").value == "altro") {
       div.innerHTML =
@@ -33,18 +33,43 @@ function ShowAltro(par) {
     }
     div.innerHTML = "";
   }
-
 }
 
-let richiedente1_is_visible = false;
-let richiedente2_is_visible = false;
+function ControlAndShowSubCase(id_select) {
+  let value = document.getElementById(id_select).value;
+  let div_altro = document.getElementById("altro_div2");
 
-function ShowRichiedente1(){
-
-  if(!richiedente1_is_visible){
-   document.getElementById("cont_richiedente_info").innerHTML = ' <div class="label-checkbox-container" id="check_div_info2"><div><input type="checkbox" name="informazioni_pratica" value="Segnalato dall\'Assistente Sociale incaricato"><label>Segnalato dall\'Assistente Sociale incaricato</label></div><div><input type="checkbox" name="informazioni_pratica" value="Occorre designare un Assistente Sociale"><label>Occorre designare un Assistente Sociale</label></div><div><input type="checkbox" name="informazioni_pratica" value="Non occorrono ulteriori interventi"><label>Non occorrono ulteriori interventi</label></div><div> <input type="checkbox" name="informazioni_pratica" value="Trattasi di problemi risolvibili dagli operatori"><label>Trattasi di problemi risolvibili dagli operatori</label></div><div> <input type="checkbox" name="informazioni_pratica" value="Segnalato alla Direzione e agli Educatori"><label>Segnalato alla Direzione e agli Educatori</label></div> <div><input type="checkbox" name="informazioni_pratica" value="E\' necessario fornire riscontro"> <label>E\' necessario fornire riscontro</label></div></div>';
+  if (id_select != "select_invio_com") {
+    if (value == "Contatto con A.S incaricato assente") {
+      document.getElementById("div_sub_cases_1").style.display = "flex";
+      document.getElementById("div_sub_cases_2").style.display = "none";
+      div_altro.style.display = "none";
+      document.getElementById("select_invio_com").selectedIndex = 0;
+      return;
+    }
+    if (value == "Sollecito Invio Indagine di Servizio Sociale per udienza") {
+      document.getElementById("div_sub_cases_2").style.display = "flex";
+      document.getElementById("div_sub_cases_1").style.display = "none";
+      div_altro.style.display = "none";
+      return;
+    }
+    /*    PENSARE AD UN'ALTRA STRUTTURA DELLA FUNZIONA ( ALCUNE COSE SI RIPETONO TROPPE VOLTE )###
+    if (value == "Sollecito Invio Indagine di Servizio Sociale per riunione GOT") {
+      document.getElementById("div_sub_cases_2").style.display = "flex";
+      document.getElementById("div_sub_cases_1").style.display = "none";
+      div_altro.style.display = "none";
+      return;
+    }
+    */
+    document.getElementById("div_sub_cases_1").style.display = "none";
+    document.getElementById("div_sub_cases_2").style.display = "none";
+    
+  } else {
+    if (value == "Altro") {
+      div_altro.style.display = "flex";
+      return;
+    }
   }
-  //no innehtml andiamo di display ( none o flex ) e giochiamo con i width
-
+  document.getElementById("select_invio_com").selectedIndex = 0;
+  div_altro.style.display = "none";
 }
-

@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <title>Document</title>
+  <title>UIEPE</title>
 </head>
 <script src="script.js"></script>
 
@@ -594,7 +594,7 @@
               <label style="margin-left: 10px">Data</label>
               <input type="date" name="data-nascita" class="input-in-pratica" style="margin-left: -30%;width: 60%;" />
             </div>
-            <input type="text" name="tipologia_consulenza" style="width: 45%; margin-top: 6px;" class="input-in-pratica"
+            <input type="text" name="tipologia_consulenza" style="width: 40%; margin-top: 6px;" class="input-in-pratica"
               placeholder="Descrizione consulenza ">
           </div>
           <span class="title-div-span">Info sulla pratica</span>
@@ -639,8 +639,9 @@
               </div>
             </div>
           </div>
-          <div class="inpput-container-in-pratica" id="input-radio-id">
-            <!-- 
+          <hr class="inner-hr">
+
+          <!-- 
              ####
               IL SEGUENTE COMPONENTE VERRA SOSTITUITO CON UN CONTROLLO AUTOMATICO 
               SE IL RICHIEDENTE ( CON CODICE ? ) E GIA SEGUITO DA UN'AS 
@@ -653,22 +654,91 @@
               OPPURE RIMANE TUTTO COSI E' SARA COMPITO DELL'UTENTE CONTROLLARE E INSERIRE 
               IL GIUSTO PERCORSO ( PERSONA IN CARICO | PERSONA NON INCARICO )
              -->
+          <div class="inpput-container-in-pratica" id="input-radio-case-id">
             <div class="label-checkbox-container">
-              <label>Tipologia persona</label>
               <div>
                 <input type="radio" name="tipo_persona_pratica" id="rad_persona_incarico" value="Persona in carico"
-                  onchange="ShowRichiedente1()">
+                  onclick="ViewContainerInPratica('case_non_in_carico','case_in_carico')">
                 <label for="rad_persona_incarico">PERSONA IN CARICO</label>
               </div>
               <div>
                 <input type="radio" name="tipo_persona_pratica" id="rad_tipo_pratica_tel" value="Persona non in carico"
-                  onchange="ShowRichiedente2()">
+                  onclick="ViewContainerInPratica('case_in_carico','case_non_in_carico')">
                 <label for="rad_tipo_pratica_tel">PERSONA NON IN CARICO</label>
               </div>
             </div>
-            <div class="container-richiedente-info" id="cont_richiedente_info"></div>
+          </div>
+          <div class="inpput-container-in-pratica" id="container-cases">
+            <div id="case_in_carico">
+              <div class="select-label-container">
+                <label>Tipologia richiesta</label>
+                <select name="info_pratica_case_in_carico" class="select-in-pratica"
+                  onchange="ControlAndShowSubCase('select_case_in_carico')" id="select_case_in_carico">
+                  <option value="seleziona">--- Seleziona ---</option>
+                  <option value="Contatto con A.S incaricato assente">Contatto con A.S incaricato assente</option>
+                  <option value="Sollecito Invio Indagine di Servizio Sociale per udienza">Sollecito Invio Indagine
+                    di Servizio Sociale per udienza</option>
+                  <option value="
+                      Sollecito Invio Indagine di Servizio Sociale per riunione GOT">
+                    Sollecito Invio Indagine di Servizio Sociale per riunione GOT</option>
+                  <option value="Sollecito collaborazione altro UEPE">Sollecito collaborazione altro UEPE</option>
+                  <option value="Presentazione istanza urgente e non differibile di modifica prescrizioni">
+                    Presentazione istanza urgente e non differibile di modifica prescrizioni</option>
+                  <option value="Appuntamento sottoscrizione verbale AP">Appuntamento sottoscrizione verbale AP
+                  </option>
+                  <option value="Appuntamento sottoscrizione MAP">Appuntamento sottoscrizione MAP</option>
+                </select>
+              </div>
+            </div>
+            <div id="case_non_in_carico">
+              <div class="select-label-container">
+                <label>Tipologia richiesta</label>
+                <select name="info_pratica_case_non_in_carico" class="select-in-pratica"
+                onchange="ControlAndShowSubCase('select_case_non_in_carico')" id="select_case_non_in_carico" >
+                  <option value="seleziona">--- Seleziona ---</option>
+                  <option value="Sapere se l’incarico è assegnato e conoscere nominativo AS">Sapere se l’incarico è
+                    assegnato e conoscere nominativo AS</option>
+                  <option value="La richiesta non riguarda la competenze dell’Ufficio">La richiesta non riguarda la
+                    competenze dell’Ufficio</option>
+                  <option value="
+                  Sollecito procedimenti">
+                    Sollecito procedimenti</option>
+                  <option value="Si forniscono informazioni a carattere generale">Si forniscono informazioni a carattere
+                    generale
+                  </option>
+                  <option value="Appuntamento per sottoscrizione verbale AP">
+                    Appuntamento per sottoscrizione verbale AP</option>
+                </select>
+              </div>
+            </div>
           </div>
           <!--  FINE COMPONENTE PRINCIPALE  -->
+          <div class="inpput-container-in-pratica" id="container-cases" style="width: 80%;">
+            <div id="div_sub_cases_1">
+              <div class="select-label-container">
+                <label>Invio comunicazione a AS per</label>
+                <select name="invio_comunicazione_as" class="select-in-pratica"
+                  onchange="ControlAndShowSubCase('select_invio_com')" id="select_invio_com">
+                  <option value="Primo contatto dare nominativo e recapito">Primo contatto dare nominativo e recapito
+                  </option>
+                  <option value="Contatto periodico">Contatto periodico</option>
+                  <option value="Confronto per urgenza">Confronto per urgenza</option>
+                  <option value="Contatto detenuto in permesso premio">Contatto detenuto in permesso premio</option>
+                  <option value="Altro">Altro</option>
+                </select>
+              </div>
+            </div>
+            <div id="div_sub_cases_2">
+              <div class="select-label-container">
+                <label style="margin-left: 20px" id="label_data_sub_case2">Data udienza</label>
+                <input type="date" name="data-nascita" class="input-in-pratica" style="margin-left: -10%;width: 80%; height: 30px;" />
+              </div>
+            </div>
+            <div id="altro_div2">
+              <input type="text" name="altro_invio_com" class="input-in-pratica" placeholder="Altro"
+                style="width: 100%; height: 30px;" />
+            </div>
+          </div>
           <br>
           <hr />
           <br>
@@ -745,14 +815,18 @@
   }
 
   function ViewContainerInPratica(id_hide, id_show) {
-    document.getElementById("insert_pratica_id").scrollTop = 0;
+    if ((id_hide + "").includes("dati") || (id_show + "").includes("dati")) {
+      document.getElementById("insert_pratica_id").scrollTop = 0;
+    }
     document.getElementById(id_hide).style.display = "none";
     document.getElementById(id_show).style.display = "flex";
+    document.getElementById("altro_div2").style.display = "none";
+    document.getElementById("div_sub_cases_1").style.display = "none";
+    document.getElementById("select_case_in_carico").selectedIndex = 0;
+    document.getElementById("select_case_non_in_carico").selectedIndex = 0;
+    document.getElementById("select_invio_com").selectedIndex = 0;
+    
   }
-
-
-
-
 
   function ChangePage(page_path) {
     window.location = page_path;
