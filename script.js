@@ -35,41 +35,159 @@ function ShowAltro(par) {
   }
 }
 
-function ControlAndShowSubCase(id_select) {
-  let value = document.getElementById(id_select).value;
-  let div_altro = document.getElementById("altro_div2");
+let id_divs_parent_with_radio = [
+  "select_affid_FFOO",
+  "select_perv_FFOO",
+  "rad_per_ord_trib",
+  "rad_per_ord_rat"
+];
 
-  if (id_select != "select_invio_com") {
+let select_element = document.getElementById("select_perv_FFOO");
+let text_value = "Emerge difficoltà da sottoporre a capo area: invio a capo area";
+let newOption = new Option(text_value,text_value);
+let last_index_of_select_element = 2;
+
+function ControlAndShowSubCase(id_element, id_div_optional_to_keep = null) {
+  id_element = id_element.trim(); 
+  let value = document.getElementById(id_element).value;
+  let div_altro = document.getElementById("altro_div2");
+  value = value.trim();
+
+  if (test()) {
+      document.getElementsByName("tipo_pervenuta").forEach(function (el) {
+      el.checked = false;
+    });
+  }
+  function test() {
+    let bool = true;
+    id_divs_parent_with_radio.forEach(function (element) {
+      if(element == id_element){
+          bool =  false;
+          return;
+       }
+    });
+    return bool;
+  }
+  if (id_element != "select_invio_com") {
+    if(value == "seleziona"){
+      if(!(id_element == "select_case_non_in_carico" || id_element == "select_case_in_carico")){
+        document.getElementById("div_sub_cases_2_1").style.display = "none";
+        return;
+      }
+    }
     if (value == "Contatto con A.S incaricato assente") {
-      document.getElementById("div_sub_cases_1").style.display = "flex";
-      document.getElementById("div_sub_cases_2").style.display = "none";
+      Show_$_Hide("div_sub_cases_1");
       div_altro.style.display = "none";
       document.getElementById("select_invio_com").selectedIndex = 0;
       return;
     }
-    if (value == "Sollecito Invio Indagine di Servizio Sociale per udienza") {
-      document.getElementById("div_sub_cases_2").style.display = "flex";
-      document.getElementById("div_sub_cases_1").style.display = "none";
+    if (
+      value == "Sollecito Invio Indagine di Servizio Sociale per udienza" ||
+      value == "Sollecito Invio Indagine di Servizio Sociale per riunione GOT"
+    ) {
+      Show_$_Hide("div_sub_cases_2");
       div_altro.style.display = "none";
       return;
     }
-    /*    PENSARE AD UN'ALTRA STRUTTURA DELLA FUNZIONA ( ALCUNE COSE SI RIPETONO TROPPE VOLTE )###
-    if (value == "Sollecito Invio Indagine di Servizio Sociale per riunione GOT") {
-      document.getElementById("div_sub_cases_2").style.display = "flex";
-      document.getElementById("div_sub_cases_1").style.display = "none";
-      div_altro.style.display = "none";
+
+    if (
+      value ==
+      "Presentazione istanza urgente e non differibile di modifica prescrizioni"
+    ) {
+      Show_$_Hide("div_sub_cases_3");
       return;
     }
-    */
-    document.getElementById("div_sub_cases_1").style.display = "none";
-    document.getElementById("div_sub_cases_2").style.display = "none";
+
+    if (value == "Appuntamento sottoscrizione verbale AP") {
+      Show_$_Hide("div_sub_cases_4");
+      if(last_index_of_select_element == 3){
+       select_element.remove(last_index_of_select_element);
+       console.log("rimosso");
+      }
+      return;
+    }
+    if(value == "Appuntamento sottoscrizione MAP"){
+      Show_$_Hide("div_sub_cases_4_1");
+      select_element.add(newOption);
+      last_index_of_select_element++;
+      return;
+    }
+
     
+
+    if (
+      value ==
+      "Pervenuta ordinanza Tribunale di Sorveglianza notificata da FFOO"
+    ) {
+      Show_$_Hide("div_sub_cases_4_1", "div_sub_cases_4");
+      return;
+    }
+
+    if (
+      value ==
+      "Pervenuta ordinanza di ratifica dell’affidamento provvisorio notificata da FFOO"
+    ) {
+      Show_$_Hide("div_sub_cases_4_2","div_sub_cases_4");
+      return;
+    }
+    if (value == "Si , fornito di appuntamento") {
+      Show_$_Hide(
+        "div_sub_cases_2_1",
+        id_div_optional_to_keep,
+        "div_sub_cases_4"
+      );
+      return;
+    }
+
+    if (value == "No , si attende ordinanza" || value == "Emerge difficoltà da sottoporre a capo area: invio a capo area") {
+      Show_$_Hide("div_sub_cases_4_1", "div_sub_cases_4");
+      return;
+    }
+    if (value == "No , si attende ordinanza di ratifica") {
+      Show_$_Hide("div_sub_cases_4_2", "div_sub_cases_4");
+      return;
+    }
   } else {
     if (value == "Altro") {
       div_altro.style.display = "flex";
       return;
     }
   }
+  if(id_element != "select_invio_com"){
+    Show_$_Hide(null);
+  }
   document.getElementById("select_invio_com").selectedIndex = 0;
-  div_altro.style.display = "none";
+  document.getElementById("select_affid_FFOO").selectedIndex = 0;
+  document.getElementById("select_perv_FFOO").selectedIndex = 0;
+}
+
+let id_divs = [
+  "div_sub_cases_1",
+  "div_sub_cases_2",
+  "div_sub_cases_2_1",
+  "div_sub_cases_3",
+  "div_sub_cases_4",
+  "div_sub_cases_4_1",
+  "div_sub_cases_4_2",
+  "altro_div2",
+];
+
+function Show_$_Hide(
+  id_div_to_show = null,
+  id_div_to_keep = null,
+  id_super_div_to_keep = null
+) {
+  if (id_div_to_show != null) {
+    document.getElementById(id_div_to_show).style.display = "flex";
+  }
+  id_divs.forEach(For);
+  function For(doc) {
+    if (
+      doc != id_div_to_show &&
+      doc != id_div_to_keep &&
+      doc != id_super_div_to_keep
+    ) {
+      document.getElementById(doc).style.display = "none";
+    }
+  }
 }

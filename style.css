@@ -615,16 +615,43 @@ hr {
   display: none;
 }
 
-#div_sub_cases_2{
+#div_sub_cases_2,#div_sub_cases_2_1{
   display: none;
   margin: 0 auto;
   margin-right: 50%;
+}
+#div_sub_cases_2_1{
+  margin-right: 0%;
+}
+#div_sub_cases_3,#div_sub_cases_4{
+  display: none;
+  margin-right: 0%;
+  margin: 0 auto;
+}
+#div_sub_cases_4{
+  height: 100px;
+  width: 80%;
+  justify-content: center;
+
+}
+#div_sub_cases_4_1,#div_sub_cases_4_2{
+  display: none;
+  margin: 0 auto;
+  width: 100%;
 }
 
 #altro_div2{
   display: none;
   width: 40%;
   margin-top: 1.5%;
+}
+
+#container_div_sub_cases{
+  display: flex;
+  flex-direction: column;
+}
+#container_div_sub_cases div{
+  margin-left: 11%;
 }
 
 

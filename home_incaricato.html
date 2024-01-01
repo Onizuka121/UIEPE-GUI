@@ -694,7 +694,7 @@
               <div class="select-label-container">
                 <label>Tipologia richiesta</label>
                 <select name="info_pratica_case_non_in_carico" class="select-in-pratica"
-                onchange="ControlAndShowSubCase('select_case_non_in_carico')" id="select_case_non_in_carico" >
+                  onchange="ControlAndShowSubCase('select_case_non_in_carico')" id="select_case_non_in_carico">
                   <option value="seleziona">--- Seleziona ---</option>
                   <option value="Sapere se l’incarico è assegnato e conoscere nominativo AS">Sapere se l’incarico è
                     assegnato e conoscere nominativo AS</option>
@@ -728,15 +728,79 @@
                 </select>
               </div>
             </div>
+            <div id="div_sub_cases_3">
+              <div class="select-label-container">
+                <label>Presentazione istanza</label>
+                <select name="presentazione_istanza_urgente" class="select-in-pratica">
+                  <option value="Acquisizione ed invio istanza all'Ufficio di Sorveglianza">Acquisizione ed invio
+                    istanza all'Ufficio di Sorveglianza
+                  </option>
+                  <option value="Acquisizione istanza e autorizzazione Direttore UIEPE">Acquisizione istanza e
+                    autorizzazione Direttore UIEPE</option>
+                  <option value="Rinvio all’AS per mancanza di documentazione">Rinvio all’AS per mancanza di
+                    documentazione</option>
+                </select>
+              </div>
+            </div>
+            <div id="div_sub_cases_4">
+              <div class="label-checkbox-container">
+                <div>
+                  <input type="radio" name="tipo_pervenuta" id="rad_per_ord_trib"
+                    value="Pervenuta ordinanza Tribunale di Sorveglianza notificata da FFOO"
+                    onclick="ControlAndShowSubCase('rad_per_ord_trib')">
+                  <label for="rad_per_ord_trib">Pervenuta ordinanza Tribunale di Sorveglianza notificata da FFOO</label>
+                </div>
+                <div>
+                  <input type="radio" name="tipo_pervenuta" id="rad_per_ord_rat"
+                    value="Pervenuta ordinanza di ratifica dell’affidamento provvisorio notificata da FFOO"
+                    onclick="ControlAndShowSubCase('rad_per_ord_rat')">
+                  <label for="rad_per_ord_rat">Pervenuta ordinanza di ratifica dell’affidamento provvisorio notificata
+                    da FFOO</label>
+                </div>
+              </div>
+            </div>
+
             <div id="div_sub_cases_2">
               <div class="select-label-container">
-                <label style="margin-left: 20px" id="label_data_sub_case2">Data udienza</label>
-                <input type="date" name="data-nascita" class="input-in-pratica" style="margin-left: -10%;width: 80%; height: 30px;" />
+                <label style="margin-left: 20px" id="label_data_sub_case2">Data</label>
+                <input type="date" name="data_udienza_o_GOT" class="input-in-pratica"
+                  style="margin-left: -10%;width: 80%; height: 30px;" />
               </div>
             </div>
             <div id="altro_div2">
               <input type="text" name="altro_invio_com" class="input-in-pratica" placeholder="Altro"
                 style="width: 100%; height: 30px;" />
+            </div>
+          </div>
+          <div class="inpput-container-in-pratica" id="container_div_sub_cases">
+            <div id="div_sub_cases_4_1">
+              <div class="select-label-container">
+                <label>Pervenuta ordinanza Tribunale di Sorveglianza notificata da FFOO</label>
+                <select name="perventa_ord_tribunale_FFOO" class="select-in-pratica"
+                  onchange="ControlAndShowSubCase('select_perv_FFOO','div_sub_cases_4_1')" id="select_perv_FFOO">
+                  <option value="seleziona">--- Seleziona ---</option>
+                  <option value="Si , fornito di appuntamento">Si , fornito di appuntamento</option>
+                  <option value="No , si attende ordinanza">No , si attende ordinanza</option>
+                </select>
+              </div>
+            </div>
+            <div id="div_sub_cases_4_2">
+              <div class="select-label-container">
+                <label>Pervenuta ordinanza di ratifica dell’affidamento provvisorio notificata da FFOO</label>
+                <select name="perventa_ord_affidamento_FFOO" class="select-in-pratica"
+                  onchange="ControlAndShowSubCase('select_affid_FFOO','div_sub_cases_4_2')" id="select_affid_FFOO">
+                  <option value="seleziona">--- Seleziona ---</option>
+                  <option value="Si , fornito di appuntamento">Si , fornito di appuntamento</option>
+                  <option value="No , si attende ordinanza di ratifica">No , si attende ordinanza di ratifica</option>
+                </select>
+              </div>
+            </div>
+            <div id="div_sub_cases_2_1">
+              <div class="select-label-container">
+                <label style="margin-left: 20px" id="label_data_sub_case2">Data appuntamento</label>
+                <input type="date" name="data_appuntamento" class="input-in-pratica"
+                  style="width: 80%; height: 30px;" />
+              </div>
             </div>
           </div>
           <br>
@@ -825,7 +889,7 @@
     document.getElementById("select_case_in_carico").selectedIndex = 0;
     document.getElementById("select_case_non_in_carico").selectedIndex = 0;
     document.getElementById("select_invio_com").selectedIndex = 0;
-    
+
   }
 
   function ChangePage(page_path) {
