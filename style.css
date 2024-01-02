@@ -623,7 +623,7 @@ hr {
 #div_sub_cases_2_1{
   margin-right: 0%;
 }
-#div_sub_cases_3,#div_sub_cases_4{
+#div_sub_cases_3,#div_sub_cases_4,#div_sub_cases_5,#div_sub_cases_6{
   display: none;
   margin-right: 0%;
   margin: 0 auto;
@@ -639,12 +639,31 @@ hr {
   margin: 0 auto;
   width: 100%;
 }
+#div_sub_cases_5 ,#div_sub_cases_6{
+  margin: 0 auto;
+}
+#div_sub_cases_6{
+  width: 30%;
+}
+#info_ge{
+  margin-left: -10px;
+  gap: 0%;
+}
 
-#altro_div2{
+#div_sub_cases_5 div{
+  width: 100%;
+  margin-left: -25% ;
+}
+#div_sub_cases_6 div{
+  width: 100%;
+}
+
+#altro_div2 ,#altro_div6{
   display: none;
   width: 40%;
   margin-top: 1.5%;
 }
+
 
 #container_div_sub_cases{
   display: flex;
@@ -667,6 +686,10 @@ hr {
     width: 100%;
     margin-left: 50px;
   
+  }
+  #div_sub_cases_5 div{
+    width: 100%;
+    margin-left: -10% ;
   }
 }
 

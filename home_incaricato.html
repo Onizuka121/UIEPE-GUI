@@ -706,13 +706,46 @@
                   <option value="Si forniscono informazioni a carattere generale">Si forniscono informazioni a carattere
                     generale
                   </option>
-                  <option value="Appuntamento per sottoscrizione verbale AP">
-                    Appuntamento per sottoscrizione verbale AP</option>
+                  <option value="Appuntamento sottoscrizione verbale AP">
+                    Appuntamento sottoscrizione verbale AP</option>
                 </select>
               </div>
             </div>
           </div>
           <!--  FINE COMPONENTE PRINCIPALE  -->
+          <div class="inpput-container-in-pratica">
+            <div id="div_sub_cases_5">
+              <div class="select-label-container">
+                <label>Sapere se l’incarico è assegnato e conoscere nominativo AS</label>
+                <select name="sapere_se_incarico_assegnato_as" class="select-in-pratica">
+                  <option value="Per obbligo di contatto">Per obbligo di contatto</option>
+                  <option value="Per udienza TS">Per udienza TS</option>
+                  <option value="Per indagine socio familiare IIPP">Per indagine socio familiare IIPP</option>
+                  <option value="Per udienza MAP">Per udienza MAP</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="inpput-container-in-pratica" id="info_ge">
+            <div id="div_sub_cases_6">
+              <div class="select-label-container">
+                <label>Informazioni generali su :</label>
+                <select name="informazioni_generali" class="select-in-pratica" onchange="ControlAndShowSubCase('select_info_generali')" id="select_info_generali">
+                  <option value="seleziona">--- Seleziona ---</option>
+                  <option value="MAP">MAP</option>
+                  <option value="LPU">LPU</option>
+                  <option value="Riforma Cartabia">Riforma Cartabia</option>
+                  <option value="Enti volontariato LPU">Enti volontariato LPU</option>
+                  <option value="Enti pubblici territoriali">Enti pubblici territoriali</option>
+                  <option value="Altro">Altro</option>
+                </select>
+              </div>
+            </div>
+            <div id="altro_div6">
+              <input type="text" name="altro_info_generali" class="input-in-pratica" placeholder="Altro"
+                style="width: 100%; height: 30px;" />
+            </div>
+          </div>
           <div class="inpput-container-in-pratica" id="container-cases" style="width: 80%;">
             <div id="div_sub_cases_1">
               <div class="select-label-container">
@@ -803,6 +836,10 @@
               </div>
             </div>
           </div>
+
+
+
+
           <br>
           <hr />
           <br>
@@ -833,9 +870,27 @@
 </body>
 
 <script>
+
+  let div_main = [
+    "dati_pratica",
+    "riepilogo",
+    "dati_assistito",
+    "dati_richiedente"
+  ];
+
   let btn_nav_in = document.getElementById("in_btn_id");
   let btn_nav_home = document.getElementById("home_btn_id");
   window.onload = btn_nav_home.style.backgroundColor = "#90AAD6";
+
+  //----------------------
+  let select_element = document.getElementById("select_perv_FFOO");
+  let text_value =
+    "Emerge difficoltà da sottoporre a capo area: invio a capo area";
+  let last_index_of_select_element = 2;
+  //------------------------
+
+
+
 
   function ShowContainer(id) {
     let btn_div = document.getElementById(id);
@@ -867,7 +922,6 @@
     let valore = document.getElementById("select_in_pratica_id").value;
     valore += "";
     if (valore.endsWith("di ..........")) {
-      console.log("ok");
       div_to_inner.innerHTML = '  <input type="text" name="citta_qualita" class="input-in-pratica" placeholder="Città" style="margin-bottom: -20px" /> '
       return;
     }
@@ -884,11 +938,13 @@
     }
     document.getElementById(id_hide).style.display = "none";
     document.getElementById(id_show).style.display = "flex";
-    document.getElementById("altro_div2").style.display = "none";
-    document.getElementById("div_sub_cases_1").style.display = "none";
-    document.getElementById("select_case_in_carico").selectedIndex = 0;
-    document.getElementById("select_case_non_in_carico").selectedIndex = 0;
-    document.getElementById("select_invio_com").selectedIndex = 0;
+    if (!(id_hide == "dati_assistito" || id_hide == "dati_richiedente" || id_hide == "riepilogo" || id_hide == "dati_pratica")) {
+      Show_$_Hide(null);//function declared in script
+      document.getElementById("select_case_in_carico").selectedIndex = 0;
+      document.getElementById("select_case_non_in_carico").selectedIndex = 0;
+      document.getElementById("select_invio_com").selectedIndex = 0;
+    }
+
 
   }
 
