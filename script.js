@@ -64,6 +64,12 @@ function ControlAndShowSubCase(id_element, id_div_optional_to_keep = null) {
     });
     return bool;
   }
+
+  if(id_element =="rad_per_ord_rat" || id_element == "rad_per_ord_trib"){
+    document.getElementById("select_affid_FFOO").selectedIndex = 0;
+    document.getElementById("select_perv_FFOO").selectedIndex = 0;
+  }
+
   if (id_element != "select_invio_com") {
     if (value == "seleziona") {
       if (!(id_element == "select_case_non_in_carico" ||id_element == "select_case_in_carico")) {
@@ -111,17 +117,10 @@ function ControlAndShowSubCase(id_element, id_div_optional_to_keep = null) {
 
     if (value == "Appuntamento sottoscrizione verbale AP") {
       Show_$_Hide("div_sub_cases_4");
-      if (last_index_of_select_element == 3) {
-        select_element.remove(last_index_of_select_element);
-        last_index_of_select_element--;
-      }
       return;
     }
     if (value == "Appuntamento sottoscrizione MAP") {
       Show_$_Hide("div_sub_cases_4_1");
-      let newOption = new Option(text_value, text_value);
-      select_element.add(newOption);
-      last_index_of_select_element++;
       return;
     }
 
@@ -173,10 +172,12 @@ function ControlAndShowSubCase(id_element, id_div_optional_to_keep = null) {
     Show_$_Hide("div_sub_cases_6","select_info_generali");
     return;
   }
-  document.getElementById("select_invio_com").selectedIndex = 0;
-  document.getElementById("select_affid_FFOO").selectedIndex = 0;
-  document.getElementById("select_perv_FFOO").selectedIndex = 0;
+  if(id_element != "select_invio_com"){
+    document.getElementById("select_invio_com").selectedIndex = 0;
+  }
+ 
   document.getElementById("select_info_generali").selectedIndex = 0;
+  div_altro.style.display = "none";
 }
 
 let id_divs = [
@@ -213,3 +214,39 @@ function Show_$_Hide(
     }
   }
 }
+
+
+let divs_case_doc = [
+  "div_doc_case_data",
+  "div_doc_case_prog_tratt_map",
+  "div_doc_case_tribunale",
+  "div_doc_case_altro",
+];
+
+function ControlAndShowCaseDoc(id_el_to_show){
+
+  let value = document.getElementById(id_el_to_show).value;
+  value = value.trim();
+
+  divs_case_doc.forEach(function (div_id){
+    document.getElementById(div_id).style.display = "none";
+  });
+
+  if(value == "Richiesta TO udienza per programma di trattamento MAP"){
+    document.getElementById("div_doc_case_data").style.display = "flex";
+    document.getElementById("div_doc_case_prog_tratt_map").style.display = "flex";
+  }
+
+  if(value == "Comunicazione Procura della Repubblica presso Tribunale di…."){
+    document.getElementById("div_doc_case_tribunale").style.display = "flex";
+  }
+  if(value == "Richiesta Tribunale di Sorveglianza per udienza"){
+    document.getElementById("div_doc_case_data").style.display = "flex";
+  }
+  if(value == "Altro"){
+    document.getElementById("div_doc_case_altro").style.display = "flex";
+  }
+
+}
+
+

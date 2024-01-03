@@ -653,193 +653,282 @@
               ? SE SI COME AVVERRA' IL CONTROLLO ( HTTP REQUEST (POST) - o con API DEL SISTEMA SIEPE) ???
               OPPURE RIMANE TUTTO COSI E' SARA COMPITO DELL'UTENTE CONTROLLARE E INSERIRE 
               IL GIUSTO PERCORSO ( PERSONA IN CARICO | PERSONA NON INCARICO )
+
+              A seguito della richiesta viene effettuato un controllo sul software SIEPE per 
+              sapere se il richiedente è già seguito da un’assistente sociale;
+              Secondo il responso di questa verifica si avviano due percorsi differenti
+
+                 - PERSONA IN CARICO,
+                 - PERSONA NON IN CARICO;
+
+
+
              -->
-          <div class="inpput-container-in-pratica" id="input-radio-case-id">
-            <div class="label-checkbox-container">
-              <div>
-                <input type="radio" name="tipo_persona_pratica" id="rad_persona_incarico" value="Persona in carico"
-                  onclick="ViewContainerInPratica('case_non_in_carico','case_in_carico')">
-                <label for="rad_persona_incarico">PERSONA IN CARICO</label>
-              </div>
-              <div>
-                <input type="radio" name="tipo_persona_pratica" id="rad_tipo_pratica_tel" value="Persona non in carico"
-                  onclick="ViewContainerInPratica('case_in_carico','case_non_in_carico')">
-                <label for="rad_tipo_pratica_tel">PERSONA NON IN CARICO</label>
-              </div>
-            </div>
-          </div>
-          <div class="inpput-container-in-pratica" id="container-cases">
-            <div id="case_in_carico">
-              <div class="select-label-container">
-                <label>Tipologia richiesta</label>
-                <select name="info_pratica_case_in_carico" class="select-in-pratica"
-                  onchange="ControlAndShowSubCase('select_case_in_carico')" id="select_case_in_carico">
-                  <option value="seleziona">--- Seleziona ---</option>
-                  <option value="Contatto con A.S incaricato assente">Contatto con A.S incaricato assente</option>
-                  <option value="Sollecito Invio Indagine di Servizio Sociale per udienza">Sollecito Invio Indagine
-                    di Servizio Sociale per udienza</option>
-                  <option value="
-                      Sollecito Invio Indagine di Servizio Sociale per riunione GOT">
-                    Sollecito Invio Indagine di Servizio Sociale per riunione GOT</option>
-                  <option value="Sollecito collaborazione altro UEPE">Sollecito collaborazione altro UEPE</option>
-                  <option value="Presentazione istanza urgente e non differibile di modifica prescrizioni">
-                    Presentazione istanza urgente e non differibile di modifica prescrizioni</option>
-                  <option value="Appuntamento sottoscrizione verbale AP">Appuntamento sottoscrizione verbale AP
-                  </option>
-                  <option value="Appuntamento sottoscrizione MAP">Appuntamento sottoscrizione MAP</option>
-                </select>
-              </div>
-            </div>
-            <div id="case_non_in_carico">
-              <div class="select-label-container">
-                <label>Tipologia richiesta</label>
-                <select name="info_pratica_case_non_in_carico" class="select-in-pratica"
-                  onchange="ControlAndShowSubCase('select_case_non_in_carico')" id="select_case_non_in_carico">
-                  <option value="seleziona">--- Seleziona ---</option>
-                  <option value="Sapere se l’incarico è assegnato e conoscere nominativo AS">Sapere se l’incarico è
-                    assegnato e conoscere nominativo AS</option>
-                  <option value="La richiesta non riguarda la competenze dell’Ufficio">La richiesta non riguarda la
-                    competenze dell’Ufficio</option>
-                  <option value="
-                  Sollecito procedimenti">
-                    Sollecito procedimenti</option>
-                  <option value="Si forniscono informazioni a carattere generale">Si forniscono informazioni a carattere
-                    generale
-                  </option>
-                  <option value="Appuntamento sottoscrizione verbale AP">
-                    Appuntamento sottoscrizione verbale AP</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <!--  FINE COMPONENTE PRINCIPALE  -->
-          <div class="inpput-container-in-pratica">
-            <div id="div_sub_cases_5">
-              <div class="select-label-container">
-                <label>Sapere se l’incarico è assegnato e conoscere nominativo AS</label>
-                <select name="sapere_se_incarico_assegnato_as" class="select-in-pratica">
-                  <option value="Per obbligo di contatto">Per obbligo di contatto</option>
-                  <option value="Per udienza TS">Per udienza TS</option>
-                  <option value="Per indagine socio familiare IIPP">Per indagine socio familiare IIPP</option>
-                  <option value="Per udienza MAP">Per udienza MAP</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="inpput-container-in-pratica" id="info_ge">
-            <div id="div_sub_cases_6">
-              <div class="select-label-container">
-                <label>Informazioni generali su :</label>
-                <select name="informazioni_generali" class="select-in-pratica" onchange="ControlAndShowSubCase('select_info_generali')" id="select_info_generali">
-                  <option value="seleziona">--- Seleziona ---</option>
-                  <option value="MAP">MAP</option>
-                  <option value="LPU">LPU</option>
-                  <option value="Riforma Cartabia">Riforma Cartabia</option>
-                  <option value="Enti volontariato LPU">Enti volontariato LPU</option>
-                  <option value="Enti pubblici territoriali">Enti pubblici territoriali</option>
-                  <option value="Altro">Altro</option>
-                </select>
-              </div>
-            </div>
-            <div id="altro_div6">
-              <input type="text" name="altro_info_generali" class="input-in-pratica" placeholder="Altro"
-                style="width: 100%; height: 30px;" />
-            </div>
-          </div>
-          <div class="inpput-container-in-pratica" id="container-cases" style="width: 80%;">
-            <div id="div_sub_cases_1">
-              <div class="select-label-container">
-                <label>Invio comunicazione a AS per</label>
-                <select name="invio_comunicazione_as" class="select-in-pratica"
-                  onchange="ControlAndShowSubCase('select_invio_com')" id="select_invio_com">
-                  <option value="Primo contatto dare nominativo e recapito">Primo contatto dare nominativo e recapito
-                  </option>
-                  <option value="Contatto periodico">Contatto periodico</option>
-                  <option value="Confronto per urgenza">Confronto per urgenza</option>
-                  <option value="Contatto detenuto in permesso premio">Contatto detenuto in permesso premio</option>
-                  <option value="Altro">Altro</option>
-                </select>
-              </div>
-            </div>
-            <div id="div_sub_cases_3">
-              <div class="select-label-container">
-                <label>Presentazione istanza</label>
-                <select name="presentazione_istanza_urgente" class="select-in-pratica">
-                  <option value="Acquisizione ed invio istanza all'Ufficio di Sorveglianza">Acquisizione ed invio
-                    istanza all'Ufficio di Sorveglianza
-                  </option>
-                  <option value="Acquisizione istanza e autorizzazione Direttore UIEPE">Acquisizione istanza e
-                    autorizzazione Direttore UIEPE</option>
-                  <option value="Rinvio all’AS per mancanza di documentazione">Rinvio all’AS per mancanza di
-                    documentazione</option>
-                </select>
-              </div>
-            </div>
-            <div id="div_sub_cases_4">
+          <div class="container_inputs_info_pratica_cases">
+            <div class="inpput-container-in-pratica" id="input-radio-case-id">
               <div class="label-checkbox-container">
                 <div>
-                  <input type="radio" name="tipo_pervenuta" id="rad_per_ord_trib"
-                    value="Pervenuta ordinanza Tribunale di Sorveglianza notificata da FFOO"
-                    onclick="ControlAndShowSubCase('rad_per_ord_trib')">
-                  <label for="rad_per_ord_trib">Pervenuta ordinanza Tribunale di Sorveglianza notificata da FFOO</label>
+                  <input type="radio" name="tipo_persona_pratica" id="rad_persona_incarico" value="Persona in carico"
+                    onclick="ViewContainerInPratica('case_non_in_carico','case_in_carico')">
+                  <label for="rad_persona_incarico">PERSONA IN CARICO</label>
                 </div>
                 <div>
-                  <input type="radio" name="tipo_pervenuta" id="rad_per_ord_rat"
-                    value="Pervenuta ordinanza di ratifica dell’affidamento provvisorio notificata da FFOO"
-                    onclick="ControlAndShowSubCase('rad_per_ord_rat')">
-                  <label for="rad_per_ord_rat">Pervenuta ordinanza di ratifica dell’affidamento provvisorio notificata
-                    da FFOO</label>
+                  <input type="radio" name="tipo_persona_pratica" id="rad_tipo_pratica_tel"
+                    value="Persona non in carico"
+                    onclick="ViewContainerInPratica('case_in_carico','case_non_in_carico')">
+                  <label for="rad_tipo_pratica_tel">PERSONA NON IN CARICO</label>
                 </div>
               </div>
             </div>
+            <div class="inpput-container-in-pratica" id="container-cases">
+              <div id="case_in_carico">
+                <div class="select-label-container">
+                  <label>Tipologia richiesta</label>
+                  <select name="info_pratica_case_in_carico" class="select-in-pratica"
+                    onchange="ControlAndShowSubCase('select_case_in_carico')" id="select_case_in_carico">
+                    <option value="seleziona">--- Seleziona ---</option>
+                    <option value="Contatto con A.S incaricato assente">Contatto con A.S incaricato assente</option>
+                    <option value="Sollecito Invio Indagine di Servizio Sociale per udienza">Sollecito Invio Indagine
+                      di Servizio Sociale per udienza</option>
+                    <option value="
+                      Sollecito Invio Indagine di Servizio Sociale per riunione GOT">
+                      Sollecito Invio Indagine di Servizio Sociale per riunione GOT</option>
+                    <option value="Sollecito collaborazione altro UEPE">Sollecito collaborazione altro UEPE</option>
+                    <option value="Presentazione istanza urgente e non differibile di modifica prescrizioni">
+                      Presentazione istanza urgente e non differibile di modifica prescrizioni</option>
+                    <option value="Appuntamento sottoscrizione verbale AP">Appuntamento sottoscrizione verbale AP
+                    </option>
+                    <option value="Appuntamento sottoscrizione MAP">Appuntamento sottoscrizione MAP</option>
+                  </select>
+                </div>
+              </div>
+              <div id="case_non_in_carico">
+                <div class="select-label-container">
+                  <label>Tipologia richiesta</label>
+                  <select name="info_pratica_case_non_in_carico" class="select-in-pratica"
+                    onchange="ControlAndShowSubCase('select_case_non_in_carico')" id="select_case_non_in_carico">
+                    <option value="seleziona">--- Seleziona ---</option>
+                    <option value="Sapere se l’incarico è assegnato e conoscere nominativo AS">Sapere se l’incarico è
+                      assegnato e conoscere nominativo AS</option>
+                    <option value="La richiesta non riguarda la competenze dell’Ufficio">La richiesta non riguarda la
+                      competenze dell’Ufficio</option>
+                    <option value="
+                  Sollecito procedimenti">
+                      Sollecito procedimenti</option>
+                    <option value="Si forniscono informazioni a carattere generale">Si forniscono informazioni a
+                      carattere
+                      generale
+                    </option>
+                    <option value="Appuntamento sottoscrizione verbale AP">
+                      Appuntamento sottoscrizione verbale AP</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!--  FINE COMPONENTE PRINCIPALE  -->
+            <div class="inpput-container-in-pratica">
+              <div id="div_sub_cases_5">
+                <div class="select-label-container">
+                  <label>Sapere se l’incarico è assegnato e conoscere nominativo AS</label>
+                  <select name="sapere_se_incarico_assegnato_as" class="select-in-pratica">
+                    <option value="Per obbligo di contatto">Per obbligo di contatto</option>
+                    <option value="Per udienza TS">Per udienza TS</option>
+                    <option value="Per indagine socio familiare IIPP">Per indagine socio familiare IIPP</option>
+                    <option value="Per udienza MAP">Per udienza MAP</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="inpput-container-in-pratica" id="info_ge">
+              <div id="div_sub_cases_6">
+                <div class="select-label-container">
+                  <label>Informazioni generali su :</label>
+                  <select name="informazioni_generali" class="select-in-pratica"
+                    onchange="ControlAndShowSubCase('select_info_generali')" id="select_info_generali">
+                    <option value="seleziona">--- Seleziona ---</option>
+                    <option value="MAP">MAP</option>
+                    <option value="LPU">LPU</option>
+                    <option value="Riforma Cartabia">Riforma Cartabia</option>
+                    <option value="Enti volontariato LPU">Enti volontariato LPU</option>
+                    <option value="Enti pubblici territoriali">Enti pubblici territoriali</option>
+                    <option value="Altro">Altro</option>
+                  </select>
+                </div>
+              </div>
+              <div id="altro_div6">
+                <input type="text" name="altro_info_generali" class="input-in-pratica" placeholder="Altro"
+                  style="width: 100%; height: 30px;" />
+              </div>
+            </div>
+            <div class="inpput-container-in-pratica" id="container-cases" style="width: 80%;">
+              <div id="div_sub_cases_1">
+                <div class="select-label-container">
+                  <label>Invio comunicazione a AS per</label>
+                  <select name="invio_comunicazione_as" class="select-in-pratica"
+                    onchange="ControlAndShowSubCase('select_invio_com')" id="select_invio_com">
+                    <option value="Primo contatto dare nominativo e recapito">Primo contatto dare nominativo e recapito
+                    </option>
+                    <option value="Contatto periodico">Contatto periodico</option>
+                    <option value="Confronto per urgenza">Confronto per urgenza</option>
+                    <option value="Contatto detenuto in permesso premio">Contatto detenuto in permesso premio</option>
+                    <option value="Altro">Altro</option>
+                  </select>
+                </div>
+              </div>
+              <div id="div_sub_cases_3">
+                <div class="select-label-container">
+                  <label>Presentazione istanza</label>
+                  <select name="presentazione_istanza_urgente" class="select-in-pratica">
+                    <option value="Acquisizione ed invio istanza all'Ufficio di Sorveglianza">Acquisizione ed invio
+                      istanza all'Ufficio di Sorveglianza
+                    </option>
+                    <option value="Acquisizione istanza e autorizzazione Direttore UIEPE">Acquisizione istanza e
+                      autorizzazione Direttore UIEPE</option>
+                    <option value="Rinvio all’AS per mancanza di documentazione">Rinvio all’AS per mancanza di
+                      documentazione</option>
+                  </select>
+                </div>
+              </div>
+              <div id="div_sub_cases_4">
+                <div class="label-checkbox-container">
+                  <div>
+                    <input type="radio" name="tipo_pervenuta" id="rad_per_ord_trib"
+                      value="Pervenuta ordinanza Tribunale di Sorveglianza notificata da FFOO"
+                      onclick="ControlAndShowSubCase('rad_per_ord_trib')">
+                    <label for="rad_per_ord_trib">Pervenuta ordinanza Tribunale di Sorveglianza notificata da
+                      FFOO</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="tipo_pervenuta" id="rad_per_ord_rat"
+                      value="Pervenuta ordinanza di ratifica dell’affidamento provvisorio notificata da FFOO"
+                      onclick="ControlAndShowSubCase('rad_per_ord_rat')">
+                    <label for="rad_per_ord_rat">Pervenuta ordinanza di ratifica dell’affidamento provvisorio notificata
+                      da FFOO</label>
+                  </div>
+                </div>
+              </div>
 
-            <div id="div_sub_cases_2">
+              <div id="div_sub_cases_2">
+                <div class="select-label-container">
+                  <label style="margin-left: 20px" id="label_data_sub_case2">Data</label>
+                  <input type="date" name="data_udienza_o_GOT" class="input-in-pratica"
+                    style="margin-left: -10%;width: 80%; height: 30px;" />
+                </div>
+              </div>
+              <div id="altro_div2">
+                <input type="text" name="altro_invio_com" class="input-in-pratica" placeholder="Altro"
+                  style="width: 100%; height: 30px;" />
+              </div>
+            </div>
+            <div class="inpput-container-in-pratica" id="container_div_sub_cases">
+              <div id="div_sub_cases_4_1">
+                <div class="select-label-container">
+                  <label>Pervenuta ordinanza Tribunale di Sorveglianza notificata da FFOO</label>
+                  <select name="perventa_ord_tribunale_FFOO" class="select-in-pratica"
+                    onchange="ControlAndShowSubCase('select_perv_FFOO','div_sub_cases_4_1')" id="select_perv_FFOO">
+                    <option value="seleziona">--- Seleziona ---</option>
+                    <option value="Si , fornito di appuntamento">Si , fornito di appuntamento</option>
+                    <option value="No , si attende ordinanza">No , si attende ordinanza</option>
+                    <option value="Emerge difficoltà da sottoporre a capo area: invio a capo area">Emerge difficoltà da
+                      sottoporre a capo area: invio a capo area</option>
+                  </select>
+                </div>
+              </div>
+              <div id="div_sub_cases_4_2">
+                <div class="select-label-container">
+                  <label>Pervenuta ordinanza di ratifica dell’affidamento provvisorio notificata da FFOO</label>
+                  <select name="perventa_ord_affidamento_FFOO" class="select-in-pratica"
+                    onchange="ControlAndShowSubCase('select_affid_FFOO','div_sub_cases_4_2')" id="select_affid_FFOO">
+                    <option value="seleziona">--- Seleziona ---</option>
+                    <option value="Si , fornito di appuntamento">Si , fornito di appuntamento</option>
+                    <option value="No , si attende ordinanza di ratifica">No , si attende ordinanza di ratifica</option>
+                  </select>
+                </div>
+              </div>
+              <div id="div_sub_cases_2_1">
+                <div class="select-label-container">
+                  <label style="margin-left: 20px" id="label_data_sub_case2">Data appuntamento</label>
+                  <input type="date" name="data_appuntamento" class="input-in-pratica"
+                    style="width: 80%; height: 30px;" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <span class="title-div-span">Documentazione</span>
+          <hr />
+          <br>
+          <div class="inpput-container-in-pratica" id="container_pervenuta_doc">
+            <div><label>Pervenuta documentazione</label></div>
+            <div class="label-checkbox-container">
+              <div>
+                <input type="radio" name="pervenuta_documentazione" id="rad_perv_document_si"
+                  value="si, pervenuta documentazione" onclick="ViewContainerInPratica('div_elenc_doc_si','div_elenc_doc_no')">
+                <label for="rad_perv_document_si">SI</label>
+              </div>
+              <div>
+                <input type="radio" name="pervenuta_documentazione" id="rad_perv_document_no"
+                  value="no, pervenuta documentazione" onclick="">
+                <label for="rad_perv_document_no">NO</label>
+              </div>
+            </div>
+          </div>
+          <div class="inpput-container-in-pratica">
+            <div id="div_elenc_doc_si">
               <div class="select-label-container">
-                <label style="margin-left: 20px" id="label_data_sub_case2">Data</label>
-                <input type="date" name="data_udienza_o_GOT" class="input-in-pratica"
+                <label>Tipologia documentazione</label>
+                <select name="tipologia_documentazione" class="select-in-pratica" onchange="ControlAndShowCaseDoc('select_tipo_doc_si')" id="select_tipo_doc_si">
+                  <option value="Richiesta apertura osservazione IP">Richiesta apertura osservazione IP</option>
+                  <option value="Comunicazione IP permesso premio">Comunicazione IP permesso premio</option>
+                  <option value="Comunicazione IP di scarcerazione per concessione affidamento in prova">Comunicazione IP di scarcerazione per concessione affidamento in prova</option>
+                  <option value="Comunicazione IP di scarcerazione per concessione detenzione domiciliare">Comunicazione IP di scarcerazione per concessione detenzione domiciliare</option>
+                  <option value="Comunicazione IP di concessione semi-libertà">Comunicazione IP di concessione semi-libertà</option>
+                  <option value="Comunicazione IP  per concessione art. 21">Comunicazione IP  per concessione art. 21</option>
+                  <option value="Ordinanza TS detenzione domiciliare">Ordinanza TS detenzione domiciliare</option>
+                  <option value="Ordinanza TS Affidamento in prova provvisorio">Ordinanza TS Affidamento in prova provvisorio</option>
+                  <option value="Ordinanza TS Affidamento in prova notificata da FFOO">Ordinanza TS Affidamento in prova notificata da FFOO</option>
+                  <option value="Ratifica affidamento provvisorio notificata da FFOO">Ratifica affidamento provvisorio notificata da FFOO</option>
+                  <option value="Richiesta Tribunale di Sorveglianza per udienza">Richiesta Tribunale di Sorveglianza per udienza</option>
+                  <option value="Istanza MAP corredata da documentazione">Istanza MAP corredata da documentazione</option>
+                  <option value="Istanza MAP non corredata da tutta la documentazione necessaria">Istanza MAP non corredata da tutta la documentazione necessaria</option>
+                  <option value="Richiesta TO udienza per programma di trattamento MAP">Richiesta TO udienza per programma di trattamento MAP</option>
+                  <option value="Sentenza TO per LPU">Sentenza TO per LPU</option>
+                  <option value="Comunicazione Procura della Repubblica presso Tribunale di….">Comunicazione Procura della Repubblica presso Tribunale di….</option>
+                  <option value="Cartabia">Cartabia</option>
+                  <option value="Altro">Altro</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="inpput-container-in-pratica">
+            <div id="div_doc_case_tribunale">
+              <input type="text" name="tribunale_doc_si" class="input-in-pratica" placeholder="Tribunale"
+                  style="width: 100%; height: 30px;" />
+            </div>
+            <div id="div_doc_case_data">
+              <div class="select-label-container">
+                <label style="margin-left: 20px" id="label_data_sub_case2">Data udienza</label>
+                <input type="date" name="data_udienza_doc_si" class="input-in-pratica"
                   style="margin-left: -10%;width: 80%; height: 30px;" />
               </div>
             </div>
-            <div id="altro_div2">
-              <input type="text" name="altro_invio_com" class="input-in-pratica" placeholder="Altro"
-                style="width: 100%; height: 30px;" />
+            <div id="div_doc_case_altro">
+              <input type="text" name="altro_doc_si" class="input-in-pratica" placeholder="Altro"
+                  style="width: 100%; height: 30px;" />
             </div>
           </div>
-          <div class="inpput-container-in-pratica" id="container_div_sub_cases">
-            <div id="div_sub_cases_4_1">
+          <div class="inpput-container-in-pratica">
+            <div id="div_doc_case_prog_tratt_map">
               <div class="select-label-container">
-                <label>Pervenuta ordinanza Tribunale di Sorveglianza notificata da FFOO</label>
-                <select name="perventa_ord_tribunale_FFOO" class="select-in-pratica"
-                  onchange="ControlAndShowSubCase('select_perv_FFOO','div_sub_cases_4_1')" id="select_perv_FFOO">
+                <label>Relazione conclusiva</label>
+                <select name="relazione_conculiva_tratt_map" class="select-in-pratica" id="select_relazione_conclusiva">
                   <option value="seleziona">--- Seleziona ---</option>
-                  <option value="Si , fornito di appuntamento">Si , fornito di appuntamento</option>
-                  <option value="No , si attende ordinanza">No , si attende ordinanza</option>
+                  <option value="Relazione conclusiva MAP">Relazione conclusiva MAP</option>
+                  <option value="Relazione conclusiva LPU">Relazione conclusiva LPU</option>
                 </select>
               </div>
             </div>
-            <div id="div_sub_cases_4_2">
-              <div class="select-label-container">
-                <label>Pervenuta ordinanza di ratifica dell’affidamento provvisorio notificata da FFOO</label>
-                <select name="perventa_ord_affidamento_FFOO" class="select-in-pratica"
-                  onchange="ControlAndShowSubCase('select_affid_FFOO','div_sub_cases_4_2')" id="select_affid_FFOO">
-                  <option value="seleziona">--- Seleziona ---</option>
-                  <option value="Si , fornito di appuntamento">Si , fornito di appuntamento</option>
-                  <option value="No , si attende ordinanza di ratifica">No , si attende ordinanza di ratifica</option>
-                </select>
-              </div>
-            </div>
-            <div id="div_sub_cases_2_1">
-              <div class="select-label-container">
-                <label style="margin-left: 20px" id="label_data_sub_case2">Data appuntamento</label>
-                <input type="date" name="data_appuntamento" class="input-in-pratica"
-                  style="width: 80%; height: 30px;" />
-              </div>
-            </div>
           </div>
-
-
-
-
           <br>
           <hr />
           <br>
@@ -881,16 +970,6 @@
   let btn_nav_in = document.getElementById("in_btn_id");
   let btn_nav_home = document.getElementById("home_btn_id");
   window.onload = btn_nav_home.style.backgroundColor = "#90AAD6";
-
-  //----------------------
-  let select_element = document.getElementById("select_perv_FFOO");
-  let text_value =
-    "Emerge difficoltà da sottoporre a capo area: invio a capo area";
-  let last_index_of_select_element = 2;
-  //------------------------
-
-
-
 
   function ShowContainer(id) {
     let btn_div = document.getElementById(id);
