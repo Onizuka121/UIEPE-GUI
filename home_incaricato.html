@@ -660,9 +660,6 @@
 
                  - PERSONA IN CARICO,
                  - PERSONA NON IN CARICO;
-
-
-
              -->
           <div class="container_inputs_info_pratica_cases">
             <div class="inpput-container-in-pratica" id="input-radio-case-id">
@@ -858,74 +855,148 @@
           <span class="title-div-span">Documentazione</span>
           <hr />
           <br>
-          <div class="inpput-container-in-pratica" id="container_pervenuta_doc">
-            <div><label>Pervenuta documentazione</label></div>
-            <div class="label-checkbox-container">
-              <div>
-                <input type="radio" name="pervenuta_documentazione" id="rad_perv_document_si"
-                  value="si, pervenuta documentazione" onclick="ViewContainerInPratica('div_elenc_doc_si','div_elenc_doc_no')">
-                <label for="rad_perv_document_si">SI</label>
-              </div>
-              <div>
-                <input type="radio" name="pervenuta_documentazione" id="rad_perv_document_no"
-                  value="no, pervenuta documentazione" onclick="">
-                <label for="rad_perv_document_no">NO</label>
-              </div>
-            </div>
-          </div>
-          <div class="inpput-container-in-pratica">
-            <div id="div_elenc_doc_si">
-              <div class="select-label-container">
-                <label>Tipologia documentazione</label>
-                <select name="tipologia_documentazione" class="select-in-pratica" onchange="ControlAndShowCaseDoc('select_tipo_doc_si')" id="select_tipo_doc_si">
-                  <option value="Richiesta apertura osservazione IP">Richiesta apertura osservazione IP</option>
-                  <option value="Comunicazione IP permesso premio">Comunicazione IP permesso premio</option>
-                  <option value="Comunicazione IP di scarcerazione per concessione affidamento in prova">Comunicazione IP di scarcerazione per concessione affidamento in prova</option>
-                  <option value="Comunicazione IP di scarcerazione per concessione detenzione domiciliare">Comunicazione IP di scarcerazione per concessione detenzione domiciliare</option>
-                  <option value="Comunicazione IP di concessione semi-libertà">Comunicazione IP di concessione semi-libertà</option>
-                  <option value="Comunicazione IP  per concessione art. 21">Comunicazione IP  per concessione art. 21</option>
-                  <option value="Ordinanza TS detenzione domiciliare">Ordinanza TS detenzione domiciliare</option>
-                  <option value="Ordinanza TS Affidamento in prova provvisorio">Ordinanza TS Affidamento in prova provvisorio</option>
-                  <option value="Ordinanza TS Affidamento in prova notificata da FFOO">Ordinanza TS Affidamento in prova notificata da FFOO</option>
-                  <option value="Ratifica affidamento provvisorio notificata da FFOO">Ratifica affidamento provvisorio notificata da FFOO</option>
-                  <option value="Richiesta Tribunale di Sorveglianza per udienza">Richiesta Tribunale di Sorveglianza per udienza</option>
-                  <option value="Istanza MAP corredata da documentazione">Istanza MAP corredata da documentazione</option>
-                  <option value="Istanza MAP non corredata da tutta la documentazione necessaria">Istanza MAP non corredata da tutta la documentazione necessaria</option>
-                  <option value="Richiesta TO udienza per programma di trattamento MAP">Richiesta TO udienza per programma di trattamento MAP</option>
-                  <option value="Sentenza TO per LPU">Sentenza TO per LPU</option>
-                  <option value="Comunicazione Procura della Repubblica presso Tribunale di….">Comunicazione Procura della Repubblica presso Tribunale di….</option>
-                  <option value="Cartabia">Cartabia</option>
-                  <option value="Altro">Altro</option>
-                </select>
+          <div class="container_inputs_info_pratica_cases">
+            <div class="inpput-container-in-pratica" id="container_pervenuta_doc">
+              <div><label>Pervenuta documentazione</label></div>
+              <div class="label-checkbox-container">
+                <div>
+                  <input type="radio" name="pervenuta_documentazione" id="rad_perv_document_si"
+                    value="si, pervenuta documentazione" onclick="ControlAndShowCaseDoc('rad_perv_document_si')">
+                  <label for="rad_perv_document_si">SI</label>
+                </div>
+                <div>
+                  <input type="radio" name="pervenuta_documentazione" id="rad_perv_document_no"
+                    value="no, pervenuta documentazione" onclick="ControlAndShowCaseDoc('rad_perv_document_no')">
+                  <label for="rad_perv_document_no">NO</label>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="inpput-container-in-pratica">
-            <div id="div_doc_case_tribunale">
-              <input type="text" name="tribunale_doc_si" class="input-in-pratica" placeholder="Tribunale"
+            <div class="inpput-container-in-pratica">
+              <div id="div_elenc_doc_si">
+                <div class="select-label-container">
+                  <label>Tipologia documentazione</label>
+                  <select name="tipologia_documentazione" class="select-in-pratica"
+                    onchange="ControlAndShowCaseDoc('select_tipo_doc_si')" id="select_tipo_doc_si">
+                    <option value="Richiesta apertura osservazione IP">Richiesta apertura osservazione IP</option>
+                    <option value="Comunicazione IP permesso premio">Comunicazione IP permesso premio</option>
+                    <option value="Comunicazione IP di scarcerazione per concessione affidamento in prova">Comunicazione
+                      IP di scarcerazione per concessione affidamento in prova</option>
+                    <option value="Comunicazione IP di scarcerazione per concessione detenzione domiciliare">
+                      Comunicazione
+                      IP di scarcerazione per concessione detenzione domiciliare</option>
+                    <option value="Comunicazione IP di concessione semi-libertà">Comunicazione IP di concessione
+                      semi-libertà</option>
+                    <option value="Comunicazione IP  per concessione art. 21">Comunicazione IP per concessione art. 21
+                    </option>
+                    <option value="Ordinanza TS detenzione domiciliare">Ordinanza TS detenzione domiciliare</option>
+                    <option value="Ordinanza TS Affidamento in prova provvisorio">Ordinanza TS Affidamento in prova
+                      provvisorio</option>
+                    <option value="Ordinanza TS Affidamento in prova notificata da FFOO">Ordinanza TS Affidamento in
+                      prova
+                      notificata da FFOO</option>
+                    <option value="Ratifica affidamento provvisorio notificata da FFOO">Ratifica affidamento provvisorio
+                      notificata da FFOO</option>
+                    <option value="Richiesta Tribunale di Sorveglianza per udienza">Richiesta Tribunale di Sorveglianza
+                      per udienza</option>
+                    <option value="Istanza MAP corredata da documentazione">Istanza MAP corredata da documentazione
+                    </option>
+                    <option value="Istanza MAP non corredata da tutta la documentazione necessaria">Istanza MAP non
+                      corredata da tutta la documentazione necessaria</option>
+                    <option value="Richiesta TO udienza per programma di trattamento MAP">Richiesta TO udienza per
+                      programma di trattamento MAP</option>
+                    <option value="Sentenza TO per LPU">Sentenza TO per LPU</option>
+                    <option value="Comunicazione Procura della Repubblica presso Tribunale di….">Comunicazione Procura
+                      della Repubblica presso Tribunale di….</option>
+                    <option value="Cartabia">Cartabia</option>
+                    <option value="Altro">Altro</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="inpput-container-in-pratica">
+              <div id="div_doc_case_tribunale">
+                <input type="text" name="tribunale_doc_si" class="input-in-pratica" placeholder="Tribunale"
                   style="width: 100%; height: 30px;" />
-            </div>
-            <div id="div_doc_case_data">
-              <div class="select-label-container">
-                <label style="margin-left: 20px" id="label_data_sub_case2">Data udienza</label>
-                <input type="date" name="data_udienza_doc_si" class="input-in-pratica"
-                  style="margin-left: -10%;width: 80%; height: 30px;" />
+              </div>
+              <div id="div_doc_case_data">
+                <div class="select-label-container">
+                  <label style="margin-left: 20px" id="label_data_sub_case2">Data udienza</label>
+                  <input type="date" name="data_udienza_doc_si" class="input-in-pratica"
+                    style="margin-left: -10%;width: 80%; height: 30px;" />
+                </div>
+              </div>
+              <div id="div_doc_case_altro">
+                <input type="text" name="altro_doc_si" class="input-in-pratica" placeholder="Altro"
+                  style="width: 100%; height: 30px;" />
               </div>
             </div>
-            <div id="div_doc_case_altro">
-              <input type="text" name="altro_doc_si" class="input-in-pratica" placeholder="Altro"
-                  style="width: 100%; height: 30px;" />
+            <div class="inpput-container-in-pratica">
+              <div id="div_doc_case_prog_tratt_map">
+                <div class="select-label-container">
+                  <label>Relazione conclusiva</label>
+                  <select name="relazione_conculiva_tratt_map" class="select-in-pratica">
+                    <option value="seleziona">--- Seleziona ---</option>
+                    <option value="Relazione conclusiva MAP">Relazione conclusiva MAP</option>
+                    <option value="Relazione conclusiva LPU">Relazione conclusiva LPU</option>
+                  </select>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="inpput-container-in-pratica">
-            <div id="div_doc_case_prog_tratt_map">
-              <div class="select-label-container">
-                <label>Relazione conclusiva</label>
-                <select name="relazione_conculiva_tratt_map" class="select-in-pratica" id="select_relazione_conclusiva">
-                  <option value="seleziona">--- Seleziona ---</option>
-                  <option value="Relazione conclusiva MAP">Relazione conclusiva MAP</option>
-                  <option value="Relazione conclusiva LPU">Relazione conclusiva LPU</option>
-                </select>
+            <hr class="inner-hr">
+            <div class="inpput-container-in-pratica">
+              <div id="div_proc_lavoro_succ_doc_si">
+                <div class="select-label-container">
+                  <label>Processo di lavoro</label>
+                  <select name="processo_lavoro_successivo_doc_si" class="select-in-pratica"
+                    onchange="ControlAndShowCaseDoc('select_proc_lavoro_succ_doc_si')"
+                    id="select_proc_lavoro_succ_doc_si">
+                    <option value="seleziona">--- Seleziona ---</option>
+                    <option value="Segnalazione a capo area\team per assegnazione">Segnalazione a capo area\team per
+                      assegnazione</option>
+                    <option value="Segnalazione a capo area\team per assegnazione urgente">Segnalazione a capo area\team
+                      per assegnazione urgente</option>
+                    <option value="Segnalazione capo area/team per competenza (occorre inviare note a AG\IIPP..)">
+                      Segnalazione capo area/team per competenza (occorre inviare note a AG\IIPP..)</option>
+                    <option value="Fornito appuntamento sottoscrizione AP">Fornito appuntamento sottoscrizione AP
+                    </option>
+                    <option value="Fornito appuntamento sottoscrizione MAP">Fornito appuntamento sottoscrizione MAP
+                    </option>
+                    <option value="Eseguita comunicazione IP per avvenuto contatto detenuto permessante">Eseguita
+                      comunicazione IP per avvenuto contatto detenuto permessante</option>
+                    <option
+                      value="Segnalazione segreteria tecnica  per competenza / per invio documenti (Sollecito procedimenti)">
+                      Segnalazione segreteria tecnica per competenza / per invio documenti (Sollecito procedimenti)
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="inpput-container-in-pratica">
+              <div id="div_proc_lavoro_succ_doc_no">
+                <div class="select-label-container">
+                  <label>Processo di lavoro</label>
+                  <select name="processo_lavoro_successivo_doc_no" class="select-in-pratica"
+                    id="select_proc_lavoro_succ_doc_no">
+                    <option value="seleziona">--- Seleziona ---</option>
+                    <option value="Il richiedente invierà\rinvierà la documentazione non pervenuta">Il richiedente
+                      invierà\rinvierà la documentazione non pervenuta</option>
+                    <option value="Eseguita comunicazione IP per avvenuto contatto detenuto permessante">Eseguita
+                      comunicazione IP per avvenuto contatto detenuto permessante</option>
+                    <option
+                      value="Occorre richiedere formalmente documentazione mancante per assegnazione: invio a capo area\team">
+                      Occorre richiedere formalmente documentazione mancante per assegnazione: invio a capo area\team
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="inpput-container-in-pratica">
+              <div id="div_doc_processo_lavoro_data_si">
+                <div class="select-label-container">
+                  <label style="margin-left: 20px" id="label_data_sub_case2">Data appuntamento</label>
+                  <input type="date" name="data_appuntamento_processo_lav_si" class="input-in-pratica"
+                    style="margin-left: -10%;width: 80%; height: 30px;" />
+                </div>
               </div>
             </div>
           </div>
@@ -1023,14 +1094,10 @@
       document.getElementById("select_case_non_in_carico").selectedIndex = 0;
       document.getElementById("select_invio_com").selectedIndex = 0;
     }
-
-
   }
-
   function ChangePage(page_path) {
     window.location = page_path;
   }
-  //#174384
 </script>
 
 </html>

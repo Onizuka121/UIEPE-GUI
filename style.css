@@ -618,7 +618,7 @@ hr {
 
 #div_sub_cases_2,#div_sub_cases_2_1{
   display: none;
-  width: 40%;
+  width: 45%;
   
 }
 #div_sub_cases_2_1{
@@ -630,13 +630,17 @@ hr {
   margin-right: 0%;
 }
 #div_sub_cases_4{
+  background-color: #1f509a1f;
+  border-radius: 15px;
   flex-direction: column;
   width: 100%;
   margin-top: -4%;
+  align-items: center;
+  align-content: center;
 }
 #div_sub_cases_4 div , #div_sub_cases_4_2 div{
   flex-direction: column;
-  width: 40%;
+  width: 45%;
   
 }
 #div_sub_cases_4_1,#div_sub_cases_4_2{
@@ -695,17 +699,20 @@ hr {
   width: 54%;
   
 }
-#div_elenc_doc_si div{
+#div_elenc_doc_si div , #div_proc_lavoro_succ_doc_si div , #div_proc_lavoro_succ_doc_no div{
   width: 100%;
 }
 
-#div_doc_case_data{
+#div_doc_case_data , #div_doc_processo_lavoro_data_si{
   display: none;
   width: 60%;
 }
-#div_doc_case_altro , #div_doc_case_tribunale{
+#div_doc_case_altro , #div_doc_case_tribunale , #div_proc_lavoro_succ_doc_si , #div_proc_lavoro_succ_doc_no{
   display: none;
   width: 50%;
+}
+#div_proc_lavoro_succ_doc_si , #div_proc_lavoro_succ_doc_no{
+  width: 85%; 
 }
 
 #div_doc_case_prog_tratt_map{
@@ -715,6 +722,10 @@ hr {
 #div_elenc_doc_si{
   display: none;
 }
+
+
+
+
 
 
 /*------------------- INIZIO RESPONSIVE PER SCHERMI CON ALTEZZA MASSIMA 900px  ------------------------------------*/
@@ -739,6 +750,11 @@ hr {
   #altro_div2{
     margin-top: 2%;
   }
+
+  #div_sub_cases_4{
+    width: 100%;
+  }
+
   #div_elenc_doc_si{
     width: 67%;
     

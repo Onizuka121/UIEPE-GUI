@@ -221,6 +221,7 @@ let divs_case_doc = [
   "div_doc_case_prog_tratt_map",
   "div_doc_case_tribunale",
   "div_doc_case_altro",
+  "div_elenc_doc_si"
 ];
 
 function ControlAndShowCaseDoc(id_el_to_show){
@@ -228,9 +229,40 @@ function ControlAndShowCaseDoc(id_el_to_show){
   let value = document.getElementById(id_el_to_show).value;
   value = value.trim();
 
+  if(id_el_to_show == "select_proc_lavoro_succ_doc_si"){
+    if(value == "Fornito appuntamento sottoscrizione AP" || value == "Fornito appuntamento sottoscrizione MAP" ){
+      document.getElementById("div_doc_processo_lavoro_data_si").style.display = "flex";
+      document.getElementById("div_proc_lavoro_succ_doc_si").style.display = "flex";
+      return;
+    }
+
+    document.getElementById("div_doc_processo_lavoro_data_si").style.display = "none";
+
+    return;
+  }
+
   divs_case_doc.forEach(function (div_id){
     document.getElementById(div_id).style.display = "none";
   });
+
+  if(value == "si, pervenuta documentazione"){
+    document.getElementById("div_elenc_doc_si").style.display = "flex";
+    document.getElementById("div_proc_lavoro_succ_doc_si").style.display = "flex";
+    document.getElementById("div_proc_lavoro_succ_doc_no").style.display = "none";
+    //hide div of no 
+    return;
+  }
+
+  if(value == "no, pervenuta documentazione"){
+    document.getElementById("div_proc_lavoro_succ_doc_si").style.display = "none";
+    document.getElementById("div_proc_lavoro_succ_doc_no").style.display = "flex";
+    document.getElementById("div_doc_processo_lavoro_data_si").style.display = "none";
+    document.getElementById("select_proc_lavoro_succ_doc_si").selectedIndex = 0;
+    document.getElementById("select_tipo_doc_si").selectedIndex = 0;
+    return;
+  }
+
+  
 
   if(value == "Richiesta TO udienza per programma di trattamento MAP"){
     document.getElementById("div_doc_case_data").style.display = "flex";
@@ -239,6 +271,7 @@ function ControlAndShowCaseDoc(id_el_to_show){
 
   if(value == "Comunicazione Procura della Repubblica presso Tribunale di…."){
     document.getElementById("div_doc_case_tribunale").style.display = "flex";
+   
   }
   if(value == "Richiesta Tribunale di Sorveglianza per udienza"){
     document.getElementById("div_doc_case_data").style.display = "flex";
@@ -246,6 +279,9 @@ function ControlAndShowCaseDoc(id_el_to_show){
   if(value == "Altro"){
     document.getElementById("div_doc_case_altro").style.display = "flex";
   }
+
+  document.getElementById("div_elenc_doc_si").style.display = "flex";
+ 
 
 }
 
