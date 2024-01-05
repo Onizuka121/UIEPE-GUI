@@ -413,13 +413,13 @@ body {
 .status-cont {
   display: flex;
   text-align: center;
-  flex-direction: row;
-  align-self: center;
+  align-items: center;
   justify-content: center;
-  width: 60%;
+  align-self: center;
   margin: 0 auto;
+  width: 60%;
   height: 60%;
-  padding: 2%;
+  padding: 1%;
   border-radius: 25px;
   background-color: rgba(0, 128, 0, 0.561);
 }
@@ -587,49 +587,55 @@ hr {
   display: inline;
 }
 
-#input-radio-case-id{
+#input-radio-case-id {
   display: flex;
   flex-direction: column;
 }
-#input-radio-case-id div{
+#input-radio-case-id div {
   gap: 10%;
 }
-#container-cases{
+#container-cases {
   width: 60%;
   height: 70px;
 }
-#container-cases div div{
+#container-cases div div {
   width: 80%;
 }
 
-#container-cases select , #div_sub_cases_6 select{
+#container-cases select,
+#div_sub_cases_6 select {
   height: 40px;
   width: 100%;
 }
 
-#case_in_carico, #case_non_in_carico,#div_sub_cases_1{
+#case_in_carico,
+#case_non_in_carico,
+#div_sub_cases_1 {
   display: none;
   width: 95%;
 }
 
-#div_sub_cases_1{
+#div_sub_cases_1 {
   width: 50%;
 }
 
-#div_sub_cases_2,#div_sub_cases_2_1{
+#div_sub_cases_2,
+#div_sub_cases_2_1 {
   display: none;
   width: 45%;
-  
 }
-#div_sub_cases_2_1{
+#div_sub_cases_2_1 {
   margin-right: 0%;
 }
-#div_sub_cases_3,#div_sub_cases_4,#div_sub_cases_5,#div_sub_cases_6{
+#div_sub_cases_3,
+#div_sub_cases_4,
+#div_sub_cases_5,
+#div_sub_cases_6 {
   display: none;
   width: 70%;
   margin-right: 0%;
 }
-#div_sub_cases_4{
+#div_sub_cases_4 {
   background-color: #1f509a1f;
   border-radius: 15px;
   flex-direction: column;
@@ -638,95 +644,228 @@ hr {
   align-items: center;
   align-content: center;
 }
-#div_sub_cases_4 div , #div_sub_cases_4_2 div{
+#div_sub_cases_4 div,
+#div_sub_cases_4_2 div {
   flex-direction: column;
   width: 45%;
-  
 }
-#div_sub_cases_4_1,#div_sub_cases_4_2{
+#div_sub_cases_4_1,
+#div_sub_cases_4_2 {
   display: none;
   margin: 0 auto;
   width: 100%;
 }
 
-#div_sub_cases_6{
+#div_sub_cases_6 {
   width: 30%;
 }
-#info_ge{
+#info_ge {
   gap: 0%;
 }
 
-#div_sub_cases_5 div{
+#div_sub_cases_5 div {
   width: 50%;
 }
-#div_sub_cases_6 div{
+#div_sub_cases_6 div {
   width: 70%;
 }
 
-
-#altro_div2 ,#altro_div6{
+#altro_div2,
+#altro_div6 {
   display: none;
   width: 60%;
   margin-top: 1.5%;
 }
-#container_div_sub_cases{
+#container_div_sub_cases {
   display: flex;
   flex-direction: column;
 }
 
-.container_inputs_info_pratica_cases{
+.container_inputs_info_pratica_cases {
   width: 90%;
   display: block;
   border-radius: 10px;
   background-color: #90aad62e;
   padding: 2%;
-  
 }
 
-#container_pervenuta_doc{
+#container_pervenuta_doc {
   flex-direction: column;
 }
 
-#container_pervenuta_doc div{
+#container_pervenuta_doc div {
   width: 30%;
 }
 
-#container_pervenuta_doc label{
+#container_pervenuta_doc label {
   font-size: larger;
 }
 
-#div_elenc_doc_si{
+#div_elenc_doc_si {
   width: 54%;
-  
 }
-#div_elenc_doc_si div , #div_proc_lavoro_succ_doc_si div , #div_proc_lavoro_succ_doc_no div{
+#div_elenc_doc_si div,
+#div_proc_lavoro_succ_doc_si div,
+#div_proc_lavoro_succ_doc_no div {
   width: 100%;
 }
 
-#div_doc_case_data , #div_doc_processo_lavoro_data_si{
+#div_doc_case_data,
+#div_doc_processo_lavoro_data_si {
   display: none;
   width: 60%;
 }
-#div_doc_case_altro , #div_doc_case_tribunale , #div_proc_lavoro_succ_doc_si , #div_proc_lavoro_succ_doc_no{
+#div_doc_case_altro,
+#div_doc_case_tribunale,
+#div_proc_lavoro_succ_doc_si,
+#div_proc_lavoro_succ_doc_no {
   display: none;
   width: 50%;
 }
-#div_proc_lavoro_succ_doc_si , #div_proc_lavoro_succ_doc_no{
-  width: 85%; 
+#div_proc_lavoro_succ_doc_si,
+#div_proc_lavoro_succ_doc_no {
+  width: 85%;
 }
 
-#div_doc_case_prog_tratt_map{
+#div_doc_case_prog_tratt_map {
   display: none;
   width: 65%;
 }
-#div_elenc_doc_si{
+#div_elenc_doc_si {
   display: none;
 }
 
+/*------------------- STYLE DETTAGLI RICHIESTA ---------------*/
 
+.container-main-dettagli-pratica {
+  margin: 0 auto;
+  width: 65%;
+  margin-top: 4%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 2%;
+  color: #174384;
+  height: 730px;
+  overflow: auto;
+}
+.span-siepe-div-inner {
+  display: flex;
+  height: 50px;
+  flex-direction: row;
+}
 
+#id-siepe-div ,#id-siepe-div2{
+  flex-direction: row;
+  height: auto;
+  gap: 40%;
+  width: 40%;
+  align-items: center;
+  justify-self: right;
+}
+#id-siepe-div2{
+  width: 35%;
+}
 
+.span-dettagli-pratica {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 60%;
+  font-size: 160%;
+}
 
+.span-hr-dettagli-pratica {
+  width: 97%;
+  margin: 0 auto;
+}
+
+.hr-dettagli-pratica {
+  width: 100%;
+  background-color: #092147;
+  color: #092147;
+  border: none;
+}
+.container-intervento-info {
+  width: auto;
+  padding: 1%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  gap: 1%;
+  font-size: 120%;
+  margin-left: 2%;
+}
+.inf-intervento,
+.inf-intervento-with-verificato {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  min-width: 20%;
+  padding: 2%;
+  background-color: #90aad612;
+  border-radius: 10px;
+  gap: 10px;
+}
+
+.inf-intervento-with-verificato {
+  width: 100%;
+  min-width: none;
+  background-color: #90aad600;
+}
+
+.verification , .verification-info{
+  width: 7%;
+  background-image: url("icons8-verificato-25.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.verification-info{
+  width: 40%;
+  background-image: url("icons8-informazioni-64.png");
+  cursor: pointer;
+}
+#div-inner-info-button{
+  display: flex; 
+  cursor: pointer;
+  padding: 1.5%;
+  width:  auto; 
+  height: 30px;
+  color: #f5f5f5;
+  background-color: #1f519a;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.inf-intervento div {
+  justify-self: left;
+}
+.title-info {
+  width: 100%;
+  color: #00000060;
+}
+.info {
+  color: #174384;
+  font-size: 122%;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+}
+
+#tcsc{
+  width: 100%;
+  font-size: 80%;
+  padding: 0%;
+}
+#tcsc div{
+  margin: 0%;
+  width: 90%;
+  justify-content: center;
+  align-content: center;
+  padding: 5%;
+}
+
+/*------------------- FINE STYLE RICHIESTA -------------------*/
 
 /*------------------- INIZIO RESPONSIVE PER SCHERMI CON ALTEZZA MASSIMA 900px  ------------------------------------*/
 
@@ -737,30 +876,29 @@ hr {
   .home-page-richieste {
     height: 300px;
   }
-  #container-cases div div{
+  #container-cases div div {
     width: 100%;
   }
-  #div_sub_cases_5 div{
+  #div_sub_cases_5 div {
     width: 100%;
   }
-  #altro_div6{
+  #altro_div6 {
     margin-top: 5%;
-    
   }
-  #altro_div2{
+  #altro_div2 {
     margin-top: 2%;
   }
 
-  #div_sub_cases_4{
+  #div_sub_cases_4 {
     width: 100%;
   }
 
-  #div_elenc_doc_si{
+  #div_elenc_doc_si {
     width: 67%;
-    
+  }
+  .container-main-dettagli-pratica {
+    height: 550px;
   }
 }
 
 /*------------------- FINE RESPONSIVE  ------------------------------------*/
-
-

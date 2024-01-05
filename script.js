@@ -43,6 +43,8 @@ let id_divs_parent_with_radio = [
   "rad_per_ord_rat",
 ];
 
+
+
 function ControlAndShowSubCase(id_element, id_div_optional_to_keep = null) {
   id_element = id_element.trim();
   let value = document.getElementById(id_element).value;
@@ -192,9 +194,7 @@ let id_divs = [
   "div_sub_cases_5",
   "div_sub_cases_6",
   "altro_div6"
-
 ];
-
 function Show_$_Hide(
   id_div_to_show = null,
   id_div_to_keep = null,
@@ -214,7 +214,6 @@ function Show_$_Hide(
     }
   }
 }
-
 
 let divs_case_doc = [
   "div_doc_case_data",
