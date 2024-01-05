@@ -865,6 +865,48 @@ hr {
   padding: 5%;
 }
 
+.container-informazioni-pratica{
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin: 0 auto;
+  height: 100%;
+  color: #092147;
+  font-size: 120%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 1%;
+  gap: 10px;
+}
+
+.row-title-info,.row-info{
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  background-color: #4e7bbe52;
+  padding: 2%;
+  align-items: center;
+  height: 30px;
+}
+.row-info{
+  background-color: #f5f5f5;
+  height: 20px;
+}
+
+.row-camp-info{
+  width: 50%;
+}
+
+.row-value-info{
+  width: 50%;
+  font-size: 90%;
+}
+
+.hr-info-pratica{
+  width: 99%;
+  height: 1px;
+  background-color: #17438470;
+}
+
 /*------------------- FINE STYLE RICHIESTA -------------------*/
 
 /*------------------- INIZIO RESPONSIVE PER SCHERMI CON ALTEZZA MASSIMA 900px  ------------------------------------*/
