@@ -89,7 +89,7 @@
     </div>
 
     <div class="home-page-richieste" id="home_richieste">
-      <div class="richiesta-short">
+      <div class="richiesta-short" onclick="window.location.href = 'dettagli.html'">
         <div class="type-container">
           <p>Appuntamento Map</p>
         </div>
@@ -295,7 +295,7 @@
                 justify-content: center;
                 gap: 10%;
               ">
-            <button type="reset" class="btn2">ANNULLA</button>
+            <button type="reset" class="btn2" onclick="ShowContainer('home_btn_id',true)">ANNULLA</button>
             <button type="button" class="btn2" onclick="ViewContainerInPratica('dati_richiedente' , 'dati_assistito')">
               AVANTI
             </button>
@@ -511,7 +511,7 @@
             <button type="button" class="btn2" onclick="ViewContainerInPratica('dati_assistito' , 'dati_richiedente')">
               INDIETRO
             </button>
-            <button type="reset" class="btn2">ANNULLA</button>
+            <button type="reset" class="btn2" onclick="ShowContainer('home_btn_id',true)">ANNULLA</button>
             <button type="button" class="btn2" onclick="ViewContainerInPratica('dati_assistito' , 'dati_pratica')">
               AVANTI
             </button>
@@ -1012,7 +1012,7 @@
             <button type="button" class="btn2" onclick="ViewContainerInPratica('dati_pratica' , 'dati_assistito')">
               INDIETRO
             </button>
-            <button type="reset" class="btn2">ANNULLA</button>
+            <button type="reset" class="btn2" onclick="ShowContainer('home_btn_id',true)">ANNULLA</button>
             <button type="button" class="btn2" onclick="ViewContainerInPratica('dati_pratica' , 'riepilogo')">
               FINE
             </button>
@@ -1021,6 +1021,22 @@
         <div class="dati-container" id="riepilogo">
           <span class="title-div-span">RIEPILOGO SCHEDA</span>
           <hr />
+
+
+          <div class="input-container" style="
+                align-self: center;
+                width: 70%;
+                justify-content: center;
+                gap: 10%;
+              ">
+            <button type="button" class="btn2" onclick="ViewContainerInPratica('riepilogo' , 'dati_pratica')">
+              INDIETRO
+            </button>
+            <button type="reset" class="btn2" onclick="ShowContainer('home_btn_id',true)">ANNULLA</button>
+            <button type="button" class="btn2" onclick="ShowContainer('home_btn_id',true)">
+              CHIUDI
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -1042,7 +1058,7 @@
   let btn_nav_home = document.getElementById("home_btn_id");
   window.onload = btn_nav_home.style.backgroundColor = "#90AAD6";
 
-  function ShowContainer(id) {
+  function ShowContainer(id, close = false) {
     let btn_div = document.getElementById(id);
     btn_div.style.backgroundColor = "#90AAD6";
 
@@ -1052,9 +1068,16 @@
       document.getElementById("home_richieste").style.display = "flex";
       document.getElementById("crc").style.display = "block";
       document.getElementById("crc_container").style.display = "block";
-
       document.getElementById("insert_pratica_id").style.display = "none";
       document.getElementById("inser_pra_container_id").style.display = "none";
+      if (close) {
+        div_main.forEach(function (id) {
+          if (id != "dati_richiedente") {
+            document.getElementById(id).style.display = "none";
+          }
+        });
+        document.getElementById("dati_richiedente").style.display = "flex";
+      }
     } else {
       btn_nav_home.style.backgroundColor = "#174384";
       //nascondi la view della home e mostra view dell'inserisci pratica
@@ -1063,6 +1086,8 @@
       document.getElementById("home_richieste").style.display = "none";
       document.getElementById("crc").style.display = "none";
       document.getElementById("crc_container").style.display = "none";
+      
+
     }
   }
 

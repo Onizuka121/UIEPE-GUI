@@ -12,4 +12,13 @@ select -> "perventa_ord_affidamento_FFOO"
 
 
 
+
+
+
+
+
+//REVIEW CODE 
+    -SE SI DEVE UTILIZZARE UN window.location usare la funziona dichiarata -> ChangePage(page_path)
+    -
+
            
