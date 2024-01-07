@@ -11,14 +11,30 @@ select -> "perventa_ord_tribunale_FFOO"
 select -> "perventa_ord_affidamento_FFOO"
 
 
+citta_qualita -> endsWith("di") (posizione giuridica)
+dettagli_qualita -> altro posizione giuridica
 
+nome_assistito
+cognome_assistito
+luogo_nascita_assistito
+data_nascita_assistito
 
+posizione_giuridica_assistito
+altro_posizione_giuridica
+pos_verificata
+istituto_detenzione_assistito
+id -> altro_div_ist -> controllare name input
+ist_verificato
 
+indirizzo_assistito
+citta_assistito
+cap_assistito
+provincia_assistito
+email_assistito
+telefono_assistito
 
-
-
-//REVIEW CODE 
+//###### ---------->   REVIEW CODE
     -SE SI DEVE UTILIZZARE UN window.location usare la funziona dichiarata -> ChangePage(page_path)
-    -
+    -ELIMINARE LE PARTI DI CODICE HTML E JS COME "di......." e sotiture con "di"
 
            

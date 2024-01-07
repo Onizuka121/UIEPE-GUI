@@ -224,8 +224,8 @@
           <span class="title-div-span">DATI RICHIEDENTE</span>
           <hr />
           <div class="inpput-container-in-pratica">
-            <input type="text" name="nome" class="input-in-pratica" placeholder="Inserisci nome" />
-            <input type="text" name="cognome" class="input-in-pratica" placeholder="Inserisci cognome" />
+            <input type="text" name="nome_richiedente" class="input-in-pratica" placeholder="Inserisci nome" />
+            <input type="text" name="cognome_richiedente" class="input-in-pratica" placeholder="Inserisci cognome" />
           </div>
 
           <div class="inpput-container-in-pratica">
@@ -282,8 +282,9 @@
           <span class="title-div-span">Contatti</span>
           <hr />
           <div class="inpput-container-in-pratica">
-            <input type="email" name="email" class="input-in-pratica" placeholder="Inserisci indirizzo email" />
-            <input type="tel" name="telefono" class="input-in-pratica" placeholder="Inserisci telefono"
+            <input type="email" name="email_richiedente" class="input-in-pratica"
+              placeholder="Inserisci indirizzo email" />
+            <input type="tel" name="telefono_richiedente" class="input-in-pratica" placeholder="Inserisci telefono"
               maxlength="10" />
           </div>
           <br>
@@ -305,24 +306,25 @@
           <span class="title-div-span">DATI ASSISTITO</span>
           <hr />
           <div class="inpput-container-in-pratica">
-            <input type="text" name="nome" class="input-in-pratica" placeholder="Inserisci nome" />
-            <input type="text" name="cognome" class="input-in-pratica" placeholder="Inserisci cognome" />
+            <input type="text" name="nome_assistito" class="input-in-pratica" placeholder="Inserisci nome" />
+            <input type="text" name="cognome_assistito" class="input-in-pratica" placeholder="Inserisci cognome" />
             <input type="text" name="id_siepe" class="input-in-pratica" placeholder="ID-SIEPE" style="width: 10%;">
           </div>
           <div class="inpput-container-in-pratica">
-            <input type="text" name="luogo-nascita" class="input-in-pratica" placeholder="Inserisci luogo di nascita"
-              style="width: 25%; margin-top: 10px;" />
+            <input type="text" name="luogo_nascita_assistito" class="input-in-pratica"
+              placeholder="Inserisci luogo di nascita" style="width: 25%; margin-top: 10px;" />
             <div class="select-label-container">
               <label style="margin-left: 20px">Data di nascita</label>
-              <input type="date" name="data-nascita" class="input-in-pratica" style="margin-left: -50%;width: 40%;" />
+              <input type="date" name="data_nascita_assistito" class="input-in-pratica"
+                style="margin-left: -50%;width: 40%;" />
             </div>
           </div>
           <hr class="inner-hr">
           <div class="inpput-container-in-pratica">
             <div class="select-label-container">
               Posizione giuridica
-              <select name="posizione_giuridica" class="select-in-pratica" id="pos_giuridica" style="width: 30%;"
-                onchange="ShowAltro('')">
+              <select name="posizione_giuridica_assistito" class="select-in-pratica" id="pos_giuridica"
+                style="width: 30%;" onchange="ShowAltro()">
                 <option value="definitivo">Definitivo</option>
                 <option value="imputato">Imputato</option>
                 <option value="LPU">LPU</option>
@@ -332,7 +334,7 @@
             </div>
             <div id="altro_div"></div>
             <div class="label-checkbox-container" style="margin-left: 5%;">
-              <input type="checkbox" name="verificata" id="chck_ver" value="Verificata"><label
+              <input type="checkbox" name="pos_verificata" id="chck_ver" value="Verificata"><label
                 for="chck_ver">Verificata</label>
             </div>
           </div>
@@ -340,8 +342,8 @@
           <div class="inpput-container-in-pratica">
             <div class="select-label-container">
               Istituto di detenzione
-              <select name="posizione_giuridica" class="select-in-pratica" id="ist_detenzione" style="width: 60%;"
-                onchange="ShowAltro('ist')">
+              <select name="istituto_detenzione_assistito" class="select-in-pratica" id="ist_detenzione"
+                style="width: 60%;" onchange="ShowAltro('ist')">
                 <option value="C.C. Regina Coeli">C.C. Regina Coeli</option>
                 <option value="C.C. N. C. Rebibbia">C.C. N. C. Rebibbia</option>
                 <option value="C.R. Rebibbia">C.R. Rebibbia</option>
@@ -355,22 +357,22 @@
             </div>
             <div id="altro_div_ist" style="margin-left: -20%;"></div>
             <div class="label-checkbox-container">
-              <input type="checkbox" name="ist_verificata" id="chck_ver_ist" value="Istituto verificato">
+              <input type="checkbox" name="ist_verificato" id="chck_ver_ist" value="Istituto verificato">
               <label for="chck_ver_ist">Istituto verificato</label>
             </div>
           </div>
           <span class="title-div-span">Residenza</span>
           <hr />
           <div class="inpput-container-in-pratica">
-            <input type="text" name="indirizzo" class="input-in-pratica"
+            <input type="text" name="indirizzo_assistito" class="input-in-pratica"
               placeholder="Inserisci indirizzo es ( Via Ostiense , 131 )" style="width: 50%;" />
-            <input type="text" name="cognome" class="input-in-pratica" placeholder="Città"
+            <input type="text" name="citta_assistito" class="input-in-pratica" placeholder="Città"
               style="width: 20%; margin-top: 0px;" />
-            <input type="text" name="cap" class="input-in-pratica" placeholder="CAP"
+            <input type="text" name="cap_assistito" class="input-in-pratica" placeholder="CAP"
               style="width: 7%; margin-top: 0px;" />
             <div class="select-label-container" id="select_provincie">
               <label>Provincia</label>
-              <select name="provincia" class="select-in-pratica" style="width: 55%;">
+              <select name="provincia_assistito" class="select-in-pratica" style="width: 55%;">
                 <option value="Agrigento">Agrigento</option>
                 <option value="Alessandria">Alessandria</option>
                 <option value="Ancona">Ancona</option>
@@ -494,9 +496,9 @@
           <span class="title-div-span">Contatti</span>
           <hr />
           <div class="inpput-container-in-pratica">
-            <input type="email" name="email_assistito" class="input-in-pratica"
+            <input type="email_assistito" name="email_assistito" class="input-in-pratica"
               placeholder="Inserisci indirizzo email" />
-            <input type="tel" name="telefono_assistito" class="input-in-pratica" placeholder="Inserisci telefono"
+            <input type="tel" name="telefono_assistito" class="input-in-pratica" placeholder="Inserisci telefono" maxlength="10"
               style="width: 20%;">
           </div>
           <br>
@@ -666,7 +668,7 @@
               <div class="label-checkbox-container">
                 <div>
                   <input type="radio" name="tipo_persona_pratica" id="rad_persona_incarico" value="Persona in carico"
-                    onclick="ViewContainerInPratica('case_non_in_carico','case_in_carico')">
+                    onclick="ViewContainerInPratica('case_non_in_carico','case_in_carico')" checked>
                   <label for="rad_persona_incarico">PERSONA IN CARICO</label>
                 </div>
                 <div>
@@ -1021,8 +1023,9 @@
         <div class="dati-container" id="riepilogo">
           <span class="title-div-span">RIEPILOGO SCHEDA</span>
           <hr />
-
-
+          <div id="container-riepilogo">
+          </div>
+          <br>
           <div class="input-container" style="
                 align-self: center;
                 width: 70%;
@@ -1041,7 +1044,6 @@
       </div>
     </div>
   </div>
-
   <!-- FOOTER -->
 </body>
 
@@ -1086,12 +1088,10 @@
       document.getElementById("home_richieste").style.display = "none";
       document.getElementById("crc").style.display = "none";
       document.getElementById("crc_container").style.display = "none";
-      
+
 
     }
   }
-
-
   function ShowInput() {
     let div_to_inner = document.getElementById("qualita_container_id");
     let valore = document.getElementById("select_in_pratica_id").value;
@@ -1101,7 +1101,7 @@
       return;
     }
     if (valore.endsWith("Altro")) {
-      div_to_inner.innerHTML = '<input type="text" name="dettagli" class="input-in-pratica" placeholder="Altro" style="width: 50%; margin-bottom: -20px" />'
+      div_to_inner.innerHTML = '<input type="text" name="dettagli_qualita" class="input-in-pratica" placeholder="Altro" style="width: 50%; margin-bottom: -20px" />'
       return;
     }
     div_to_inner.innerHTML = '';
@@ -1119,7 +1119,196 @@
       document.getElementById("select_case_non_in_carico").selectedIndex = 0;
       document.getElementById("select_invio_com").selectedIndex = 0;
     }
+
+    if (id_show == "riepilogo") {
+
+
+      let valore_citta = document.getElementsByName("qualita")[0].value;
+
+      if(document.getElementsByName("dettagli_qualita")[0] != null){
+        valore_citta = document.getElementsByName("dettagli_qualita")[0].value;
+      }else if(document.getElementsByName("citta_qualita")[0] != null){
+        valore_citta += " "+document.getElementsByName("citta_qualita")[0].value;
+      }
+
+      let valore_pos_giu_ass_altro = 
+      (document.getElementsByName("posizione_giuridica_assistito")[0].value == "altro")
+       ? 
+       document.getElementsByName("altro_posizione_giuridica")[0].value 
+       : 
+       document.getElementsByName("posizione_giuridica_assistito")[0].value;
+
+      let image_verificato_pos = "icons8-x-25.png";
+
+      if(document.getElementsByName("pos_verificata")[0].checked){
+        image_verificato_pos = "icons8-verificato-25.png";
+      }
+
+      let valore_ist_altro = 
+      (document.getElementsByName("istituto_detenzione_assistito")[0].value == "altro istituto")
+       ? 
+       document.getElementsByName("altro_ist_detenzione")[0].value 
+       : 
+       document.getElementsByName("istituto_detenzione_assistito")[0].value;
+
+       let image_verificato_ist = (document.getElementsByName("ist_verificato")[0].checked) 
+       ? "icons8-verificato-25.png" : "icons8-x-25.png";
+
+      document.getElementById("container-riepilogo").innerHTML =
+        ` 
+        <div class="row-title-info">
+            Dati del richiedente
+          </div>
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Nome
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("nome_richiedente")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Cognome
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("cognome_richiedente")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Qualità
+                </div>
+                <div class="row-value-info">
+                  `+ valore_citta + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Email
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("email_richiedente")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Telefono
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("telefono_richiedente")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica"><br>
+        <div class="row-title-info">
+            Dati del'assistito
+        </div>
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Nome
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("nome_assistito")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Cognome
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("cognome_assistito")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Luogo di nascita
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("luogo_nascita_assistito")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Data di nascita
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("data_nascita_assistito")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Posizione giuridica
+                </div>
+                <div class="row-value-info">
+                  `+valore_pos_giu_ass_altro+ `
+                </div>
+                
+                <div class="verification" style="height: 25px; width: 3.5%; background-image: url(`+image_verificato_pos+`); margin-left:20px;">
+               </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Istituto di detenzione
+                </div>
+                <div class="row-value-info">
+                  `+valore_ist_altro+ `
+                </div>
+                
+                <div class="verification" style="height: 25px; width: 3.5%; background-image: url(`+image_verificato_ist+`); margin-left:20px;">
+               </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Indirizzo di residenza
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("indirizzo_assistito")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Citta di residenza
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("citta_assistito")[0].value
+                  +" ("+document.getElementsByName("provincia_assistito")[0].value + ")"
+                  +" - "+document.getElementsByName("cap_assistito")[0].value +`
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Email
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("email_assistito")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Telefono
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("telefono_assistito")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">`;
+    }
   }
+
+
   function ChangePage(page_path) {
     window.location = page_path;
   }

@@ -608,10 +608,12 @@ hr {
   width: 100%;
 }
 
-#case_in_carico,
 #case_non_in_carico,
 #div_sub_cases_1 {
   display: none;
+  width: 95%;
+}
+#case_in_carico{
   width: 95%;
 }
 
@@ -927,6 +929,10 @@ hr {
   
 }
 
+#container-riepilogo{
+  font-size: 125%;
+}
+
 /*------------------- FINE STYLE RICHIESTA -------------------*/
 
 /*------------------- INIZIO RESPONSIVE PER SCHERMI CON ALTEZZA MASSIMA 900px  ------------------------------------*/
@@ -964,3 +970,4 @@ hr {
 }
 
 /*------------------- FINE RESPONSIVE  ------------------------------------*/
+

@@ -16,7 +16,7 @@ function ShowPass() {
   }
 }
 
-function ShowAltro(par) {
+function ShowAltro(par = "") {
   if (par == "ist") {
     let div = document.getElementById("altro_div_ist");
     if (document.getElementById("ist_detenzione").value == "altro istituto") {
