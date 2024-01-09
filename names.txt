@@ -33,8 +33,55 @@ provincia_assistito
 email_assistito
 telefono_assistito
 
+
+codice_incarico
+data_pratica
+descrizione_consulenza
+tipo_pratica ( id -> rad_tipo_pratica_uff)
+tipo_pratica ( id -> rad_tipo_pratica_tel)
+informazioni_pratica ( da vedere in riunione )
+tipo_persona_pratica ( id -> rad_persona_incarico)
+    info_pratica_case_in_carico
+    invio_comunicazione_as
+    altro_invio_com
+    presentazione_istanza_urgente
+    data_udienza_o_GOT
+tipo_persona_pratica ( id -> rad_persona_non_in_carico)
+    info_pratica_case_non_in_carico
+    sapere_se_incarico_assegnato_as
+    informazioni_generali
+    altro_info_generali
+
+tipo_pervenuta ( id -> rad_per_ord_trib)
+tipo_pervenuta ( id -> rad_per_ord_rat)
+perventa_ord_tribunale_FFOO
+perventa_ord_affidamento_FFOO
+data_appuntamento
+
+
+pervenuta_documentazione (id -> rad_perv_document_si)
+pervenuta_documentazione (id -> rad_perv_document_no)
+tipologia_documentazione ( si documentazione )
+tribunale_doc_si
+data_udienza_doc_si
+altro_doc_si
+
+
+PROCESSO DI LAVORO
+processo_lavoro_successivo_doc_no
+div_doc_processo_lavoro_data_si
+data_appuntamento_processo_lav_si
+
+
+
 //###### ---------->   REVIEW CODE
     -SE SI DEVE UTILIZZARE UN window.location usare la funziona dichiarata -> ChangePage(page_path)
     -ELIMINARE LE PARTI DI CODICE HTML E JS COME "di......." e sotiture con "di"
+    
+
+//######### REVIEW CODE IN RIUNIONE
+ - informazioni_pratica puo 
+    trasformarsi in una select ( si puo selezionare piu di una o solo una opzione )
+
 
            

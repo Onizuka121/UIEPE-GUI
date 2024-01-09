@@ -498,8 +498,8 @@
           <div class="inpput-container-in-pratica">
             <input type="email_assistito" name="email_assistito" class="input-in-pratica"
               placeholder="Inserisci indirizzo email" />
-            <input type="tel" name="telefono_assistito" class="input-in-pratica" placeholder="Inserisci telefono" maxlength="10"
-              style="width: 20%;">
+            <input type="tel" name="telefono_assistito" class="input-in-pratica" placeholder="Inserisci telefono"
+              maxlength="10" style="width: 20%;">
           </div>
           <br>
           <hr />
@@ -526,7 +526,7 @@
             <div class="select-label-container" id="slcd">
               <!--AGGIUNGEWRE POSSIBILITA DI CERCARLO-->
               <label>Codice incarico</label>
-              <input list="codici_id_data" placeholder="Cerca..." class="input-in-pratica"
+              <input list="codici_id_data" name="codice_incarico" placeholder="Cerca..." class="input-in-pratica"
                 style="width: 50%; margin-left: -45%;">
               <datalist id="codici_id_data">
                 <option value="47LI">47LI</option>
@@ -594,10 +594,10 @@
             </div>
             <div class="select-label-container" style="width: 25%;">
               <label style="margin-left: 10px">Data</label>
-              <input type="date" name="data-nascita" class="input-in-pratica" style="margin-left: -30%;width: 60%;" />
+              <input type="date" name="data_pratica" class="input-in-pratica" style="margin-left: -30%;width: 60%;" />
             </div>
-            <input type="text" name="tipologia_consulenza" style="width: 40%; margin-top: 6px;" class="input-in-pratica"
-              placeholder="Descrizione consulenza ">
+            <input type="text" name="descrizione_consulenza" style="width: 40%; margin-top: 6px;"
+              class="input-in-pratica" placeholder="Descrizione consulenza ">
           </div>
           <span class="title-div-span">Info sulla pratica</span>
           <hr />
@@ -605,7 +605,8 @@
             <div class="label-checkbox-container">
               <label>Tipo</label>
               <div>
-                <input type="radio" name="tipo_pratica" id="rad_tipo_pratica_uff" value="Si è presentato in ufficio">
+                <input type="radio" name="tipo_pratica" id="rad_tipo_pratica_uff" value="Si è presentato in ufficio"
+                  checked>
                 <label for="rad_tipo_pratica_uff">Si è presentato in ufficio</label>
               </div>
               <div>
@@ -672,7 +673,7 @@
                   <label for="rad_persona_incarico">PERSONA IN CARICO</label>
                 </div>
                 <div>
-                  <input type="radio" name="tipo_persona_pratica" id="rad_tipo_pratica_tel"
+                  <input type="radio" name="tipo_persona_pratica" id="rad_persona_non_in_carico"
                     value="Persona non in carico"
                     onclick="ViewContainerInPratica('case_in_carico','case_non_in_carico')">
                   <label for="rad_tipo_pratica_tel">PERSONA NON IN CARICO</label>
@@ -1125,34 +1126,85 @@
 
       let valore_citta = document.getElementsByName("qualita")[0].value;
 
-      if(document.getElementsByName("dettagli_qualita")[0] != null){
+      if (document.getElementsByName("dettagli_qualita")[0] != null) {
         valore_citta = document.getElementsByName("dettagli_qualita")[0].value;
-      }else if(document.getElementsByName("citta_qualita")[0] != null){
-        valore_citta += " "+document.getElementsByName("citta_qualita")[0].value;
+      } else if (document.getElementsByName("citta_qualita")[0] != null) {
+        valore_citta += " " + document.getElementsByName("citta_qualita")[0].value;
       }
 
-      let valore_pos_giu_ass_altro = 
-      (document.getElementsByName("posizione_giuridica_assistito")[0].value == "altro")
-       ? 
-       document.getElementsByName("altro_posizione_giuridica")[0].value 
-       : 
-       document.getElementsByName("posizione_giuridica_assistito")[0].value;
+      let valore_pos_giu_ass_altro =
+        (document.getElementsByName("posizione_giuridica_assistito")[0].value == "altro")
+          ?
+          document.getElementsByName("altro_posizione_giuridica")[0].value
+          :
+          document.getElementsByName("posizione_giuridica_assistito")[0].value;
 
       let image_verificato_pos = "icons8-x-25.png";
 
-      if(document.getElementsByName("pos_verificata")[0].checked){
+      if (document.getElementsByName("pos_verificata")[0].checked) {
         image_verificato_pos = "icons8-verificato-25.png";
       }
 
-      let valore_ist_altro = 
-      (document.getElementsByName("istituto_detenzione_assistito")[0].value == "altro istituto")
-       ? 
-       document.getElementsByName("altro_ist_detenzione")[0].value 
-       : 
-       document.getElementsByName("istituto_detenzione_assistito")[0].value;
+      let valore_ist_altro =
+        (document.getElementsByName("istituto_detenzione_assistito")[0].value == "altro istituto")
+          ?
+          document.getElementsByName("altro_ist_detenzione")[0].value
+          :
+          document.getElementsByName("istituto_detenzione_assistito")[0].value;
 
-       let image_verificato_ist = (document.getElementsByName("ist_verificato")[0].checked) 
-       ? "icons8-verificato-25.png" : "icons8-x-25.png";
+      let image_verificato_ist = (document.getElementsByName("ist_verificato")[0].checked)
+        ? "icons8-verificato-25.png" : "icons8-x-25.png";
+
+
+      let valore_tipo_pratica = (document.getElementById("rad_tipo_pratica_uff").checked) ? "Si è presentato in ufficio" : "Ha telefonato";
+
+      let valore_tipo_persona = (document.getElementById("rad_persona_incarico").checked) ? "In carico" : "Non in carico";
+
+      let valore_tipologia_richiesta = (valore_tipo_persona == "In carico") ?
+
+        document.getElementsByName("info_pratica_case_in_carico")[0].value
+        : 
+        document.getElementsByName("info_pratica_case_non_in_carico")[0].value
+        ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      let block_invio_com =    ` 
+      <div class="row-info">
+                <div class="row-camp-info">
+                  Motivazione della comunicazione  
+                </div>
+                <div class="row-value-info">
+                  `+  + `
+                </div>
+        </div>
+      `;
+
+      let block_dynamic_tipo_persona = ` 
+      <div class="row-info">
+                <div class="row-camp-info">
+                  Tipologia richiesta
+                </div>
+                <div class="row-value-info">
+                  `+ valore_tipologia_richiesta + `
+                </div>
+        </div>
+      `;
+
+
+      //------------------------------------------------------------------------------------------------
+      //------------------------------------------------------------------------------------------------
 
       document.getElementById("container-riepilogo").innerHTML =
         ` 
@@ -1248,10 +1300,10 @@
                   Posizione giuridica
                 </div>
                 <div class="row-value-info">
-                  `+valore_pos_giu_ass_altro+ `
+                  `+ valore_pos_giu_ass_altro + `
                 </div>
                 
-                <div class="verification" style="height: 25px; width: 3.5%; background-image: url(`+image_verificato_pos+`); margin-left:20px;">
+                <div class="verification" style="height: 25px; width: 3.5%; background-image: url(`+ image_verificato_pos + `); margin-left:20px;">
                </div>
         </div>
         <hr class="hr-info-pratica">
@@ -1260,10 +1312,10 @@
                   Istituto di detenzione
                 </div>
                 <div class="row-value-info">
-                  `+valore_ist_altro+ `
+                  `+ valore_ist_altro + `
                 </div>
                 
-                <div class="verification" style="height: 25px; width: 3.5%; background-image: url(`+image_verificato_ist+`); margin-left:20px;">
+                <div class="verification" style="height: 25px; width: 3.5%; background-image: url(`+ image_verificato_ist + `); margin-left:20px;">
                </div>
         </div>
         <hr class="hr-info-pratica">
@@ -1282,8 +1334,8 @@
                 </div>
                 <div class="row-value-info">
                   `+ document.getElementsByName("citta_assistito")[0].value
-                  +" ("+document.getElementsByName("provincia_assistito")[0].value + ")"
-                  +" - "+document.getElementsByName("cap_assistito")[0].value +`
+        + " (" + document.getElementsByName("provincia_assistito")[0].value + ")"
+        + " - " + document.getElementsByName("cap_assistito")[0].value + `
                 </div>
         </div>
         <hr class="hr-info-pratica">
@@ -1304,7 +1356,66 @@
                   `+ document.getElementsByName("telefono_assistito")[0].value + `
                 </div>
         </div>
-        <hr class="hr-info-pratica">`;
+        <hr class="hr-info-pratica"><br>
+        <div class="row-title-info">
+            Dati della pratica
+          </div>
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Codice incarico
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("codice_incarico")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Data
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("data_pratica")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Descrizione consulenza
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("descrizione_consulenza")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Tipo pratica
+                </div>
+                <div class="row-value-info">
+                  `+ valore_tipo_pratica + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Informazioni pratica
+                </div>
+                <div class="row-value-info">
+                  `+ "######## DA VEDERE IN RIUNIONE ######### " + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Tipo di persona
+                </div>
+                <div class="row-value-info">
+                  `+ valore_tipo_persona + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">`
+        + block_dynamic_tipo_persona;
+
     }
   }
 
