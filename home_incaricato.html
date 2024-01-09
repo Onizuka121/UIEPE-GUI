@@ -1163,33 +1163,10 @@
       let valore_tipologia_richiesta = (valore_tipo_persona == "In carico") ?
 
         document.getElementsByName("info_pratica_case_in_carico")[0].value
-        : 
+        :
         document.getElementsByName("info_pratica_case_non_in_carico")[0].value
         ;
 
-
-
-
-
-
-
-
-
-
-
-
-
-        
-      let block_invio_com =    ` 
-      <div class="row-info">
-                <div class="row-camp-info">
-                  Motivazione della comunicazione  
-                </div>
-                <div class="row-value-info">
-                  `+  + `
-                </div>
-        </div>
-      `;
 
       let block_dynamic_tipo_persona = ` 
       <div class="row-info">
@@ -1202,6 +1179,76 @@
         </div>
       `;
 
+      if (isVisible("div_sub_cases_1")) {
+        let valore_invio_com = document.getElementsByName("invio_comunicazione_as")[0].value
+        if (valore_invio_com == "Altro") {
+          valore_invio_com = document.getElementsByName("altro_invio_com")[0].value
+        }
+        block_dynamic_tipo_persona += CreatorOfHtmlContent("Motivazione della comunicazione", null, valore_invio_com);
+      }
+      if (isVisible("div_sub_cases_2")) {
+        block_dynamic_tipo_persona += CreatorOfHtmlContent("Data udienza", "data_udienza_o_GOT");
+      }
+      if (isVisible("div_sub_cases_3")) {
+        block_dynamic_tipo_persona += CreatorOfHtmlContent("Presentazione istanza", "presentazione_istanza_urgente");
+      }
+      if (isVisible("div_sub_cases_4_1")) {
+        block_dynamic_tipo_persona += CreatorOfHtmlContent("Pervenuta ordinanza Tribunale di Sorveglianza notificata da FFOO"
+          , "perventa_ord_tribunale_FFOO");
+      }
+      if (isVisible("div_sub_cases_4_2")) {
+        block_dynamic_tipo_persona += CreatorOfHtmlContent("Pervenuta ordinanza di ratifica dell’affidamento provvisorio notificata da FFOO"
+          , "perventa_ord_affidamento_FFOO");
+      }
+      if (isVisible("div_sub_cases_2_1")) {
+        block_dynamic_tipo_persona += CreatorOfHtmlContent("Data appuntamento"
+          , "data_appuntamento");
+      }
+      if (isVisible("div_sub_cases_5")) {
+        block_dynamic_tipo_persona += CreatorOfHtmlContent("Sapere se l’incarico è assegnato e conoscere nominativo AS"
+          , "sapere_se_incarico_assegnato_as");
+      }
+      if (isVisible("div_sub_cases_6")) {
+        let valore_info = document.getElementsByName("informazioni_generali")[0].value
+        if (valore_info == "Altro") {
+          valore_info = document.getElementsByName("altro_info_generali")[0].value
+        }
+        block_dynamic_tipo_persona += CreatorOfHtmlContent("Informazioni generali ", null, valore_info);
+      }
+
+      function CreatorOfHtmlContent(title, name_element, valore = null) {
+
+        if (valore == null) {
+          valore = document.getElementsByName(name_element)[0].value;
+        }
+
+        return ` 
+      <hr class="hr-info-pratica">
+      <div class="row-info">
+          <div class="row-camp-info">
+            `+ title + `
+          </div>
+          <div class="row-value-info">
+            `+ valore + `
+          </div>
+       </div>`;
+      }
+
+
+      // PERVENUTA DOCUMENTAZIONE --> 
+
+
+
+
+
+
+      function isVisible(id_element) {
+        if (document.getElementById(id_element).style.display.length > 0 &&
+          document.getElementById(id_element).style.display != "none") {
+          return true;
+        }
+        return false;
+      }
 
       //------------------------------------------------------------------------------------------------
       //------------------------------------------------------------------------------------------------
@@ -1414,7 +1461,7 @@
                 </div>
         </div>
         <hr class="hr-info-pratica">`
-        + block_dynamic_tipo_persona;
+        + block_dynamic_tipo_persona + `<hr class="hr-info-pratica">`;
 
     }
   }
