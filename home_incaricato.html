@@ -89,7 +89,7 @@
     </div>
 
     <div class="home-page-richieste" id="home_richieste">
-      <div class="richiesta-short">
+      <div class="richiesta-short" onclick="window.location.href = 'dettagli.html'">
         <div class="type-container">
           <p>Appuntamento Map</p>
         </div>
@@ -224,8 +224,8 @@
           <span class="title-div-span">DATI RICHIEDENTE</span>
           <hr />
           <div class="inpput-container-in-pratica">
-            <input type="text" name="nome" class="input-in-pratica" placeholder="Inserisci nome" />
-            <input type="text" name="cognome" class="input-in-pratica" placeholder="Inserisci cognome" />
+            <input type="text" name="nome_richiedente" class="input-in-pratica" placeholder="Inserisci nome" />
+            <input type="text" name="cognome_richiedente" class="input-in-pratica" placeholder="Inserisci cognome" />
           </div>
 
           <div class="inpput-container-in-pratica">
@@ -282,8 +282,9 @@
           <span class="title-div-span">Contatti</span>
           <hr />
           <div class="inpput-container-in-pratica">
-            <input type="email" name="email" class="input-in-pratica" placeholder="Inserisci indirizzo email" />
-            <input type="tel" name="telefono" class="input-in-pratica" placeholder="Inserisci telefono"
+            <input type="email" name="email_richiedente" class="input-in-pratica"
+              placeholder="Inserisci indirizzo email" />
+            <input type="tel" name="telefono_richiedente" class="input-in-pratica" placeholder="Inserisci telefono"
               maxlength="10" />
           </div>
           <br>
@@ -295,7 +296,7 @@
                 justify-content: center;
                 gap: 10%;
               ">
-            <button type="reset" class="btn2">ANNULLA</button>
+            <button type="reset" class="btn2" onclick="ShowContainer('home_btn_id',true)">ANNULLA</button>
             <button type="button" class="btn2" onclick="ViewContainerInPratica('dati_richiedente' , 'dati_assistito')">
               AVANTI
             </button>
@@ -305,24 +306,25 @@
           <span class="title-div-span">DATI ASSISTITO</span>
           <hr />
           <div class="inpput-container-in-pratica">
-            <input type="text" name="nome" class="input-in-pratica" placeholder="Inserisci nome" />
-            <input type="text" name="cognome" class="input-in-pratica" placeholder="Inserisci cognome" />
+            <input type="text" name="nome_assistito" class="input-in-pratica" placeholder="Inserisci nome" />
+            <input type="text" name="cognome_assistito" class="input-in-pratica" placeholder="Inserisci cognome" />
             <input type="text" name="id_siepe" class="input-in-pratica" placeholder="ID-SIEPE" style="width: 10%;">
           </div>
           <div class="inpput-container-in-pratica">
-            <input type="text" name="luogo-nascita" class="input-in-pratica" placeholder="Inserisci luogo di nascita"
-              style="width: 25%; margin-top: 10px;" />
+            <input type="text" name="luogo_nascita_assistito" class="input-in-pratica"
+              placeholder="Inserisci luogo di nascita" style="width: 25%; margin-top: 10px;" />
             <div class="select-label-container">
               <label style="margin-left: 20px">Data di nascita</label>
-              <input type="date" name="data-nascita" class="input-in-pratica" style="margin-left: -50%;width: 40%;" />
+              <input type="date" name="data_nascita_assistito" class="input-in-pratica"
+                style="margin-left: -50%;width: 40%;" />
             </div>
           </div>
           <hr class="inner-hr">
           <div class="inpput-container-in-pratica">
             <div class="select-label-container">
               Posizione giuridica
-              <select name="posizione_giuridica" class="select-in-pratica" id="pos_giuridica" style="width: 30%;"
-                onchange="ShowAltro('')">
+              <select name="posizione_giuridica_assistito" class="select-in-pratica" id="pos_giuridica"
+                style="width: 30%;" onchange="ShowAltro()">
                 <option value="definitivo">Definitivo</option>
                 <option value="imputato">Imputato</option>
                 <option value="LPU">LPU</option>
@@ -332,7 +334,7 @@
             </div>
             <div id="altro_div"></div>
             <div class="label-checkbox-container" style="margin-left: 5%;">
-              <input type="checkbox" name="verificata" id="chck_ver" value="Verificata"><label
+              <input type="checkbox" name="pos_verificata" id="chck_ver" value="Verificata"><label
                 for="chck_ver">Verificata</label>
             </div>
           </div>
@@ -340,8 +342,8 @@
           <div class="inpput-container-in-pratica">
             <div class="select-label-container">
               Istituto di detenzione
-              <select name="posizione_giuridica" class="select-in-pratica" id="ist_detenzione" style="width: 60%;"
-                onchange="ShowAltro('ist')">
+              <select name="istituto_detenzione_assistito" class="select-in-pratica" id="ist_detenzione"
+                style="width: 60%;" onchange="ShowAltro('ist')">
                 <option value="C.C. Regina Coeli">C.C. Regina Coeli</option>
                 <option value="C.C. N. C. Rebibbia">C.C. N. C. Rebibbia</option>
                 <option value="C.R. Rebibbia">C.R. Rebibbia</option>
@@ -355,22 +357,22 @@
             </div>
             <div id="altro_div_ist" style="margin-left: -20%;"></div>
             <div class="label-checkbox-container">
-              <input type="checkbox" name="ist_verificata" id="chck_ver_ist" value="Istituto verificato">
+              <input type="checkbox" name="ist_verificato" id="chck_ver_ist" value="Istituto verificato">
               <label for="chck_ver_ist">Istituto verificato</label>
             </div>
           </div>
           <span class="title-div-span">Residenza</span>
           <hr />
           <div class="inpput-container-in-pratica">
-            <input type="text" name="indirizzo" class="input-in-pratica"
+            <input type="text" name="indirizzo_assistito" class="input-in-pratica"
               placeholder="Inserisci indirizzo es ( Via Ostiense , 131 )" style="width: 50%;" />
-            <input type="text" name="cognome" class="input-in-pratica" placeholder="Città"
+            <input type="text" name="citta_assistito" class="input-in-pratica" placeholder="Città"
               style="width: 20%; margin-top: 0px;" />
-            <input type="text" name="cap" class="input-in-pratica" placeholder="CAP"
+            <input type="text" name="cap_assistito" class="input-in-pratica" placeholder="CAP"
               style="width: 7%; margin-top: 0px;" />
             <div class="select-label-container" id="select_provincie">
               <label>Provincia</label>
-              <select name="provincia" class="select-in-pratica" style="width: 55%;">
+              <select name="provincia_assistito" class="select-in-pratica" style="width: 55%;">
                 <option value="Agrigento">Agrigento</option>
                 <option value="Alessandria">Alessandria</option>
                 <option value="Ancona">Ancona</option>
@@ -494,10 +496,10 @@
           <span class="title-div-span">Contatti</span>
           <hr />
           <div class="inpput-container-in-pratica">
-            <input type="email" name="email_assistito" class="input-in-pratica"
+            <input type="email_assistito" name="email_assistito" class="input-in-pratica"
               placeholder="Inserisci indirizzo email" />
             <input type="tel" name="telefono_assistito" class="input-in-pratica" placeholder="Inserisci telefono"
-              style="width: 20%;">
+              maxlength="10" style="width: 20%;">
           </div>
           <br>
           <hr />
@@ -511,7 +513,7 @@
             <button type="button" class="btn2" onclick="ViewContainerInPratica('dati_assistito' , 'dati_richiedente')">
               INDIETRO
             </button>
-            <button type="reset" class="btn2">ANNULLA</button>
+            <button type="reset" class="btn2" onclick="ShowContainer('home_btn_id',true)">ANNULLA</button>
             <button type="button" class="btn2" onclick="ViewContainerInPratica('dati_assistito' , 'dati_pratica')">
               AVANTI
             </button>
@@ -524,7 +526,7 @@
             <div class="select-label-container" id="slcd">
               <!--AGGIUNGEWRE POSSIBILITA DI CERCARLO-->
               <label>Codice incarico</label>
-              <input list="codici_id_data" placeholder="Cerca..." class="input-in-pratica"
+              <input list="codici_id_data" name="codice_incarico" placeholder="Cerca..." class="input-in-pratica"
                 style="width: 50%; margin-left: -45%;">
               <datalist id="codici_id_data">
                 <option value="47LI">47LI</option>
@@ -592,10 +594,10 @@
             </div>
             <div class="select-label-container" style="width: 25%;">
               <label style="margin-left: 10px">Data</label>
-              <input type="date" name="data-nascita" class="input-in-pratica" style="margin-left: -30%;width: 60%;" />
+              <input type="date" name="data_pratica" class="input-in-pratica" style="margin-left: -30%;width: 60%;" />
             </div>
-            <input type="text" name="tipologia_consulenza" style="width: 40%; margin-top: 6px;" class="input-in-pratica"
-              placeholder="Descrizione consulenza ">
+            <input type="text" name="descrizione_consulenza" style="width: 40%; margin-top: 6px;"
+              class="input-in-pratica" placeholder="Descrizione consulenza ">
           </div>
           <span class="title-div-span">Info sulla pratica</span>
           <hr />
@@ -603,7 +605,8 @@
             <div class="label-checkbox-container">
               <label>Tipo</label>
               <div>
-                <input type="radio" name="tipo_pratica" id="rad_tipo_pratica_uff" value="Si è presentato in ufficio">
+                <input type="radio" name="tipo_pratica" id="rad_tipo_pratica_uff" value="Si è presentato in ufficio"
+                  checked>
                 <label for="rad_tipo_pratica_uff">Si è presentato in ufficio</label>
               </div>
               <div>
@@ -653,153 +656,350 @@
               ? SE SI COME AVVERRA' IL CONTROLLO ( HTTP REQUEST (POST) - o con API DEL SISTEMA SIEPE) ???
               OPPURE RIMANE TUTTO COSI E' SARA COMPITO DELL'UTENTE CONTROLLARE E INSERIRE 
               IL GIUSTO PERCORSO ( PERSONA IN CARICO | PERSONA NON INCARICO )
+
+              A seguito della richiesta viene effettuato un controllo sul software SIEPE per 
+              sapere se il richiedente è già seguito da un’assistente sociale;
+              Secondo il responso di questa verifica si avviano due percorsi differenti
+
+                 - PERSONA IN CARICO,
+                 - PERSONA NON IN CARICO;
              -->
-          <div class="inpput-container-in-pratica" id="input-radio-case-id">
-            <div class="label-checkbox-container">
-              <div>
-                <input type="radio" name="tipo_persona_pratica" id="rad_persona_incarico" value="Persona in carico"
-                  onclick="ViewContainerInPratica('case_non_in_carico','case_in_carico')">
-                <label for="rad_persona_incarico">PERSONA IN CARICO</label>
-              </div>
-              <div>
-                <input type="radio" name="tipo_persona_pratica" id="rad_tipo_pratica_tel" value="Persona non in carico"
-                  onclick="ViewContainerInPratica('case_in_carico','case_non_in_carico')">
-                <label for="rad_tipo_pratica_tel">PERSONA NON IN CARICO</label>
-              </div>
-            </div>
-          </div>
-          <div class="inpput-container-in-pratica" id="container-cases">
-            <div id="case_in_carico">
-              <div class="select-label-container">
-                <label>Tipologia richiesta</label>
-                <select name="info_pratica_case_in_carico" class="select-in-pratica"
-                  onchange="ControlAndShowSubCase('select_case_in_carico')" id="select_case_in_carico">
-                  <option value="seleziona">--- Seleziona ---</option>
-                  <option value="Contatto con A.S incaricato assente">Contatto con A.S incaricato assente</option>
-                  <option value="Sollecito Invio Indagine di Servizio Sociale per udienza">Sollecito Invio Indagine
-                    di Servizio Sociale per udienza</option>
-                  <option value="
-                      Sollecito Invio Indagine di Servizio Sociale per riunione GOT">
-                    Sollecito Invio Indagine di Servizio Sociale per riunione GOT</option>
-                  <option value="Sollecito collaborazione altro UEPE">Sollecito collaborazione altro UEPE</option>
-                  <option value="Presentazione istanza urgente e non differibile di modifica prescrizioni">
-                    Presentazione istanza urgente e non differibile di modifica prescrizioni</option>
-                  <option value="Appuntamento sottoscrizione verbale AP">Appuntamento sottoscrizione verbale AP
-                  </option>
-                  <option value="Appuntamento sottoscrizione MAP">Appuntamento sottoscrizione MAP</option>
-                </select>
-              </div>
-            </div>
-            <div id="case_non_in_carico">
-              <div class="select-label-container">
-                <label>Tipologia richiesta</label>
-                <select name="info_pratica_case_non_in_carico" class="select-in-pratica"
-                  onchange="ControlAndShowSubCase('select_case_non_in_carico')" id="select_case_non_in_carico">
-                  <option value="seleziona">--- Seleziona ---</option>
-                  <option value="Sapere se l’incarico è assegnato e conoscere nominativo AS">Sapere se l’incarico è
-                    assegnato e conoscere nominativo AS</option>
-                  <option value="La richiesta non riguarda la competenze dell’Ufficio">La richiesta non riguarda la
-                    competenze dell’Ufficio</option>
-                  <option value="
-                  Sollecito procedimenti">
-                    Sollecito procedimenti</option>
-                  <option value="Si forniscono informazioni a carattere generale">Si forniscono informazioni a carattere
-                    generale
-                  </option>
-                  <option value="Appuntamento per sottoscrizione verbale AP">
-                    Appuntamento per sottoscrizione verbale AP</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <!--  FINE COMPONENTE PRINCIPALE  -->
-          <div class="inpput-container-in-pratica" id="container-cases" style="width: 80%;">
-            <div id="div_sub_cases_1">
-              <div class="select-label-container">
-                <label>Invio comunicazione a AS per</label>
-                <select name="invio_comunicazione_as" class="select-in-pratica"
-                  onchange="ControlAndShowSubCase('select_invio_com')" id="select_invio_com">
-                  <option value="Primo contatto dare nominativo e recapito">Primo contatto dare nominativo e recapito
-                  </option>
-                  <option value="Contatto periodico">Contatto periodico</option>
-                  <option value="Confronto per urgenza">Confronto per urgenza</option>
-                  <option value="Contatto detenuto in permesso premio">Contatto detenuto in permesso premio</option>
-                  <option value="Altro">Altro</option>
-                </select>
-              </div>
-            </div>
-            <div id="div_sub_cases_3">
-              <div class="select-label-container">
-                <label>Presentazione istanza</label>
-                <select name="presentazione_istanza_urgente" class="select-in-pratica">
-                  <option value="Acquisizione ed invio istanza all'Ufficio di Sorveglianza">Acquisizione ed invio
-                    istanza all'Ufficio di Sorveglianza
-                  </option>
-                  <option value="Acquisizione istanza e autorizzazione Direttore UIEPE">Acquisizione istanza e
-                    autorizzazione Direttore UIEPE</option>
-                  <option value="Rinvio all’AS per mancanza di documentazione">Rinvio all’AS per mancanza di
-                    documentazione</option>
-                </select>
-              </div>
-            </div>
-            <div id="div_sub_cases_4">
+          <div class="container_inputs_info_pratica_cases">
+            <div class="inpput-container-in-pratica" id="input-radio-case-id">
               <div class="label-checkbox-container">
                 <div>
-                  <input type="radio" name="tipo_pervenuta" id="rad_per_ord_trib"
-                    value="Pervenuta ordinanza Tribunale di Sorveglianza notificata da FFOO"
-                    onclick="ControlAndShowSubCase('rad_per_ord_trib')">
-                  <label for="rad_per_ord_trib">Pervenuta ordinanza Tribunale di Sorveglianza notificata da FFOO</label>
+                  <input type="radio" name="tipo_persona_pratica" id="rad_persona_incarico" value="Persona in carico"
+                    onclick="ViewContainerInPratica('case_non_in_carico','case_in_carico')" checked>
+                  <label for="rad_persona_incarico">PERSONA IN CARICO</label>
                 </div>
                 <div>
-                  <input type="radio" name="tipo_pervenuta" id="rad_per_ord_rat"
-                    value="Pervenuta ordinanza di ratifica dell’affidamento provvisorio notificata da FFOO"
-                    onclick="ControlAndShowSubCase('rad_per_ord_rat')">
-                  <label for="rad_per_ord_rat">Pervenuta ordinanza di ratifica dell’affidamento provvisorio notificata
-                    da FFOO</label>
+                  <input type="radio" name="tipo_persona_pratica" id="rad_persona_non_in_carico"
+                    value="Persona non in carico"
+                    onclick="ViewContainerInPratica('case_in_carico','case_non_in_carico')">
+                  <label for="rad_tipo_pratica_tel">PERSONA NON IN CARICO</label>
                 </div>
               </div>
             </div>
-
-            <div id="div_sub_cases_2">
-              <div class="select-label-container">
-                <label style="margin-left: 20px" id="label_data_sub_case2">Data</label>
-                <input type="date" name="data_udienza_o_GOT" class="input-in-pratica"
-                  style="margin-left: -10%;width: 80%; height: 30px;" />
+            <div class="inpput-container-in-pratica" id="container-cases">
+              <div id="case_in_carico">
+                <div class="select-label-container">
+                  <label>Tipologia richiesta</label>
+                  <select name="info_pratica_case_in_carico" class="select-in-pratica"
+                    onchange="ControlAndShowSubCase('select_case_in_carico')" id="select_case_in_carico">
+                    <option value="seleziona">--- Seleziona ---</option>
+                    <option value="Contatto con A.S incaricato assente">Contatto con A.S incaricato assente</option>
+                    <option value="Sollecito Invio Indagine di Servizio Sociale per udienza">Sollecito Invio Indagine
+                      di Servizio Sociale per udienza</option>
+                    <option value="
+                      Sollecito Invio Indagine di Servizio Sociale per riunione GOT">
+                      Sollecito Invio Indagine di Servizio Sociale per riunione GOT</option>
+                    <option value="Sollecito collaborazione altro UEPE">Sollecito collaborazione altro UEPE</option>
+                    <option value="Presentazione istanza urgente e non differibile di modifica prescrizioni">
+                      Presentazione istanza urgente e non differibile di modifica prescrizioni</option>
+                    <option value="Appuntamento sottoscrizione verbale AP">Appuntamento sottoscrizione verbale AP
+                    </option>
+                    <option value="Appuntamento sottoscrizione MAP">Appuntamento sottoscrizione MAP</option>
+                  </select>
+                </div>
+              </div>
+              <div id="case_non_in_carico">
+                <div class="select-label-container">
+                  <label>Tipologia richiesta</label>
+                  <select name="info_pratica_case_non_in_carico" class="select-in-pratica"
+                    onchange="ControlAndShowSubCase('select_case_non_in_carico')" id="select_case_non_in_carico">
+                    <option value="seleziona">--- Seleziona ---</option>
+                    <option value="Sapere se l’incarico è assegnato e conoscere nominativo AS">Sapere se l’incarico è
+                      assegnato e conoscere nominativo AS</option>
+                    <option value="La richiesta non riguarda la competenze dell’Ufficio">La richiesta non riguarda la
+                      competenze dell’Ufficio</option>
+                    <option value="
+                  Sollecito procedimenti">
+                      Sollecito procedimenti</option>
+                    <option value="Si forniscono informazioni a carattere generale">Si forniscono informazioni a
+                      carattere
+                      generale
+                    </option>
+                    <option value="Appuntamento sottoscrizione verbale AP">
+                      Appuntamento sottoscrizione verbale AP</option>
+                  </select>
+                </div>
               </div>
             </div>
-            <div id="altro_div2">
-              <input type="text" name="altro_invio_com" class="input-in-pratica" placeholder="Altro"
-                style="width: 100%; height: 30px;" />
+            <!--  FINE COMPONENTE PRINCIPALE  -->
+            <div class="inpput-container-in-pratica">
+              <div id="div_sub_cases_5">
+                <div class="select-label-container">
+                  <label>Sapere se l’incarico è assegnato e conoscere nominativo AS</label>
+                  <select name="sapere_se_incarico_assegnato_as" class="select-in-pratica">
+                    <option value="Per obbligo di contatto">Per obbligo di contatto</option>
+                    <option value="Per udienza TS">Per udienza TS</option>
+                    <option value="Per indagine socio familiare IIPP">Per indagine socio familiare IIPP</option>
+                    <option value="Per udienza MAP">Per udienza MAP</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="inpput-container-in-pratica" id="info_ge">
+              <div id="div_sub_cases_6">
+                <div class="select-label-container">
+                  <label>Informazioni generali su :</label>
+                  <select name="informazioni_generali" class="select-in-pratica"
+                    onchange="ControlAndShowSubCase('select_info_generali')" id="select_info_generali">
+                    <option value="seleziona">--- Seleziona ---</option>
+                    <option value="MAP">MAP</option>
+                    <option value="LPU">LPU</option>
+                    <option value="Riforma Cartabia">Riforma Cartabia</option>
+                    <option value="Enti volontariato LPU">Enti volontariato LPU</option>
+                    <option value="Enti pubblici territoriali">Enti pubblici territoriali</option>
+                    <option value="Altro">Altro</option>
+                  </select>
+                </div>
+              </div>
+              <div id="altro_div6">
+                <input type="text" name="altro_info_generali" class="input-in-pratica" placeholder="Altro"
+                  style="width: 100%; height: 30px;" />
+              </div>
+            </div>
+            <div class="inpput-container-in-pratica" id="container-cases" style="width: 80%;">
+              <div id="div_sub_cases_1">
+                <div class="select-label-container">
+                  <label>Invio comunicazione a AS per</label>
+                  <select name="invio_comunicazione_as" class="select-in-pratica"
+                    onchange="ControlAndShowSubCase('select_invio_com')" id="select_invio_com">
+                    <option value="Primo contatto dare nominativo e recapito">Primo contatto dare nominativo e recapito
+                    </option>
+                    <option value="Contatto periodico">Contatto periodico</option>
+                    <option value="Confronto per urgenza">Confronto per urgenza</option>
+                    <option value="Contatto detenuto in permesso premio">Contatto detenuto in permesso premio</option>
+                    <option value="Altro">Altro</option>
+                  </select>
+                </div>
+              </div>
+              <div id="div_sub_cases_3">
+                <div class="select-label-container">
+                  <label>Presentazione istanza</label>
+                  <select name="presentazione_istanza_urgente" class="select-in-pratica">
+                    <option value="Acquisizione ed invio istanza all'Ufficio di Sorveglianza">Acquisizione ed invio
+                      istanza all'Ufficio di Sorveglianza
+                    </option>
+                    <option value="Acquisizione istanza e autorizzazione Direttore UIEPE">Acquisizione istanza e
+                      autorizzazione Direttore UIEPE</option>
+                    <option value="Rinvio all’AS per mancanza di documentazione">Rinvio all’AS per mancanza di
+                      documentazione</option>
+                  </select>
+                </div>
+              </div>
+              <div id="div_sub_cases_4">
+                <div class="label-checkbox-container">
+                  <div>
+                    <input type="radio" name="tipo_pervenuta" id="rad_per_ord_trib"
+                      value="Pervenuta ordinanza Tribunale di Sorveglianza notificata da FFOO"
+                      onclick="ControlAndShowSubCase('rad_per_ord_trib')">
+                    <label for="rad_per_ord_trib">Pervenuta ordinanza Tribunale di Sorveglianza notificata da
+                      FFOO</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="tipo_pervenuta" id="rad_per_ord_rat"
+                      value="Pervenuta ordinanza di ratifica dell’affidamento provvisorio notificata da FFOO"
+                      onclick="ControlAndShowSubCase('rad_per_ord_rat')">
+                    <label for="rad_per_ord_rat">Pervenuta ordinanza di ratifica dell’affidamento provvisorio notificata
+                      da FFOO</label>
+                  </div>
+                </div>
+              </div>
+
+              <div id="div_sub_cases_2">
+                <div class="select-label-container">
+                  <label style="margin-left: 20px" id="label_data_sub_case2">Data</label>
+                  <input type="date" name="data_udienza_o_GOT" class="input-in-pratica"
+                    style="margin-left: -10%;width: 80%; height: 30px;" />
+                </div>
+              </div>
+              <div id="altro_div2">
+                <input type="text" name="altro_invio_com" class="input-in-pratica" placeholder="Altro"
+                  style="width: 100%; height: 30px;" />
+              </div>
+            </div>
+            <div class="inpput-container-in-pratica" id="container_div_sub_cases">
+              <div id="div_sub_cases_4_1">
+                <div class="select-label-container">
+                  <label>Pervenuta ordinanza Tribunale di Sorveglianza notificata da FFOO</label>
+                  <select name="perventa_ord_tribunale_FFOO" class="select-in-pratica"
+                    onchange="ControlAndShowSubCase('select_perv_FFOO','div_sub_cases_4_1')" id="select_perv_FFOO">
+                    <option value="seleziona">--- Seleziona ---</option>
+                    <option value="Si , fornito di appuntamento">Si , fornito di appuntamento</option>
+                    <option value="No , si attende ordinanza">No , si attende ordinanza</option>
+                    <option value="Emerge difficoltà da sottoporre a capo area: invio a capo area">Emerge difficoltà da
+                      sottoporre a capo area: invio a capo area</option>
+                  </select>
+                </div>
+              </div>
+              <div id="div_sub_cases_4_2">
+                <div class="select-label-container">
+                  <label>Pervenuta ordinanza di ratifica dell’affidamento provvisorio notificata da FFOO</label>
+                  <select name="perventa_ord_affidamento_FFOO" class="select-in-pratica"
+                    onchange="ControlAndShowSubCase('select_affid_FFOO','div_sub_cases_4_2')" id="select_affid_FFOO">
+                    <option value="seleziona">--- Seleziona ---</option>
+                    <option value="Si , fornito di appuntamento">Si , fornito di appuntamento</option>
+                    <option value="No , si attende ordinanza di ratifica">No , si attende ordinanza di ratifica</option>
+                  </select>
+                </div>
+              </div>
+              <div id="div_sub_cases_2_1">
+                <div class="select-label-container">
+                  <label style="margin-left: 20px" id="label_data_sub_case2">Data appuntamento</label>
+                  <input type="date" name="data_appuntamento" class="input-in-pratica"
+                    style="width: 80%; height: 30px;" />
+                </div>
+              </div>
             </div>
           </div>
-          <div class="inpput-container-in-pratica" id="container_div_sub_cases">
-            <div id="div_sub_cases_4_1">
-              <div class="select-label-container">
-                <label>Pervenuta ordinanza Tribunale di Sorveglianza notificata da FFOO</label>
-                <select name="perventa_ord_tribunale_FFOO" class="select-in-pratica"
-                  onchange="ControlAndShowSubCase('select_perv_FFOO','div_sub_cases_4_1')" id="select_perv_FFOO">
-                  <option value="seleziona">--- Seleziona ---</option>
-                  <option value="Si , fornito di appuntamento">Si , fornito di appuntamento</option>
-                  <option value="No , si attende ordinanza">No , si attende ordinanza</option>
-                </select>
+          <br>
+          <span class="title-div-span">Documentazione</span>
+          <hr />
+          <br>
+          <div class="container_inputs_info_pratica_cases">
+            <div class="inpput-container-in-pratica" id="container_pervenuta_doc">
+              <div><label>Pervenuta documentazione</label></div>
+              <div class="label-checkbox-container">
+                <div>
+                  <input type="radio" name="pervenuta_documentazione" id="rad_perv_document_si"
+                    value="si, pervenuta documentazione" onclick="ControlAndShowCaseDoc('rad_perv_document_si')">
+                  <label for="rad_perv_document_si">SI</label>
+                </div>
+                <div>
+                  <input type="radio" name="pervenuta_documentazione" id="rad_perv_document_no"
+                    value="no, pervenuta documentazione" onclick="ControlAndShowCaseDoc('rad_perv_document_no')">
+                  <label for="rad_perv_document_no">NO</label>
+                </div>
               </div>
             </div>
-            <div id="div_sub_cases_4_2">
-              <div class="select-label-container">
-                <label>Pervenuta ordinanza di ratifica dell’affidamento provvisorio notificata da FFOO</label>
-                <select name="perventa_ord_affidamento_FFOO" class="select-in-pratica"
-                  onchange="ControlAndShowSubCase('select_affid_FFOO','div_sub_cases_4_2')" id="select_affid_FFOO">
-                  <option value="seleziona">--- Seleziona ---</option>
-                  <option value="Si , fornito di appuntamento">Si , fornito di appuntamento</option>
-                  <option value="No , si attende ordinanza di ratifica">No , si attende ordinanza di ratifica</option>
-                </select>
+            <div class="inpput-container-in-pratica">
+              <div id="div_elenc_doc_si">
+                <div class="select-label-container">
+                  <label>Tipologia documentazione</label>
+                  <select name="tipologia_documentazione" class="select-in-pratica"
+                    onchange="ControlAndShowCaseDoc('select_tipo_doc_si')" id="select_tipo_doc_si">
+                    <option value="Richiesta apertura osservazione IP">Richiesta apertura osservazione IP</option>
+                    <option value="Comunicazione IP permesso premio">Comunicazione IP permesso premio</option>
+                    <option value="Comunicazione IP di scarcerazione per concessione affidamento in prova">Comunicazione
+                      IP di scarcerazione per concessione affidamento in prova</option>
+                    <option value="Comunicazione IP di scarcerazione per concessione detenzione domiciliare">
+                      Comunicazione
+                      IP di scarcerazione per concessione detenzione domiciliare</option>
+                    <option value="Comunicazione IP di concessione semi-libertà">Comunicazione IP di concessione
+                      semi-libertà</option>
+                    <option value="Comunicazione IP  per concessione art. 21">Comunicazione IP per concessione art. 21
+                    </option>
+                    <option value="Ordinanza TS detenzione domiciliare">Ordinanza TS detenzione domiciliare</option>
+                    <option value="Ordinanza TS Affidamento in prova provvisorio">Ordinanza TS Affidamento in prova
+                      provvisorio</option>
+                    <option value="Ordinanza TS Affidamento in prova notificata da FFOO">Ordinanza TS Affidamento in
+                      prova
+                      notificata da FFOO</option>
+                    <option value="Ratifica affidamento provvisorio notificata da FFOO">Ratifica affidamento provvisorio
+                      notificata da FFOO</option>
+                    <option value="Richiesta Tribunale di Sorveglianza per udienza">Richiesta Tribunale di Sorveglianza
+                      per udienza</option>
+                    <option value="Istanza MAP corredata da documentazione">Istanza MAP corredata da documentazione
+                    </option>
+                    <option value="Istanza MAP non corredata da tutta la documentazione necessaria">Istanza MAP non
+                      corredata da tutta la documentazione necessaria</option>
+                    <option value="Richiesta TO udienza per programma di trattamento MAP">Richiesta TO udienza per
+                      programma di trattamento MAP</option>
+                    <option value="Sentenza TO per LPU">Sentenza TO per LPU</option>
+                    <option value="Comunicazione Procura della Repubblica presso Tribunale di….">Comunicazione Procura
+                      della Repubblica presso Tribunale di….</option>
+                    <option value="Cartabia">Cartabia</option>
+                    <option value="Altro">Altro</option>
+                  </select>
+                </div>
               </div>
             </div>
-            <div id="div_sub_cases_2_1">
-              <div class="select-label-container">
-                <label style="margin-left: 20px" id="label_data_sub_case2">Data appuntamento</label>
-                <input type="date" name="data_appuntamento" class="input-in-pratica"
-                  style="width: 80%; height: 30px;" />
+            <div class="inpput-container-in-pratica">
+              <div id="div_doc_case_tribunale">
+                <input type="text" name="tribunale_doc_si" class="input-in-pratica" placeholder="Tribunale"
+                  style="width: 100%; height: 30px;" />
+              </div>
+              <div id="div_doc_case_data">
+                <div class="select-label-container">
+                  <label style="margin-left: 20px" id="label_data_sub_case2">Data udienza</label>
+                  <input type="date" name="data_udienza_doc_si" class="input-in-pratica"
+                    style="margin-left: -10%;width: 80%; height: 30px;" />
+                </div>
+              </div>
+              <div id="div_doc_case_altro">
+                <input type="text" name="altro_doc_si" class="input-in-pratica" placeholder="Altro"
+                  style="width: 100%; height: 30px;" />
+              </div>
+            </div>
+            <div class="inpput-container-in-pratica">
+              <div id="div_doc_case_prog_tratt_map">
+                <div class="select-label-container">
+                  <label>Relazione conclusiva</label>
+                  <select name="relazione_conculiva_tratt_map" class="select-in-pratica">
+                    <option value="seleziona">--- Seleziona ---</option>
+                    <option value="Relazione conclusiva MAP">Relazione conclusiva MAP</option>
+                    <option value="Relazione conclusiva LPU">Relazione conclusiva LPU</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <hr class="inner-hr">
+            <div class="inpput-container-in-pratica">
+              <div id="div_proc_lavoro_succ_doc_si">
+                <div class="select-label-container">
+                  <label>Processo di lavoro</label>
+                  <select name="processo_lavoro_successivo_doc_si" class="select-in-pratica"
+                    onchange="ControlAndShowCaseDoc('select_proc_lavoro_succ_doc_si')"
+                    id="select_proc_lavoro_succ_doc_si">
+                    <option value="seleziona">--- Seleziona ---</option>
+                    <option value="Segnalazione a capo area\team per assegnazione">Segnalazione a capo area\team per
+                      assegnazione</option>
+                    <option value="Segnalazione a capo area\team per assegnazione urgente">Segnalazione a capo area\team
+                      per assegnazione urgente</option>
+                    <option value="Segnalazione capo area/team per competenza (occorre inviare note a AG\IIPP..)">
+                      Segnalazione capo area/team per competenza (occorre inviare note a AG\IIPP..)</option>
+                    <option value="Fornito appuntamento sottoscrizione AP">Fornito appuntamento sottoscrizione AP
+                    </option>
+                    <option value="Fornito appuntamento sottoscrizione MAP">Fornito appuntamento sottoscrizione MAP
+                    </option>
+                    <option value="Eseguita comunicazione IP per avvenuto contatto detenuto permessante">Eseguita
+                      comunicazione IP per avvenuto contatto detenuto permessante</option>
+                    <option
+                      value="Segnalazione segreteria tecnica  per competenza / per invio documenti (Sollecito procedimenti)">
+                      Segnalazione segreteria tecnica per competenza / per invio documenti (Sollecito procedimenti)
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="inpput-container-in-pratica">
+              <div id="div_proc_lavoro_succ_doc_no">
+                <div class="select-label-container">
+                  <label>Processo di lavoro</label>
+                  <select name="processo_lavoro_successivo_doc_no" class="select-in-pratica"
+                    id="select_proc_lavoro_succ_doc_no">
+                    <option value="seleziona">--- Seleziona ---</option>
+                    <option value="Il richiedente invierà\rinvierà la documentazione non pervenuta">Il richiedente
+                      invierà\rinvierà la documentazione non pervenuta</option>
+                    <option value="Eseguita comunicazione IP per avvenuto contatto detenuto permessante">Eseguita
+                      comunicazione IP per avvenuto contatto detenuto permessante</option>
+                    <option
+                      value="Occorre richiedere formalmente documentazione mancante per assegnazione: invio a capo area\team">
+                      Occorre richiedere formalmente documentazione mancante per assegnazione: invio a capo area\team
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="inpput-container-in-pratica">
+              <div id="div_doc_processo_lavoro_data_si">
+                <div class="select-label-container">
+                  <label style="margin-left: 20px" id="label_data_sub_case2">Data appuntamento</label>
+                  <input type="date" name="data_appuntamento_processo_lav_si" class="input-in-pratica"
+                    style="margin-left: -10%;width: 80%; height: 30px;" />
+                </div>
               </div>
             </div>
           </div>
@@ -815,7 +1015,7 @@
             <button type="button" class="btn2" onclick="ViewContainerInPratica('dati_pratica' , 'dati_assistito')">
               INDIETRO
             </button>
-            <button type="reset" class="btn2">ANNULLA</button>
+            <button type="reset" class="btn2" onclick="ShowContainer('home_btn_id',true)">ANNULLA</button>
             <button type="button" class="btn2" onclick="ViewContainerInPratica('dati_pratica' , 'riepilogo')">
               FINE
             </button>
@@ -824,20 +1024,44 @@
         <div class="dati-container" id="riepilogo">
           <span class="title-div-span">RIEPILOGO SCHEDA</span>
           <hr />
+          <div id="container-riepilogo">
+          </div>
+          <br>
+          <div class="input-container" style="
+                align-self: center;
+                width: 70%;
+                justify-content: center;
+                gap: 10%;
+              ">
+            <button type="button" class="btn2" onclick="ViewContainerInPratica('riepilogo' , 'dati_pratica')">
+              INDIETRO
+            </button>
+            <button type="reset" class="btn2" onclick="ShowContainer('home_btn_id',true)">ANNULLA</button>
+            <button type="button" class="btn2" onclick="ShowContainer('home_btn_id',true)">
+              CHIUDI
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
   <!-- FOOTER -->
 </body>
 
 <script>
+
+  let div_main = [
+    "dati_pratica",
+    "riepilogo",
+    "dati_assistito",
+    "dati_richiedente"
+  ];
+
   let btn_nav_in = document.getElementById("in_btn_id");
   let btn_nav_home = document.getElementById("home_btn_id");
   window.onload = btn_nav_home.style.backgroundColor = "#90AAD6";
 
-  function ShowContainer(id) {
+  function ShowContainer(id, close = false) {
     let btn_div = document.getElementById(id);
     btn_div.style.backgroundColor = "#90AAD6";
 
@@ -847,9 +1071,16 @@
       document.getElementById("home_richieste").style.display = "flex";
       document.getElementById("crc").style.display = "block";
       document.getElementById("crc_container").style.display = "block";
-
       document.getElementById("insert_pratica_id").style.display = "none";
       document.getElementById("inser_pra_container_id").style.display = "none";
+      if (close) {
+        div_main.forEach(function (id) {
+          if (id != "dati_richiedente") {
+            document.getElementById(id).style.display = "none";
+          }
+        });
+        document.getElementById("dati_richiedente").style.display = "flex";
+      }
     } else {
       btn_nav_home.style.backgroundColor = "#174384";
       //nascondi la view della home e mostra view dell'inserisci pratica
@@ -858,21 +1089,20 @@
       document.getElementById("home_richieste").style.display = "none";
       document.getElementById("crc").style.display = "none";
       document.getElementById("crc_container").style.display = "none";
+
+
     }
   }
-
-
   function ShowInput() {
     let div_to_inner = document.getElementById("qualita_container_id");
     let valore = document.getElementById("select_in_pratica_id").value;
     valore += "";
     if (valore.endsWith("di ..........")) {
-      console.log("ok");
       div_to_inner.innerHTML = '  <input type="text" name="citta_qualita" class="input-in-pratica" placeholder="Città" style="margin-bottom: -20px" /> '
       return;
     }
     if (valore.endsWith("Altro")) {
-      div_to_inner.innerHTML = '<input type="text" name="dettagli" class="input-in-pratica" placeholder="Altro" style="width: 50%; margin-bottom: -20px" />'
+      div_to_inner.innerHTML = '<input type="text" name="dettagli_qualita" class="input-in-pratica" placeholder="Altro" style="width: 50%; margin-bottom: -20px" />'
       return;
     }
     div_to_inner.innerHTML = '';
@@ -884,18 +1114,362 @@
     }
     document.getElementById(id_hide).style.display = "none";
     document.getElementById(id_show).style.display = "flex";
-    document.getElementById("altro_div2").style.display = "none";
-    document.getElementById("div_sub_cases_1").style.display = "none";
-    document.getElementById("select_case_in_carico").selectedIndex = 0;
-    document.getElementById("select_case_non_in_carico").selectedIndex = 0;
-    document.getElementById("select_invio_com").selectedIndex = 0;
+    if (!(id_hide == "dati_assistito" || id_hide == "dati_richiedente" || id_hide == "riepilogo" || id_hide == "dati_pratica")) {
+      Show_$_Hide(null);//function declared in script
+      document.getElementById("select_case_in_carico").selectedIndex = 0;
+      document.getElementById("select_case_non_in_carico").selectedIndex = 0;
+      document.getElementById("select_invio_com").selectedIndex = 0;
+    }
 
+    if (id_show == "riepilogo") {
+
+
+      let valore_citta = document.getElementsByName("qualita")[0].value;
+
+      if (document.getElementsByName("dettagli_qualita")[0] != null) {
+        valore_citta = document.getElementsByName("dettagli_qualita")[0].value;
+      } else if (document.getElementsByName("citta_qualita")[0] != null) {
+        valore_citta += " " + document.getElementsByName("citta_qualita")[0].value;
+      }
+
+      let valore_pos_giu_ass_altro =
+        (document.getElementsByName("posizione_giuridica_assistito")[0].value == "altro")
+          ?
+          document.getElementsByName("altro_posizione_giuridica")[0].value
+          :
+          document.getElementsByName("posizione_giuridica_assistito")[0].value;
+
+      let image_verificato_pos = "icons8-x-25.png";
+
+      if (document.getElementsByName("pos_verificata")[0].checked) {
+        image_verificato_pos = "icons8-verificato-25.png";
+      }
+
+      let valore_ist_altro =
+        (document.getElementsByName("istituto_detenzione_assistito")[0].value == "altro istituto")
+          ?
+          document.getElementsByName("altro_ist_detenzione")[0].value
+          :
+          document.getElementsByName("istituto_detenzione_assistito")[0].value;
+
+      let image_verificato_ist = (document.getElementsByName("ist_verificato")[0].checked)
+        ? "icons8-verificato-25.png" : "icons8-x-25.png";
+
+
+      let valore_tipo_pratica = (document.getElementById("rad_tipo_pratica_uff").checked) ? "Si è presentato in ufficio" : "Ha telefonato";
+
+      let valore_tipo_persona = (document.getElementById("rad_persona_incarico").checked) ? "In carico" : "Non in carico";
+
+      let valore_tipologia_richiesta = (valore_tipo_persona == "In carico") ?
+
+        document.getElementsByName("info_pratica_case_in_carico")[0].value
+        :
+        document.getElementsByName("info_pratica_case_non_in_carico")[0].value
+        ;
+
+
+      let block_dynamic_tipo_persona = ` 
+      <div class="row-info">
+                <div class="row-camp-info">
+                  Tipologia richiesta
+                </div>
+                <div class="row-value-info">
+                  `+ valore_tipologia_richiesta + `
+                </div>
+        </div>
+      `;
+
+      if (isVisible("div_sub_cases_1")) {
+        let valore_invio_com = document.getElementsByName("invio_comunicazione_as")[0].value
+        if (valore_invio_com == "Altro") {
+          valore_invio_com = document.getElementsByName("altro_invio_com")[0].value
+        }
+        block_dynamic_tipo_persona += CreatorOfHtmlContent("Motivazione della comunicazione", null, valore_invio_com);
+      }
+      if (isVisible("div_sub_cases_2")) {
+        block_dynamic_tipo_persona += CreatorOfHtmlContent("Data udienza", "data_udienza_o_GOT");
+      }
+      if (isVisible("div_sub_cases_3")) {
+        block_dynamic_tipo_persona += CreatorOfHtmlContent("Presentazione istanza", "presentazione_istanza_urgente");
+      }
+      if (isVisible("div_sub_cases_4_1")) {
+        block_dynamic_tipo_persona += CreatorOfHtmlContent("Pervenuta ordinanza Tribunale di Sorveglianza notificata da FFOO"
+          , "perventa_ord_tribunale_FFOO");
+      }
+      if (isVisible("div_sub_cases_4_2")) {
+        block_dynamic_tipo_persona += CreatorOfHtmlContent("Pervenuta ordinanza di ratifica dell’affidamento provvisorio notificata da FFOO"
+          , "perventa_ord_affidamento_FFOO");
+      }
+      if (isVisible("div_sub_cases_2_1")) {
+        block_dynamic_tipo_persona += CreatorOfHtmlContent("Data appuntamento"
+          , "data_appuntamento");
+      }
+      if (isVisible("div_sub_cases_5")) {
+        block_dynamic_tipo_persona += CreatorOfHtmlContent("Sapere se l’incarico è assegnato e conoscere nominativo AS"
+          , "sapere_se_incarico_assegnato_as");
+      }
+      if (isVisible("div_sub_cases_6")) {
+        let valore_info = document.getElementsByName("informazioni_generali")[0].value
+        if (valore_info == "Altro") {
+          valore_info = document.getElementsByName("altro_info_generali")[0].value
+        }
+        block_dynamic_tipo_persona += CreatorOfHtmlContent("Informazioni generali ", null, valore_info);
+      }
+
+      function CreatorOfHtmlContent(title, name_element, valore = null) {
+
+        if (valore == null) {
+          valore = document.getElementsByName(name_element)[0].value;
+        }
+
+        return ` 
+      <hr class="hr-info-pratica">
+      <div class="row-info">
+          <div class="row-camp-info">
+            `+ title + `
+          </div>
+          <div class="row-value-info">
+            `+ valore + `
+          </div>
+       </div>`;
+      }
+
+
+      // PERVENUTA DOCUMENTAZIONE --> 
+
+
+
+
+
+
+      function isVisible(id_element) {
+        if (document.getElementById(id_element).style.display.length > 0 &&
+          document.getElementById(id_element).style.display != "none") {
+          return true;
+        }
+        return false;
+      }
+
+      //------------------------------------------------------------------------------------------------
+      //------------------------------------------------------------------------------------------------
+
+      document.getElementById("container-riepilogo").innerHTML =
+        ` 
+        <div class="row-title-info">
+            Dati del richiedente
+          </div>
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Nome
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("nome_richiedente")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Cognome
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("cognome_richiedente")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Qualità
+                </div>
+                <div class="row-value-info">
+                  `+ valore_citta + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Email
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("email_richiedente")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Telefono
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("telefono_richiedente")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica"><br>
+        <div class="row-title-info">
+            Dati del'assistito
+        </div>
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Nome
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("nome_assistito")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Cognome
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("cognome_assistito")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Luogo di nascita
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("luogo_nascita_assistito")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Data di nascita
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("data_nascita_assistito")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Posizione giuridica
+                </div>
+                <div class="row-value-info">
+                  `+ valore_pos_giu_ass_altro + `
+                </div>
+                
+                <div class="verification" style="height: 25px; width: 3.5%; background-image: url(`+ image_verificato_pos + `); margin-left:20px;">
+               </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Istituto di detenzione
+                </div>
+                <div class="row-value-info">
+                  `+ valore_ist_altro + `
+                </div>
+                
+                <div class="verification" style="height: 25px; width: 3.5%; background-image: url(`+ image_verificato_ist + `); margin-left:20px;">
+               </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Indirizzo di residenza
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("indirizzo_assistito")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Citta di residenza
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("citta_assistito")[0].value
+        + " (" + document.getElementsByName("provincia_assistito")[0].value + ")"
+        + " - " + document.getElementsByName("cap_assistito")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Email
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("email_assistito")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Telefono
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("telefono_assistito")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica"><br>
+        <div class="row-title-info">
+            Dati della pratica
+          </div>
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Codice incarico
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("codice_incarico")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Data
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("data_pratica")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Descrizione consulenza
+                </div>
+                <div class="row-value-info">
+                  `+ document.getElementsByName("descrizione_consulenza")[0].value + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Tipo pratica
+                </div>
+                <div class="row-value-info">
+                  `+ valore_tipo_pratica + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Informazioni pratica
+                </div>
+                <div class="row-value-info">
+                  `+ "######## DA VEDERE IN RIUNIONE ######### " + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">
+        <div class="row-info">
+                <div class="row-camp-info">
+                  Tipo di persona
+                </div>
+                <div class="row-value-info">
+                  `+ valore_tipo_persona + `
+                </div>
+        </div>
+        <hr class="hr-info-pratica">`
+        + block_dynamic_tipo_persona + `<hr class="hr-info-pratica">`;
+
+    }
   }
+
 
   function ChangePage(page_path) {
     window.location = page_path;
   }
-  //#174384
 </script>
 
 </html>
