@@ -35,19 +35,19 @@ telefono_assistito
 
 
 codice_incarico
-data_pratica
+data_richiesta
 descrizione_consulenza
-tipo_pratica ( id -> rad_tipo_pratica_uff)
-tipo_pratica ( id -> rad_tipo_pratica_tel)
-informazioni_pratica ( da vedere in riunione )
-tipo_persona_pratica ( id -> rad_persona_incarico)
-    info_pratica_case_in_carico
+tipo_richiesta ( id -> rad_tipo_richiesta_uff)
+tipo_richiesta ( id -> rad_tipo_richiesta_tel)
+informazioni_richiesta ( da vedere in riunione )
+tipo_persona_richiesta ( id -> rad_persona_incarico)
+    info_richiesta_case_in_carico
     invio_comunicazione_as
     altro_invio_com
     presentazione_istanza_urgente
     data_udienza_o_GOT
-tipo_persona_pratica ( id -> rad_persona_non_in_carico)
-    info_pratica_case_non_in_carico
+tipo_persona_richiesta ( id -> rad_persona_non_in_carico)
+    info_richiesta_case_non_in_carico
     sapere_se_incarico_assegnato_as
     informazioni_generali
     altro_info_generali
@@ -80,8 +80,11 @@ data_appuntamento_processo_lav_si
     
 
 //######### REVIEW CODE IN RIUNIONE
- - informazioni_pratica puo 
-    trasformarsi in una select ( si puo selezionare piu di una o solo una opzione )
+ - togliere PERSONA IN CARICO
+ - AGGIUNGERE A PERSONA NON IN CARICO : 
+       # Assegnazione assistente sociale
+       # Appuntamento sottoscrizione verbale MAP
+       # Altro (segnalazioni di particolari problematiche, informazioni generiche) -> la comunicazione viene segnalata al capo area il quale, dopo averne presa visione, la chiude.
 
 
-           
+
