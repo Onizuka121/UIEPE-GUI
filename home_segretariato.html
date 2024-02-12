@@ -133,7 +133,7 @@
         </div>
         <div class="type-container">
           <div class="status-cont">
-            <label>lavorazione</label>
+            <label>terminata</label>
           </div>
         </div>
       </div>
@@ -196,7 +196,7 @@
           <p>Marco Verdi</p>
         </div>
         <div class="type-container">
-          <div class="status-cont">lavorazione</div>
+          <div class="status-cont">terminata</div>
         </div>
       </div>
       <div class="richiesta-short">
@@ -210,7 +210,7 @@
           <p>Marco Verdi</p>
         </div>
         <div class="type-container">
-          <div class="status-cont">lavorazione</div>
+          <div class="status-cont">terminata</div>
         </div>
       </div>
     </div>
@@ -297,7 +297,8 @@
                 gap: 10%;
               ">
             <button type="reset" class="btn2" onclick="ShowContainer('home_btn_id',true)">ANNULLA</button>
-            <button type="button" class="btn2" onclick="ViewContainerInrichiesta('dati_richiedente' , 'dati_assistito')">
+            <button type="button" class="btn2"
+              onclick="ViewContainerInrichiesta('dati_richiedente' , 'dati_assistito')">
               AVANTI
             </button>
           </div>
@@ -510,7 +511,8 @@
                 justify-content: center;
                 gap: 10%;
               ">
-            <button type="button" class="btn2" onclick="ViewContainerInrichiesta('dati_assistito' , 'dati_richiedente')">
+            <button type="button" class="btn2"
+              onclick="ViewContainerInrichiesta('dati_assistito' , 'dati_richiedente')">
               INDIETRO
             </button>
             <button type="reset" class="btn2" onclick="ShowContainer('home_btn_id',true)">ANNULLA</button>
@@ -594,7 +596,8 @@
             </div>
             <div class="select-label-container" style="width: 25%;">
               <label style="margin-left: 10px">Data</label>
-              <input type="date" name="data_richiesta" class="input-in-richiesta" style="margin-left: -30%;width: 60%;" />
+              <input type="date" name="data_richiesta" class="input-in-richiesta"
+                style="margin-left: -30%;width: 60%;" />
             </div>
             <input type="text" name="descrizione_consulenza" style="width: 40%; margin-top: 6px;"
               class="input-in-richiesta" placeholder="Descrizione consulenza ">
@@ -603,7 +606,6 @@
           <hr />
           <div class="inpput-container-in-richiesta" id="input-radio-id">
             <div class="label-checkbox-container">
-              <label>Tipo</label>
               <div>
                 <input type="radio" name="tipo_richiesta" id="rad_tipo_richiesta_uff" value="Si è presentato in ufficio"
                   checked>
@@ -615,93 +617,21 @@
               </div>
             </div>
             <div class="label-checkbox-container" id="check_div_info">
-              <div>
-                <input type="checkbox" name="informazioni_richiesta" value="Segnalato dall'Assistente Sociale incaricato">
-                <label>Segnalato dall'Assistente Sociale incaricato</label>
-              </div>
-              <div>
-                <input type="checkbox" name="informazioni_richiesta" value="Occorre designare un Assistente Sociale">
-                <label>Occorre designare un Assistente Sociale</label>
-              </div>
-              <div>
-                <input type="checkbox" name="informazioni_richiesta" value="Non occorrono ulteriori interventi">
-                <label>Non occorrono ulteriori interventi</label>
-              </div>
-              <div>
-                <input type="checkbox" name="informazioni_richiesta"
-                  value="Trattasi di problemi risolvibili dagli operatori">
-                <label>Trattasi di problemi risolvibili dagli operatori</label>
-              </div>
-              <div>
-                <input type="checkbox" name="informazioni_richiesta" value="Segnalato alla Direzione e agli Educatori">
-                <label>Segnalato alla Direzione e agli Educatori</label>
-              </div>
-              <div>
-                <input type="checkbox" name="informazioni_richiesta" value="E' necessario fornire riscontro">
-                <label>E' necessario fornire riscontro</label>
+              <div class="select-label-container" id="select_provincie">
+                <select name="informazioni_richiesta" class="select-in-richiesta">
+                  <option value="Segnalato dall'Assistente Sociale incaricato">Segnalato dall'Assistente Sociale incaricato</option>
+                  <option value="Occorre designare un Assistente Sociale">Occorre designare un Assistente Sociale</option>
+                  <option value="Non occorrono ulteriori interventi">Non occorrono ulteriori interventi</option>
+                  <option value="Trattasi di problemi risolvibili dagli operatori">Trattasi di problemi risolvibili dagli operatori</option>
+                  <option value="Segnalato alla Direzione e agli Educatori">Segnalato alla Direzione e agli Educatori</option>
+                  <option value="E' necessario fornire riscontro">E' necessario fornire riscontro</option>
+                </select>
               </div>
             </div>
           </div>
           <hr class="inner-hr">
-
-          <!-- 
-             ####
-              IL SEGUENTE COMPONENTE VERRA SOSTITUITO CON UN CONTROLLO AUTOMATICO 
-              SE IL RICHIEDENTE ( CON CODICE ? ) E GIA SEGUITO DA UN'AS 
-              QUINDI POTRA ESSERE 
-              - PERSONA IN CARICO
-              - PERSONA NON IN CARICO
-
-              ? IL CONTROLLO PUO' ESSERE AUTOMATICO ? 
-              ? SE SI COME AVVERRA' IL CONTROLLO ( HTTP REQUEST (POST) - o con API DEL SISTEMA SIEPE) ???
-              OPPURE RIMANE TUTTO COSI E' SARA COMPITO DELL'UTENTE CONTROLLARE E INSERIRE 
-              IL GIUSTO PERCORSO ( PERSONA IN CARICO | PERSONA NON INCARICO )
-
-              A seguito della richiesta viene effettuato un controllo sul software SIEPE per 
-              sapere se il richiedente è già seguito da un’assistente sociale;
-              Secondo il responso di questa verifica si avviano due percorsi differenti
-
-                 - PERSONA IN CARICO,
-                 - PERSONA NON IN CARICO;
-             -->
           <div class="container_inputs_info_richiesta_cases">
-            <div class="inpput-container-in-richiesta" id="input-radio-case-id">
-              <div class="label-checkbox-container">
-                <div>
-                  <input type="radio" name="tipo_persona_richiesta" id="rad_persona_incarico" value="Persona in carico"
-                    onclick="ViewContainerInrichiesta('case_non_in_carico','case_in_carico')" checked>
-                  <label for="rad_persona_incarico">PERSONA IN CARICO</label>
-                </div>
-                <div>
-                  <input type="radio" name="tipo_persona_richiesta" id="rad_persona_non_in_carico"
-                    value="Persona non in carico"
-                    onclick="ViewContainerInrichiesta('case_in_carico','case_non_in_carico')">
-                  <label for="rad_tipo_richiesta_tel">PERSONA NON IN CARICO</label>
-                </div>
-              </div>
-            </div>
             <div class="inpput-container-in-richiesta" id="container-cases">
-              <div id="case_in_carico">
-                <div class="select-label-container">
-                  <label>Tipologia richiesta</label>
-                  <select name="info_richiesta_case_in_carico" class="select-in-richiesta"
-                    onchange="ControlAndShowSubCase('select_case_in_carico')" id="select_case_in_carico">
-                    <option value="seleziona">--- Seleziona ---</option>
-                    <option value="Contatto con A.S incaricato assente">Contatto con A.S incaricato assente</option>
-                    <option value="Sollecito Invio Indagine di Servizio Sociale per udienza">Sollecito Invio Indagine
-                      di Servizio Sociale per udienza</option>
-                    <option value="
-                      Sollecito Invio Indagine di Servizio Sociale per riunione GOT">
-                      Sollecito Invio Indagine di Servizio Sociale per riunione GOT</option>
-                    <option value="Sollecito collaborazione altro UEPE">Sollecito collaborazione altro UEPE</option>
-                    <option value="Presentazione istanza urgente e non differibile di modifica prescrizioni">
-                      Presentazione istanza urgente e non differibile di modifica prescrizioni</option>
-                    <option value="Appuntamento sottoscrizione verbale AP">Appuntamento sottoscrizione verbale AP
-                    </option>
-                    <option value="Appuntamento sottoscrizione MAP">Appuntamento sottoscrizione MAP</option>
-                  </select>
-                </div>
-              </div>
               <div id="case_non_in_carico">
                 <div class="select-label-container">
                   <label>Tipologia richiesta</label>
@@ -721,6 +651,7 @@
                     </option>
                     <option value="Appuntamento sottoscrizione verbale AP">
                       Appuntamento sottoscrizione verbale AP</option>
+                    <option value="Appuntamento sottoscrizione MAP">Appuntamento sottoscrizione MAP</option>
                   </select>
                 </div>
               </div>
@@ -761,34 +692,7 @@
               </div>
             </div>
             <div class="inpput-container-in-richiesta" id="container-cases" style="width: 80%;">
-              <div id="div_sub_cases_1">
-                <div class="select-label-container">
-                  <label>Invio comunicazione a AS per</label>
-                  <select name="invio_comunicazione_as" class="select-in-richiesta"
-                    onchange="ControlAndShowSubCase('select_invio_com')" id="select_invio_com">
-                    <option value="Primo contatto dare nominativo e recapito">Primo contatto dare nominativo e recapito
-                    </option>
-                    <option value="Contatto periodico">Contatto periodico</option>
-                    <option value="Confronto per urgenza">Confronto per urgenza</option>
-                    <option value="Contatto detenuto in permesso premio">Contatto detenuto in permesso premio</option>
-                    <option value="Altro">Altro</option>
-                  </select>
-                </div>
-              </div>
-              <div id="div_sub_cases_3">
-                <div class="select-label-container">
-                  <label>Presentazione istanza</label>
-                  <select name="presentazione_istanza_urgente" class="select-in-richiesta">
-                    <option value="Acquisizione ed invio istanza all'Ufficio di Sorveglianza">Acquisizione ed invio
-                      istanza all'Ufficio di Sorveglianza
-                    </option>
-                    <option value="Acquisizione istanza e autorizzazione Direttore UIEPE">Acquisizione istanza e
-                      autorizzazione Direttore UIEPE</option>
-                    <option value="Rinvio all’AS per mancanza di documentazione">Rinvio all’AS per mancanza di
-                      documentazione</option>
-                  </select>
-                </div>
-              </div>
+              
               <div id="div_sub_cases_4">
                 <div class="label-checkbox-container">
                   <div>
@@ -808,13 +712,6 @@
                 </div>
               </div>
 
-              <div id="div_sub_cases_2">
-                <div class="select-label-container">
-                  <label style="margin-left: 20px" id="label_data_sub_case2">Data</label>
-                  <input type="date" name="data_udienza_o_GOT" class="input-in-richiesta"
-                    style="margin-left: -10%;width: 80%; height: 30px;" />
-                </div>
-              </div>
               <div id="altro_div2">
                 <input type="text" name="altro_invio_com" class="input-in-richiesta" placeholder="Altro"
                   style="width: 100%; height: 30px;" />
@@ -1115,8 +1012,7 @@
     document.getElementById(id_hide).style.display = "none";
     document.getElementById(id_show).style.display = "flex";
     if (!(id_hide == "dati_assistito" || id_hide == "dati_richiedente" || id_hide == "riepilogo" || id_hide == "dati_richiesta")) {
-      Show_$_Hide(null);//function declared in script
-      document.getElementById("select_case_in_carico").selectedIndex = 0;
+      Show_$_Hide(null);
       document.getElementById("select_case_non_in_carico").selectedIndex = 0;
       document.getElementById("select_invio_com").selectedIndex = 0;
     }
@@ -1158,14 +1054,9 @@
 
       let valore_tipo_richiesta = (document.getElementById("rad_tipo_richiesta_uff").checked) ? "Si è presentato in ufficio" : "Ha telefonato";
 
-      let valore_tipo_persona = (document.getElementById("rad_persona_incarico").checked) ? "In carico" : "Non in carico";
+      let valore_tipo_persona = "Non in carico";
 
-      let valore_tipologia_richiesta = (valore_tipo_persona == "In carico") ?
-
-        document.getElementsByName("info_richiesta_case_in_carico")[0].value
-        :
-        document.getElementsByName("info_richiesta_case_non_in_carico")[0].value
-        ;
+      let valore_tipologia_richiesta = document.getElementsByName("info_richiesta_case_non_in_carico")[0].value;
 
 
       let block_dynamic_tipo_persona = ` 
@@ -1179,19 +1070,6 @@
         </div>
       `;
 
-      if (isVisible("div_sub_cases_1")) {
-        let valore_invio_com = document.getElementsByName("invio_comunicazione_as")[0].value
-        if (valore_invio_com == "Altro") {
-          valore_invio_com = document.getElementsByName("altro_invio_com")[0].value
-        }
-        block_dynamic_tipo_persona += CreatorOfHtmlContent("Motivazione della comunicazione", null, valore_invio_com);
-      }
-      if (isVisible("div_sub_cases_2")) {
-        block_dynamic_tipo_persona += CreatorOfHtmlContent("Data udienza", "data_udienza_o_GOT");
-      }
-      if (isVisible("div_sub_cases_3")) {
-        block_dynamic_tipo_persona += CreatorOfHtmlContent("Presentazione istanza", "presentazione_istanza_urgente");
-      }
       if (isVisible("div_sub_cases_4_1")) {
         block_dynamic_tipo_persona += CreatorOfHtmlContent("Pervenuta ordinanza Tribunale di Sorveglianza notificata da FFOO"
           , "perventa_ord_tribunale_FFOO");
@@ -1236,11 +1114,6 @@
 
 
       // PERVENUTA DOCUMENTAZIONE --> 
-
-
-
-
-
 
       function isVisible(id_element) {
         if (document.getElementById(id_element).style.display.length > 0 &&
@@ -1448,7 +1321,7 @@
                   Informazioni richiesta
                 </div>
                 <div class="row-value-info">
-                  `+ "######## DA VEDERE IN RIUNIONE ######### " + `
+                  `+ document.getElementsByName("informazioni_richiesta")[0].value  + `
                 </div>
         </div>
         <hr class="hr-info-richiesta">

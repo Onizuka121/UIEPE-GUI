@@ -74,24 +74,10 @@ function ControlAndShowSubCase(id_element, id_div_optional_to_keep = null) {
 
   if (id_element != "select_invio_com") {
     if (value == "seleziona") {
-      if (!(id_element == "select_case_non_in_carico" ||id_element == "select_case_in_carico")) {
+      if (!(id_element == "select_case_non_in_carico")) {
         document.getElementById("div_sub_cases_2_1").style.display = "none";
         return;
       }
-    }
-    if (value == "Contatto con A.S incaricato assente") {
-      Show_$_Hide("div_sub_cases_1");
-      div_altro.style.display = "none";
-      document.getElementById("select_invio_com").selectedIndex = 0;
-      return;
-    }
-    if (
-      value == "Sollecito Invio Indagine di Servizio Sociale per udienza" ||
-      value == "Sollecito Invio Indagine di Servizio Sociale per riunione GOT"
-    ) {
-      Show_$_Hide("div_sub_cases_2");
-      div_altro.style.display = "none";
-      return;
     }
 
     if(value == "Sapere se l’incarico è assegnato e conoscere nominativo AS"){
@@ -108,15 +94,6 @@ function ControlAndShowSubCase(id_element, id_div_optional_to_keep = null) {
       Show_$_Hide("altro_div6","div_sub_cases_6");
       return;
     }
-
-    if (
-      value ==
-      "Presentazione istanza urgente e non differibile di modifica prescrizioni"
-    ) {
-      Show_$_Hide("div_sub_cases_3");
-      return;
-    }
-
     if (value == "Appuntamento sottoscrizione verbale AP") {
       Show_$_Hide("div_sub_cases_4");
       return;
@@ -183,10 +160,7 @@ function ControlAndShowSubCase(id_element, id_div_optional_to_keep = null) {
 }
 
 let id_divs = [
-  "div_sub_cases_1",
-  "div_sub_cases_2",
   "div_sub_cases_2_1",
-  "div_sub_cases_3",
   "div_sub_cases_4",
   "div_sub_cases_4_1",
   "div_sub_cases_4_2",

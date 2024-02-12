@@ -564,19 +564,16 @@ hr {
   flex-direction: row;
   gap: 15%;
   width: 90%;
-  height: 200px;
+  height: 60px;
 }
 #input-radio-id div {
   display: flex;
   flex-direction: column;
-  margin-left: 5%;
+  margin-left: 2%;
 }
 #input-radio-id div div {
   width: 100%;
   display: inline;
-  align-items: center;
-  justify-items: center;
-  gap: 2%;
 }
 #check_div_info {
   height: auto;
@@ -608,28 +605,15 @@ hr {
   width: 100%;
 }
 
-#case_non_in_carico,
-#div_sub_cases_1 {
-  display: none;
-  width: 95%;
-}
-#case_in_carico{
+#case_non_in_carico{
   width: 95%;
 }
 
-#div_sub_cases_1 {
-  width: 50%;
-}
-
-#div_sub_cases_2,
 #div_sub_cases_2_1 {
   display: none;
   width: 45%;
-}
-#div_sub_cases_2_1 {
   margin-right: 0%;
 }
-#div_sub_cases_3,
 #div_sub_cases_4,
 #div_sub_cases_5,
 #div_sub_cases_6 {
@@ -685,10 +669,10 @@ hr {
 
 .container_inputs_info_richiesta_cases {
   width: 90%;
-  display: block;
   border-radius: 10px;
   background-color: #90aad62e;
   padding: 2%;
+  height: auto;
 }
 
 #container_pervenuta_doc {

@@ -88,3 +88,47 @@ data_appuntamento_processo_lav_si
 
 
 
+ViewContainerInrichiesta
+rad_persona_incarico
+
+<div class="inpput-container-in-richiesta" id="input-radio-case-id">
+              <div class="label-checkbox-container">
+                <div>
+                  <input type="radio" name="tipo_persona_richiesta" id="rad_persona_non_in_carico"
+                    value="Persona non in carico"
+                    onclick="ViewContainerInrichiesta('case_in_carico','case_non_in_carico')">
+                  <label for="rad_tipo_richiesta_tel">PERSONA NON IN CARICO</label>
+                </div>
+              </div>
+            </div>
+
+
+
+
+<div id="case_in_carico">
+                <div class="select-label-container">
+                  <label>Tipologia richiesta</label>
+                  <select name="info_richiesta_case_in_carico" class="select-in-richiesta"
+                    onchange="ControlAndShowSubCase('select_case_in_carico')" id="select_case_in_carico">
+                    <option value="seleziona">--- Seleziona ---</option>
+                    <option value="Contatto con A.S incaricato assente">Contatto con A.S incaricato assente</option>
+                    <option value="Sollecito Invio Indagine di Servizio Sociale per udienza">Sollecito Invio Indagine
+                      di Servizio Sociale per udienza</option>
+                    <option value="
+                      Sollecito Invio Indagine di Servizio Sociale per riunione GOT">
+                      Sollecito Invio Indagine di Servizio Sociale per riunione GOT</option>
+                    <option value="Sollecito collaborazione altro UEPE">Sollecito collaborazione altro UEPE</option>
+                    <option value="Presentazione istanza urgente e non differibile di modifica prescrizioni">
+                      Presentazione istanza urgente e non differibile di modifica prescrizioni</option>
+                    <option value="Appuntamento sottoscrizione verbale AP">Appuntamento sottoscrizione verbale AP
+                    </option>
+                    <option value="Appuntamento sottoscrizione MAP">Appuntamento sottoscrizione MAP</option>
+                  </select>
+                </div>
+              </div>
+
+
+
+
+
+onchange="ControlAndShowSubCase('select_case_non_in_carico')" id="select_case_non_in_carico"
