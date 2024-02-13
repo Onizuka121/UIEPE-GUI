@@ -921,6 +921,7 @@ hr {
 
 /*------------------- INIZIO RESPONSIVE PER SCHERMI CON ALTEZZA MASSIMA 900px  ------------------------------------*/
 
+
 @media only screen and (max-height: 900px) {
   .container-inserisci-richiesta {
     height: 400px;

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UIEPE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <!-- HEADER -->
+  <header class="header-home">
+    <nav class="nav-home">
+      <div class="logo"></div>
+      <div class="brand">
+        Ufficio interdistrettuale esecuzione penale esterna
+        <p style="font-size: 60%">Ministero della Giustizia</p>
+      </div>
+      <div class="container-pro">
+        <div class="container-profile-details">
+          <div class="logo-profile"></div>
+          <div class="details-profile">
+            <!--IN QUESTA PARTE DOVRA' ESSERCI DEL CODICE PHP INNESTATO PER 
+                    1-  tipologia utente*
+                    2 - nome cognome
+                    3- altri dati
+               -->
+            <p class="nome-cognome" id="nc">
+              Paolo Verdi <br />DIRETTORE
+            </p>
+          </div>
+        </div>
+        <div class="btn-profile-container">
+          <div class="btn-profile">
+            <div class="logo-btn-profile" style="background-image: url('user.png')"></div>
+            PROFILO
+          </div>
+          <div class="btn-profile" onclick="ChangePage('index.html')">
+            <div class="logo-btn-profile" style="background-image: url('exit.png')"></div>
+            LOGOUT
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-options">
+      <div class="nav-btn-div" id="home_btn_id">
+        HOME
+      </div>
+    </div>
+  </header>
+  <!-- BODY -->
+  <br />
+  <br />
+  <div class="container-main" id="crc_container">
+    <div class="container-row-campi" id="crc">
+      <table class="row-name-coloumn">
+        <tr>
+          <th>
+            TIPOLOGIA
+            <select name="tipologia_filtro" class="select-filter"  onchange="alert('FUNZIONE DI FILTRAGGIO INTERVENTI IN ARRIVO...')">
+              <option value="tutte">tutte</option>
+              <option value="Appuntamento Map">Appuntamento Map</option>
+            </select>
+          </th>
+          <th>
+            DATA
+            <input type="date" name="data_filtro" class="input-filter"  onchange="alert('FUNZIONE DI FILTRAGGIO INTERVENTI IN ARRIVO...')"/>
+          </th>
+          <th>
+            SOGGETTO
+            <input type="text" name="soggetto_filtro" class="input-filter" value="null"  onchange="alert('FUNZIONE DI FILTRAGGIO INTERVENTI IN ARRIVO...')" />
+          </th>
+          <th>
+            STATO
+            <select name="stato_filtro" class="select-filter" onchange="alert('FUNZIONE DI FILTRAGGIO INTERVENTI IN ARRIVO...')">
+              <option value="tutte">tutte</option>
+              <option value="terminata">terminata</option>
+              <option value="lavorazione">lavorazione</option>
+            </select>
+          </th>
+          <th>
+          </th>
+        </tr>
+      </table>
+     
+    </div>
+
+    <div class="home-page-richieste" id="home_richieste">
+      <div class="richiesta-short" onclick="ChangePage('dettagli.html')">
+        <div class="type-container">
+          <p>Appuntamento Map</p>
+        </div>
+        <div class="type-container">
+          <p>12/04/2023</p>
+        </div>
+        <div class="type-container">
+          <p>Francesco Rossi</p>
+        </div>
+        <div class="type-container">
+          <div class="status-cont">
+            <label>terminata</label>
+          </div>
+        </div>
+      </div>
+      <div class="richiesta-short">
+        <div class="type-container">
+          <p>Appuntamento Map</p>
+        </div>
+        <div class="type-container">
+          <p>17/04/2023</p>
+        </div>
+        <div class="type-container">
+          <p>Lorenzo De Ciglio</p>
+        </div>
+        <div class="type-container">
+          <div class="status-cont">
+            <label>terminata</label>
+          </div>
+        </div>
+      </div>
+      <div class="richiesta-short">
+        <div class="type-container">
+          <p>Appuntamento Map</p>
+        </div>
+        <div class="type-container">
+          <p>05/04/2023</p>
+        </div>
+        <div class="type-container">
+          <p>Mario Neri</p>
+        </div>
+        <div class="type-container">
+          <div class="status-cont">
+            <label>terminata</label>
+          </div>
+        </div>
+      </div>
+      <div class="richiesta-short">
+        <div class="type-container">
+          <p>Appuntamento Map</p>
+        </div>
+        <div class="type-container">
+          <p>20/12/2023</p>
+        </div>
+        <div class="type-container">
+          <p>Marco Verdi</p>
+        </div>
+        <div class="type-container">
+          <div class="status-cont" style="background-color: rgba(177, 2, 2, 0.707)">
+            lavorazione
+          </div>
+        </div>
+      </div>
+      <div class="richiesta-short">
+        <div class="type-container">
+          <p>Appuntamento Map</p>
+        </div>
+        <div class="type-container">
+          <p>20/12/2023</p>
+        </div>
+        <div class="type-container">
+          <p>Marco Verdi</p>
+        </div>
+        <div class="type-container">
+          <div class="status-cont" style="background-color: rgba(177, 2, 2, 0.707)">
+            lavorazione
+          </div>
+        </div>
+      </div>
+      <div class="richiesta-short">
+        <div class="type-container">
+          <p>Appuntamento Map</p>
+        </div>
+        <div class="type-container">
+          <p>20/12/2023</p>
+        </div>
+        <div class="type-container">
+          <p>Marco Verdi</p>
+        </div>
+        <div class="type-container">
+          <div class="status-cont" style="background-color: rgba(177, 2, 2, 0.707)">
+            lavorazione
+          </div>
+        </div>
+      </div>
+      <div class="richiesta-short">
+        <div class="type-container">
+          <p>Appuntamento Map</p>
+        </div>
+        <div class="type-container">
+          <p>20/12/2023</p>
+        </div>
+        <div class="type-container">
+          <p>Marco Verdi</p>
+        </div>
+        <div class="type-container">
+          <div class="status-cont">terminata</div>
+        </div>
+      </div>
+      <div class="richiesta-short">
+        <div class="type-container">
+          <p>Appuntamento Map</p>
+        </div>
+        <div class="type-container">
+          <p>20/12/2023</p>
+        </div>
+        <div class="type-container">
+          <p>Marco Verdi</p>
+        </div>
+        <div class="type-container">
+          <div class="status-cont">terminata</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="script.js"></script>
+</html>

@@ -1,10 +1,8 @@
 var text = false;
 
-
 function ShowPass() {
   var input = document.getElementById("pass");
   var div = document.getElementById("view_id");
-
   if (!text) {
     input.type = "text";
     div.style.backgroundImage = "url('hide.png')";
@@ -15,6 +13,25 @@ function ShowPass() {
     text = false;
   }
 }
+
+function ChangePage(page_path = null) {
+  if(page_path == null){
+    window.location = sessionStorage.getItem("pagina");
+  }else{
+    window.location = page_path;
+  }
+}
+
+//FUNZIONE DA STRALCIARE CON IL CODICE PHP
+function SetUtenza(){
+  let utenza = document.getElementsByName("tipologia_utente")[0].value;
+  let pagina_view = (utenza == "direttore") ? "home_direttore.html" : "home_segretariato.html";
+  sessionStorage.setItem("pagina",pagina_view);
+  ChangePage(pagina_view);
+
+
+}
+
 
 function ShowAltro(par = "") {
   if (par == "ist") {

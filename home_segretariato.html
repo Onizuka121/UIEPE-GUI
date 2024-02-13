@@ -63,29 +63,32 @@
         <tr>
           <th>
             TIPOLOGIA
-            <select name="tipologia_filtro" class="select-filter">
+            <select name="tipologia_filtro" class="select-filter"  onchange="alert('FUNZIONE DI FILTRAGGIO INTERVENTI IN ARRIVO...')">
               <option value="tutte">tutte</option>
               <option value="Appuntamento Map">Appuntamento Map</option>
             </select>
           </th>
           <th>
             DATA
-            <input type="date" name="data_filtro" class="input-filter" />
+            <input type="date" name="data_filtro" class="input-filter"  onchange="alert('FUNZIONE DI FILTRAGGIO INTERVENTI IN ARRIVO...')"/>
           </th>
           <th>
             SOGGETTO
-            <input type="text" name="soggetto_filtro" class="input-filter" value="null" />
+            <input type="text" name="soggetto_filtro" class="input-filter" value="null"  onchange="alert('FUNZIONE DI FILTRAGGIO INTERVENTI IN ARRIVO...')" />
           </th>
           <th>
             STATO
-            <select name="stato_filtro" class="select-filter">
+            <select name="stato_filtro" class="select-filter" onchange="alert('FUNZIONE DI FILTRAGGIO INTERVENTI IN ARRIVO...')">
               <option value="tutte">tutte</option>
               <option value="terminata">terminata</option>
               <option value="lavorazione">lavorazione</option>
             </select>
           </th>
+          <th>
+          </th>
         </tr>
       </table>
+     
     </div>
 
     <div class="home-page-richieste" id="home_richieste">
@@ -1340,9 +1343,7 @@
   }
 
 
-  function ChangePage(page_path) {
-    window.location = page_path;
-  }
+  
 </script>
 
 </html>
